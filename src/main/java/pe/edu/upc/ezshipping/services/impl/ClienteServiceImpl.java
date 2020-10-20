@@ -4,22 +4,21 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Optional;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
-import javax.inject.Named;
-import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import pe.edu.upc.ezshipping.models.entities.Cliente;
 import pe.edu.upc.ezshipping.models.repositories.ClienteRepository;
 import pe.edu.upc.ezshipping.services.ClienteService;
 
-@Named
-@ApplicationScoped
+@Service
 public class ClienteServiceImpl implements ClienteService, Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	@Inject
+	@Autowired
 	private ClienteRepository clienteRepository;
 
 	@Transactional
@@ -31,7 +30,7 @@ public class ClienteServiceImpl implements ClienteService, Serializable {
 	@Transactional
 	@Override
 	public Cliente update(Cliente entity) throws Exception {
-		return clienteRepository.update(entity);
+		return clienteRepository.save(entity);
 	}
 
 	@Transactional
@@ -40,16 +39,19 @@ public class ClienteServiceImpl implements ClienteService, Serializable {
 		clienteRepository.deleteById(id);
 	}
 
+	@Transactional(readOnly = true)
 	@Override
 	public Optional<Cliente> findById(Integer id) throws Exception {
 		return clienteRepository.findById(id);
 	}
 
+	@Transactional(readOnly = true)
 	@Override
 	public List<Cliente> findAll() throws Exception {
 		return clienteRepository.findAll();
 	}
 
+	@Transactional(readOnly = true)
 	@Override
 	public Optional<Cliente> findByDNI(String DNI) throws Exception {
 		return clienteRepository.findByDNI(DNI);

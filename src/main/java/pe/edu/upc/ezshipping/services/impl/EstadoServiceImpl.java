@@ -4,22 +4,20 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Optional;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
-import javax.inject.Named;
-import javax.transaction.Transactional;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import pe.edu.upc.ezshipping.models.entities.Estado;
 import pe.edu.upc.ezshipping.models.repositories.EstadoRepository;
 import pe.edu.upc.ezshipping.services.EstadoService;
 
-@Named
-@ApplicationScoped
+@Service
 public class EstadoServiceImpl implements EstadoService, Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	@Inject
+	@Autowired
 	private EstadoRepository estadoRepository;
 
 	@Transactional
@@ -31,7 +29,7 @@ public class EstadoServiceImpl implements EstadoService, Serializable {
 	@Transactional
 	@Override
 	public Estado update(Estado entity) throws Exception {
-		return estadoRepository.update(entity);
+		return estadoRepository.save(entity);
 	}
 
 	@Transactional
@@ -40,16 +38,19 @@ public class EstadoServiceImpl implements EstadoService, Serializable {
 		estadoRepository.deleteById(id);
 	}
 
+	@Transactional(readOnly = true)
 	@Override
 	public Optional<Estado> findById(Integer id) throws Exception {
 		return estadoRepository.findById(id);
 	}
 
+	@Transactional(readOnly = true)
 	@Override
 	public List<Estado> findAll() throws Exception {
 		return estadoRepository.findAll();
 	}
 
+	@Transactional(readOnly = true)
 	@Override
 	public Optional<Estado> findByNombre(String nombre) throws Exception {
 		return estadoRepository.findByNombre(nombre);
