@@ -4,22 +4,20 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Optional;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
-import javax.inject.Named;
-import javax.transaction.Transactional;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import pe.edu.upc.ezshipping.models.entities.Reclamo;
 import pe.edu.upc.ezshipping.models.repositories.ReclamoRepository;
 import pe.edu.upc.ezshipping.services.ReclamoService;
 
-@Named
-@ApplicationScoped
+@Service
 public class ReclamoServiceImpl implements ReclamoService, Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	@Inject
+	@Autowired
 	private ReclamoRepository reclamoRepository;
 
 	@Transactional
@@ -31,7 +29,7 @@ public class ReclamoServiceImpl implements ReclamoService, Serializable {
 	@Transactional
 	@Override
 	public Reclamo update(Reclamo entity) throws Exception {
-		return reclamoRepository.update(entity);
+		return reclamoRepository.save(entity);
 	}
 
 	@Transactional
@@ -40,16 +38,19 @@ public class ReclamoServiceImpl implements ReclamoService, Serializable {
 		reclamoRepository.deleteById(id);
 	}
 
+	@Transactional(readOnly = true)
 	@Override
 	public Optional<Reclamo> findById(Integer id) throws Exception {
 		return reclamoRepository.findById(id);
 	}
 
+	@Transactional(readOnly = true)
 	@Override
 	public List<Reclamo> findAll() throws Exception {
 		return reclamoRepository.findAll();
 	}
 
+	@Transactional(readOnly = true)
 	@Override
 	public Optional<Reclamo> findByDescripcion(String descripcion) throws Exception {
 		return reclamoRepository.findByDescripcion(descripcion);

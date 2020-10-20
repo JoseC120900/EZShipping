@@ -4,22 +4,20 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Optional;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
-import javax.inject.Named;
-import javax.transaction.Transactional;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import pe.edu.upc.ezshipping.models.entities.Persona;
 import pe.edu.upc.ezshipping.models.repositories.PersonaRepository;
 import pe.edu.upc.ezshipping.services.PersonaService;
 
-@Named
-@ApplicationScoped
+@Service
 public class PesonaServiceImpl implements PersonaService, Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	@Inject
+	@Autowired
 	private PersonaRepository personaRepository;
 
 	@Transactional
@@ -31,7 +29,7 @@ public class PesonaServiceImpl implements PersonaService, Serializable {
 	@Transactional
 	@Override
 	public Persona update(Persona entity) throws Exception {
-		return personaRepository.update(entity);
+		return personaRepository.save(entity);
 	}
 
 	@Transactional
@@ -40,16 +38,19 @@ public class PesonaServiceImpl implements PersonaService, Serializable {
 		personaRepository.deleteById(id);
 	}
 
+	@Transactional(readOnly = true)
 	@Override
 	public Optional<Persona> findById(Integer id) throws Exception {
 		return personaRepository.findById(id);
 	}
 
+	@Transactional(readOnly = true)
 	@Override
 	public List<Persona> findAll() throws Exception {
 		return personaRepository.findAll();
 	}
 
+	@Transactional(readOnly = true)
 	@Override
 	public Optional<Persona> findByEmail(String email) throws Exception {
 		return personaRepository.findByEmail(email);

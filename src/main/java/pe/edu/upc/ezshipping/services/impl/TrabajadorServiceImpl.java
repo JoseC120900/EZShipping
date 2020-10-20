@@ -4,22 +4,20 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Optional;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
-import javax.inject.Named;
-import javax.transaction.Transactional;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import pe.edu.upc.ezshipping.models.entities.Trabajador;
 import pe.edu.upc.ezshipping.models.repositories.TrabajadorRepository;
 import pe.edu.upc.ezshipping.services.TrabajadorService;
 
-@Named
-@ApplicationScoped
+@Service
 public class TrabajadorServiceImpl implements TrabajadorService, Serializable{
 
 	private static final long serialVersionUID = 1L;
 
-	@Inject
+	@Autowired
 	private TrabajadorRepository trabajadorRepository;
 	
 	@Transactional
@@ -31,7 +29,7 @@ public class TrabajadorServiceImpl implements TrabajadorService, Serializable{
 	@Transactional
 	@Override
 	public Trabajador update(Trabajador entity) throws Exception {
-		return trabajadorRepository.update(entity);
+		return trabajadorRepository.save(entity);
 	}
 
 	@Transactional
@@ -41,11 +39,13 @@ public class TrabajadorServiceImpl implements TrabajadorService, Serializable{
 		
 	}
 
+	@Transactional(readOnly = true)
 	@Override
 	public Optional<Trabajador> findById(Integer id) throws Exception {
 		return trabajadorRepository.findById(id);
 	}
 
+	@Transactional(readOnly = true)
 	@Override
 	public List<Trabajador> findAll() throws Exception {
 		return trabajadorRepository.findAll();
