@@ -13,13 +13,13 @@ import pe.edu.upc.ezshipping.models.repositories.TarjetaRepository;
 import pe.edu.upc.ezshipping.services.TarjetaService;
 
 @Service
-public class TarjetaServiceImpl implements TarjetaService, Serializable{
+public class TarjetaServiceImpl implements TarjetaService, Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	@Autowired
 	private TarjetaRepository tarjetaRepository;
-	
+
 	@Transactional
 	@Override
 	public Tarjeta save(Tarjeta entity) throws Exception {
@@ -36,7 +36,7 @@ public class TarjetaServiceImpl implements TarjetaService, Serializable{
 	@Override
 	public void deleteById(Integer id) throws Exception {
 		tarjetaRepository.deleteById(id);
-		
+
 	}
 
 	@Transactional(readOnly = true)
@@ -53,8 +53,8 @@ public class TarjetaServiceImpl implements TarjetaService, Serializable{
 
 	@Transactional(readOnly = true)
 	@Override
-	public Optional<Tarjeta> findByNumero(String nroTarjeta) throws Exception {
-		return tarjetaRepository.findByNumero(nroTarjeta);
+	public Optional<Tarjeta> findByNroTarjeta(String nroTarjeta) throws Exception {
+		return tarjetaRepository.findByNroTarjeta(nroTarjeta);
 	}
 
 }

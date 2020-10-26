@@ -16,10 +16,10 @@ import pe.edu.upc.ezshipping.services.TipoClienteService;
 public class TipoClienteServiceImpl implements TipoClienteService, Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	@Autowired
 	private TipoClienteRepository tipoClienteRepository;
-	
+
 	@Transactional
 	@Override
 	public TipoCliente save(TipoCliente entity) throws Exception {

@@ -7,5 +7,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import pe.edu.upc.ezshipping.models.entities.Tarjeta;
 
 public interface TarjetaRepository extends JpaRepository<Tarjeta, Integer> {
-	Optional<Tarjeta> findByNumero(String nroTarjeta) throws Exception;
+	Optional<Tarjeta> findByNroTarjeta(String nroTarjeta) throws Exception;
 }

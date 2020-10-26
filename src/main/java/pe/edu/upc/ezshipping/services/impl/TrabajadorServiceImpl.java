@@ -13,13 +13,13 @@ import pe.edu.upc.ezshipping.models.repositories.TrabajadorRepository;
 import pe.edu.upc.ezshipping.services.TrabajadorService;
 
 @Service
-public class TrabajadorServiceImpl implements TrabajadorService, Serializable{
+public class TrabajadorServiceImpl implements TrabajadorService, Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	@Autowired
 	private TrabajadorRepository trabajadorRepository;
-	
+
 	@Transactional
 	@Override
 	public Trabajador save(Trabajador entity) throws Exception {
@@ -36,7 +36,7 @@ public class TrabajadorServiceImpl implements TrabajadorService, Serializable{
 	@Override
 	public void deleteById(Integer id) throws Exception {
 		trabajadorRepository.deleteById(id);
-		
+
 	}
 
 	@Transactional(readOnly = true)
