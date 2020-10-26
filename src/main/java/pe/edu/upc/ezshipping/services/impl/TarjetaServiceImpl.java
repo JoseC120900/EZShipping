@@ -53,8 +53,7 @@ public class TarjetaServiceImpl implements TarjetaService, Serializable{
 
 	@Transactional(readOnly = true)
 	@Override
-	public Optional<Tarjeta> findByNumero(String nroTarjeta) throws Exception {
-		return tarjetaRepository.findByNumero(nroTarjeta);
+	public Optional<Tarjeta> findByNroTarjeta(String nroTarjeta) throws Exception {
+		return tarjetaRepository.findByNroTarjeta(nroTarjeta);
 	}
-
 }
