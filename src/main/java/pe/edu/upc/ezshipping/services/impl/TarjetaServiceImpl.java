@@ -56,5 +56,4 @@ public class TarjetaServiceImpl implements TarjetaService, Serializable {
 	public Optional<Tarjeta> findByNroTarjeta(String nroTarjeta) throws Exception {
 		return tarjetaRepository.findByNroTarjeta(nroTarjeta);
 	}
-
 }
