@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link th:href="@{css/style.css}" rel="stylesheet">
-     <link th:href="@{css/styleControl.css}" rel="stylesheet">
+    <link th:href="@{css/styleControl.css}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
     <link rel="stylesheet" th:href="@{css/bootstrap.min.css}">
 
@@ -31,10 +31,35 @@
 		</div>
 	</nav>
 	<section class="zoom">
-		<h1>			
-			Página principal
-		</h1>
-		<h2>Hello, <span th:text="${nombre}"></span></h2>
+		<div class="adjust-title">
+			<h1>Bienvenido!</h1>
+			<h2>
+				Hello, <span th:text="${nombre}"></span>
+			</h2>
+		</div>
+
+	</section>
+	
+	<section class="content">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm">
+					<img src="images/Enviar_Icon.png" class="myicons">
+					<p text-align="center" class="my_text">Envía</p>
+				</div>
+				<div class="col-sm">
+					<img src="images/Rastrear_Icon.png" class="myicons">
+					<p text-align="center" class="my_text">Rastrea</p>
+				</div>
+				<div class="col-sm">
+					<img src="images/Historial_Icon.png" class="myicons">
+					<p text-align="center" class="my_text">Historial</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<section class="footer">
 		
 	</section>
 	

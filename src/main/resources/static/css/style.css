@@ -94,7 +94,8 @@ p {
     width: 150px;
     height: 150px;
     display: block;
-    margin-left: 80px;
+    margin-left: 105px;
+    margin-top: 60px;
     margin-right: auto;
     margin-bottom: 30px;
 }
@@ -149,7 +150,7 @@ p {
     .myicons {
         width: 150px;
         height: 150px;
-        margin-left: 135px;
+        margin-left: 165px;
         margin-right: auto;
         margin-bottom: 30px;
     }
@@ -173,10 +174,10 @@ p {
 
 .zoom{
     width: 100%;
-    height: 800px;
+    height: 400px;
     position: relative;
     overflow: hidden;
-    background: url(my_background.png);
+    background: url(my_header.png);
     background-size: cover;
 }
 
@@ -185,7 +186,7 @@ p {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 200px;
+    height: 130px;
     z-index: 20;
     background: linear-gradient(transparent, white);
 }
@@ -229,3 +230,50 @@ p {
     height: auto;
 
 }
+
+.adjust-title {
+	margin-top: 100px;
+	margin-left: 100px;
+}
+
+#bootstrap-overrides .adjust-title h1 {
+	font-size: 100px;
+}
+#bootstrap-overrides .adjust-title h2 {
+	font-size: 40px;
+}
+
+.content {
+	width: 100%;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+    background-color: white;
+    background-size: cover;
+}
+
+.footer {
+	width: 100%;
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+    background: url(my_footer.png);
+    background-size: cover;
+}
+
+.my_text {
+	padding-left: 120px;
+	margin-top: 40px;
+	font-size: 30px;
+	
+}
+
+.BackGr{
+    width: 100%;
+    height: 1000px;
+    position: relative;
+    overflow: hidden;
+    background: url(my_background.png);
+    background-size: cover;
+}
+
