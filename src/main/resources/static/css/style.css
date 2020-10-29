@@ -19,10 +19,10 @@ p {
     color: black;
     text-align: justify;
     display: flex;
-    width: 90%;
+    width: 100%;
     letter-spacing: 2px;
     font-family: 'Cabin', sans-serif;
-    padding: 15px;
+    padding: 0px!important;
 
 }
 
