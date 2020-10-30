@@ -270,7 +270,16 @@ p {
 
 .BackGr{
     width: 100%;
-    height: 2000px;
+    height: 3000px;
+    position: relative;
+    overflow: hidden;
+    background: url(my_background.png);
+    background-size: cover;
+}
+
+.BackGrTerminos{
+    width: 100%;
+    height: 978px;
     position: relative;
     overflow: hidden;
     background: url(my_background.png);
@@ -337,4 +346,62 @@ z-index: 2;
 width: 80%;
 padding: 20px;
 text-align: center;
+}
+
+.bg-textterminos {
+
+font-weight: bold;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+z-index: 2;
+width: 80%;
+padding: 20px;
+text-align: center;
+}
+
+.btn-regular {
+	background-color: white;
+	color: black; 
+	border-color: balck;
+}
+
+.btn-regular:hover {
+  color: black;
+  background-color: #D3D3D3;
+  border-color: #D3D3D3;
+}
+.btn-bronce {
+	background-color: #a46628;
+	color: black; 
+	border-color: black;
+}
+
+.btn-bronce:hover {
+  color: black;
+  background-color: #7b4d1e;
+  border-color: #7b4d1e;
+}
+.btn-plata {
+	background-color: #C0C0C0;
+	color: black; 
+	border-color: black;
+}
+
+.btn-plata:hover {
+  color: black;
+  background-color: #A9A9A9;
+  border-color: #A9A9A9;
+}
+.btn-oro {
+	background-color: #EEE8AA;
+	color: black; 
+	border-color: black;
+}
+
+.btn-oro:hover {
+  color: black;
+  background-color: #FFD700;
+  border-color: #FFD700;
 }
