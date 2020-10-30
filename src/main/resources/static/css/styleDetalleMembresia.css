@@ -1,0 +1,19 @@
+@charset "ISO-8859-1";
+
+.contenido-info{
+	text-align: center;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+h2.info {
+	font-size: 17px;
+	letter-spacing: 0.8px;
+	word-spacing: 0.8px;
+	color: #000000;
+	font-weight: normal;
+	text-decoration: none;
+	font-style: normal;
+	font-variant: normal;
+	text-transform: none;
+}
