@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"> 
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link th:href="@{../css/style.css}" rel="stylesheet">
+    <link th:href="@{../css/styleControl.css}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{../css/bootstrap.min.css}">
+
+    <title>EZShipping</title>
+  </head>
+  <body id="bootstrap-overrides">
+	<nav class="navbar mynav">
+		<div class="logo">
+			<h4>EZShipping</h4>
+		</div>
+		<ul class="nav-links">
+			<li><a href="../">Inicio</a></li>
+			<li><a href="#">Nosotros</a></li>
+			<li><a href="#">Servicios</a></li>
+			<li><a href="#">Contáctanos</a></li>
+
+		</ul>
+		<div class="burger">
+			<div class="line1"></div>
+			<div class="line2"></div>
+			<div class="line3"></div>
+		</div>
+	</nav>
+	<section class="BackGr">
+		<h1>			
+			Calculadora de precios
+		</h1>
+
+		<section class="differ">
+            <div class="shadow">	          
+				
+				<div>
+					<p>Ingrese la altura de su paquete: </p>
+					<div class="input-group mb-3">
+						<input type="text" id="altura" class="form-control"
+							placeholder="Altura(en cm)"
+							aria-label="Altura(en cm)" aria-describedby="basic-addon2">
+						<div class="input-group-append">
+							<span class="input-group-text" id="basic-addon2">Ej. 70</span>
+						</div>
+					</div>
+				</div>
+				<div>
+					<p>Ingrese el ancho de su paquete: </p>
+					<div class="input-group mb-3">
+						<input type="text" id="ancho" class="form-control"
+							placeholder="Ancho(en cm)"
+							aria-label="Ancho(en cm)" aria-describedby="basic-addon2">
+						<div class="input-group-append">
+							<span class="input-group-text" id="basic-addon2">Ej. 70</span>
+						</div>
+					</div>
+				</div>
+				<div>
+					<p>Ingrese el largo de su paquete: </p>
+					<div class="input-group mb-3">
+						<input type="text" id="largo" class="form-control"
+							placeholder="Largo(en cm)"
+							aria-label="Largo(en cm)" aria-describedby="basic-addon2">
+						<div class="input-group-append">
+							<span class="input-group-text" id="basic-addon2">Ej. 70</span>
+						</div>
+					</div>
+				</div>
+				
+				<span th:text="'Descuento por tipo de membresia ' + ${tipoCliente.nombre} + ': '"></span>
+				<input type="text" id="descuentoMiembro" th:value="${tipoCliente.descuento}" class="form-control" aria-describedby="basic-addon2" readonly>
+				
+				<button onclick="getSumPaquete()" class="displaybutton btn btn-outline-dark"> Calcular</button>
+
+				<div class="container">
+					<div class="row">
+						<div class="col-sm">
+							<p>Monto: </p>
+							<h3 id="monto"/>					
+						</div>
+						<div class="col-sm">
+							<p>Descuento: </p>
+							<h3 id="descontado"/>
+						</div>
+						<div class="col-sm">
+							<p>Precio a pagar: </p>
+							<h3 id="neto"/>
+						</div>
+					</div>
+				</div>
+				
+				<button class="displaybutton btn btn-outline-dark"> <a href="/precios">Volver</a> </button>
+								
+			</div>
+        </section>
+	</section>
+	
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+	<script th:src="@{../js/app.js}"></script>
+	<script th:src="@{../js/control.js}"></script>
+	
+  </body>
+</html>

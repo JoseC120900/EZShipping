@@ -22,7 +22,7 @@ public class TipoCliente {
 	private String nombre;
 	
 	@Column(name = "descuento", length = 10, nullable = false)
-	private Float descuento;
+	private Double descuento;
 	
 	@OneToMany(mappedBy = "tipoCliente")
 	private List<Cliente> clientes;
@@ -51,11 +51,11 @@ public class TipoCliente {
 		this.nombre = nombre;
 	}
 
-	public Float getDescuento() {
+	public Double getDescuento() {
 		return descuento;
 	}
 
-	public void setDescuento(Float descuento) {
+	public void setDescuento(double descuento) {
 		this.descuento = descuento;
 	}
 
