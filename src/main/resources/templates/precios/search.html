@@ -36,65 +36,150 @@
 		</h1>
 
 		<section class="differ">
-            <div class="shadow">	          
-				
+            <div class="shadow">
+
+				<p></p>
 				<div>
-					<p>Ingrese la altura de su paquete: </p>
-					<div class="input-group mb-3">
-						<input type="text" id="altura" class="form-control"
-							placeholder="Altura(en cm)"
-							aria-label="Altura(en cm)" aria-describedby="basic-addon2">
-						<div class="input-group-append">
-							<span class="input-group-text" id="basic-addon2">Ej. 70</span>
-						</div>
-					</div>
-				</div>
-				<div>
-					<p>Ingrese el ancho de su paquete: </p>
-					<div class="input-group mb-3">
-						<input type="text" id="ancho" class="form-control"
-							placeholder="Ancho(en cm)"
-							aria-label="Ancho(en cm)" aria-describedby="basic-addon2">
-						<div class="input-group-append">
-							<span class="input-group-text" id="basic-addon2">Ej. 70</span>
-						</div>
-					</div>
-				</div>
-				<div>
-					<p>Ingrese el largo de su paquete: </p>
-					<div class="input-group mb-3">
-						<input type="text" id="largo" class="form-control"
-							placeholder="Largo(en cm)"
-							aria-label="Largo(en cm)" aria-describedby="basic-addon2">
-						<div class="input-group-append">
-							<span class="input-group-text" id="basic-addon2">Ej. 70</span>
+					<div class="container">
+						<div class="row">
+							<div class="col-sm">
+								<p>Ingrese la altura de su paquete:</p>
+							</div>
+							<div class="col-sm">
+								<div class="input-group mb-3">
+									<input type="text" id="altura" class="form-control"
+										placeholder="Altura(en cm)" aria-label="Altura(en cm)"
+										aria-describedby="basic-addon2">
+									<div class="input-group-append">
+										<span class="input-group-text" id="basic-addon2">Ej. 70</span>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
 				
-				<span th:text="'Descuento por tipo de membresia ' + ${tipoCliente.nombre} + ': '"></span>
-				<input type="text" id="descuentoMiembro" th:value="${tipoCliente.descuento}" class="form-control" aria-describedby="basic-addon2" readonly>
+				<div>
+					<div class="container">
+						<div class="row">
+							<div class="col-sm">
+								<p>Ingrese el ancho de su paquete:</p>
+							</div>
+							<div class="col-sm">
+								<div class="input-group mb-3">
+									<input type="text" id="ancho" class="form-control"
+										placeholder="Ancho(en cm)" aria-label="Ancho(en cm)"
+										aria-describedby="basic-addon2">
+									<div class="input-group-append">
+										<span class="input-group-text" id="basic-addon2">Ej. 70</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 				
-				<button onclick="getSumPaquete()" class="displaybutton btn btn-outline-dark"> Calcular</button>
+				<div>
+					<div class="container">
+						<div class="row">
+							<div class="col-sm">
+								<p>Ingrese el largo de su paquete:</p>
+							</div>
+							<div class="col-sm">
+								<div class="input-group mb-3">
+									<input type="text" id="largo" class="form-control"
+										placeholder="Largo(en cm)" aria-label="Largo(en cm)"
+										aria-describedby="basic-addon2">
+									<div class="input-group-append">
+										<span class="input-group-text" id="basic-addon2">Ej. 70</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div>
+					<div class="container">
+						<div class="row">
+							<div class="col-sm">
+								<p>Ingrese el peso de su paquete:</p>
+							</div>
+							<div class="col-sm">
+								<div class="input-group mb-3">
+									<input type="text" id="peso" class="form-control"
+										placeholder="Peso(en kg)" aria-label="Peso(en kg)"
+										aria-describedby="basic-addon2">
+									<div class="input-group-append">
+										<span class="input-group-text" id="basic-addon2">Ej. 70</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 
 				<div class="container">
 					<div class="row">
 						<div class="col-sm">
-							<p>Monto: </p>
-							<h3 id="monto"/>					
+							<p
+								th:text="'Descuento por tipo de membresia ' + ${tipoCliente.nombre} + ': '"></p>
 						</div>
 						<div class="col-sm">
-							<p>Descuento: </p>
-							<h3 id="descontado"/>
+							<input type="text" id="descuentoMiembro"
+								th:value="${tipoCliente.descuento}" class="form-control"
+								aria-describedby="basic-addon2" readonly>
+						</div>
+					</div>
+				</div>
+
+				<div>	
+					<button onclick="getSumPaquete()" class="displaybutton btn btn-outline-dark button-event"> Calcular</button>
+				</div>				
+				<p></p>
+
+				<div class="container">
+					<div class="row">
+						<div class="col-sm">
+							<div class="container">
+								<div class="row">
+									<div class="col-sm">
+										<p>Monto:</p>
+									</div>
+									<div class="col-sm">
+										<h3 id="monto" />
+									</div>
+								</div>
+							</div>
 						</div>
 						<div class="col-sm">
-							<p>Precio a pagar: </p>
-							<h3 id="neto"/>
+							<div class="container">
+								<div class="row">
+									<div class="col-sm">
+										<p>Descuento:</p>
+									</div>
+									<div class="col-sm">
+										<h3 id="descontado" />
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm">
+							<div class="container">
+								<div class="row">
+									<div class="col-sm">
+										<p>Neto:</p>
+									</div>
+									<div class="col-sm">
+										<h3 id="neto" />
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
 				
-				<button class="displaybutton btn btn-outline-dark"> <a href="/precios">Volver</a> </button>
+				<button class="displaybutton btn btn-outline-dark button-event"> <a href="/precios">Volver</a> </button>
 								
 			</div>
         </section>

@@ -23,8 +23,8 @@ class SpringEzshippingApplicationTests {
 	@Test
 	void contextLoads() {		
 		TipoCliente tipo = new TipoCliente();
-		tipo.setNombre("Plata");
-		tipo.setDescuento(0.2);
+		tipo.setNombre("Black");
+		tipo.setDescuento(0.35);
 				
 		try {
 			tipoclienteService.save(tipo);

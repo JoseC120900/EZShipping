@@ -18,7 +18,7 @@
 			<h4>EZShipping</h4>
 		</div>
 		<ul class="nav-links">
-			<li><a href="index.html">Inicio</a></li>
+			<li><a href="/">Inicio</a></li>
 			<li><a href="#">Nosotros</a></li>
 			<li><a href="#">Servicios</a></li>
 			<li><a href="#">Contáctanos</a></li>
@@ -47,17 +47,22 @@
 					</select>					
 				</form>
 				-->
-				
-				<!-- unorder list -->
-				<ul th:each="tipos : ${tipos}" class="card">				
-					<div>						
-						<button type="button" class="btn btn-outline-dark">
-							<a th:href="@{'/precios/search-' + ${tipos.id}}" th:text="${tipos.nombre}"></a>
-						</button>
-					</div>				
-				</ul>
-			</div>
-        </section>
+
+				<div class="container">
+					<div class="row">
+						<div class="card card-member" style="width: 18rem;" th:each="tipos : ${tipos}">
+							<div class="col-sm-12 col-md-12 col-lg-12">
+								<img src="images/logo.jpg" class="card-img-top" alt="...">
+								<div class="card-body">
+									<h5 class="card-title" th:text="${tipos.nombre}"></h5>								
+									<a th:href="@{'/precios/search-' + ${tipos.id}}" class="btn btn-outline-light btn-member" >Calcular</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>			
+
+				</div></section>
 	</section>
 	
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
