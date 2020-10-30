@@ -34,18 +34,6 @@ public class Tarjeta {
 		return mes_vencimiento;
 	}
 
-	public void setMes_vencimiento(Integer mes_vencimiento) {
-		this.mes_vencimiento = mes_vencimiento;
-	}
-
-	public Integer getAnio_vencimiento() {
-		return anio_vencimiento;
-	}
-
-	public void setAnio_vencimiento(Integer anio_vencimiento) {
-		this.anio_vencimiento = anio_vencimiento;
-	}
-
 	@Column(name = "cvv", length = 3, nullable = false)
 	private Integer cvv;
 
@@ -103,5 +91,18 @@ public class Tarjeta {
 	public void setEnvios(List<Envio> envios) {
 		this.envios = envios;
 	}
+	
+	public void setMes_vencimiento(Integer mes_vencimiento) {
+		this.mes_vencimiento = mes_vencimiento;
+	}
+
+	public Integer getAnio_vencimiento() {
+		return anio_vencimiento;
+	}
+
+	public void setAnio_vencimiento(Integer anio_vencimiento) {
+		this.anio_vencimiento = anio_vencimiento;
+	}
+	
 
 }
