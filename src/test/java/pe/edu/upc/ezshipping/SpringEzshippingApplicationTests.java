@@ -39,3 +39,4 @@ class SpringEzshippingApplicationTests {
 		Assert.isTrue(true);	
 	}
 }
+
