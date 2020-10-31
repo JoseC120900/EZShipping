@@ -46,15 +46,11 @@
 		<form th:action="@{/reclamos/save}" th:object="${reclamo}" method="post">
 		<div class="form-group">
 			<div>
-				<input th:value="${#calendars.format(#calendars.createNow(), 'dd/MM/yyyy')}" readonly ></span>  <!-- th:field="*{fechaReclamo}" -->
-			</div>
-			<div>
 			<label for="exampleFormControlTextarea1">Escriba su reclamo</label>
 			</div>
 			<div class="col">
-				<input type="text" class="form-control" placeholder="¿Qué no le agaradó?">
+				<input type="text" class="form-control" placeholder="¿Qué no le agaradó?" th:field="*{descripcion}">
 			</div>
-			<!-- th:field="*{descripcion}" -->
 		</div>
 		<button type="submit" class="btn btn-success"><i class="fas fa-save"></i> Grabar</button>
 		</form>
