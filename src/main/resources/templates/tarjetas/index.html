@@ -95,10 +95,10 @@
 		</div>
 
 		<!-- Formulario -->
-		<form action="" id="formulario-tarjeta" class="formulario-tarjeta">
+		<form th:action="@{/tarjetas/save}" th:object="${tarjeta}" method="post" id="formulario-tarjeta" class="formulario-tarjeta">
 			<div class="grupo">
 				<label for="inputNumero">Número Tarjeta</label>
-				<input type="text" id="inputNumero" maxlength="19" autocomplete="off">
+				<input type="text" th:field="*{nroTarjeta}" id="inputNumero" maxlength="19" autocomplete="off">
 			</div>
 			<div class="grupo">
 				<label for="inputNombre">Nombre</label>
@@ -109,13 +109,13 @@
 					<label for="selectMes">Expiracion</label>
 					<div class="flexbox">
 						<div class="grupo-select">
-							<select name="mes" id="selectMes">
+							<select name="mes_vencimiento" id="mes_vencimiento">
 								<option disabled selected>Mes</option>
 							</select>
 							<i class="fas fa-angle-down"></i>
 						</div>
 						<div class="grupo-select">
-							<select name="year" id="selectYear">
+							<select name="anio_vencimiento" id="anio_vencimiento">
 								<option disabled selected>Año</option>
 							</select>
 							<i class="fas fa-angle-down"></i>
@@ -125,7 +125,7 @@
 
 				<div class="grupo ccv">
 					<label for="inputCCV">CCV</label>
-					<input type="text" id="inputCCV" maxlength="3">
+					<input type="text" th:field="*{cvv}" id="inputCCV" maxlength="3">
 				</div>
 			</div>
 			<button type="submit" class="btn-enviar">Guardar</button>

@@ -1,7 +1,6 @@
 package pe.edu.upc.ezshipping.models.entities;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -11,8 +10,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "tarjetas")
@@ -21,18 +18,14 @@ public class Tarjeta {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
-	@Column(name = "nro_tarjeta", length = 16, nullable = false)
+	@Column(name = "nro_tarjeta", length = 19, nullable = false)
 	private String nroTarjeta;
 
-	@Column(name = "mes_vencimiento", length =2, nullable = false)
+	@Column(name = "mes_vencimiento", length = 2, nullable = false)
 	private Integer mes_vencimiento;
 	
-	@Column(name = "anio_vencimiento", length =4, nullable = false)
+	@Column(name = "anio_vencimiento", length = 4, nullable = false)
 	private Integer anio_vencimiento;
-	
-	public Integer getMes_vencimiento() {
-		return mes_vencimiento;
-	}
 
 	@Column(name = "cvv", length = 3, nullable = false)
 	private Integer cvv;
@@ -92,6 +85,10 @@ public class Tarjeta {
 		this.envios = envios;
 	}
 	
+	public Integer getMes_vencimiento() {
+		return mes_vencimiento;
+	}
+
 	public void setMes_vencimiento(Integer mes_vencimiento) {
 		this.mes_vencimiento = mes_vencimiento;
 	}
@@ -103,6 +100,6 @@ public class Tarjeta {
 	public void setAnio_vencimiento(Integer anio_vencimiento) {
 		this.anio_vencimiento = anio_vencimiento;
 	}
-	
+
 
 }
