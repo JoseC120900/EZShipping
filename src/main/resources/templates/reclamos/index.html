@@ -1,7 +1,9 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"> 
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head th:replace="layout/layout :: head"></head>
-  <body id="bootstrap-overrides">
+
+<body id="bootstrap-overrides">
 	<nav class="navbar mynav">
 		<div class="logo">
 			<h4>EZShipping</h4>
@@ -12,7 +14,7 @@
 			<li><a href="#">Clientes</a></li>
 			<li><a href="#">Trabajadores</a></li>
 		</ul>
-		
+
 		<div class="burger">
 			<div class="line1"></div>
 			<div class="line2"></div>
@@ -20,31 +22,30 @@
 		</div>
 	</nav>
 	<section class="BackGr">
-		<h1>			
+		<h1>
 			Realizar reclamo
 		</h1>
 
-	
-	<!-- Ingresar data y enviarlo al Controller -->
-	<div>
+		<!-- Ingresar data y enviarlo al Controller -->
 		<section class="differ">
-		<div class="shadow">
-		<form th:action="@{/reclamos/save}" th:object="${reclamo}" method="post">
-		<div class="form-group">
-			<div>
-			<label for="exampleFormControlTextarea1">Escriba su reclamo</label>
+			<div class="shadow">
+				<form th:action="@{/reclamos/save}" th:object="${reclamo}" method="post" >
+					<div class="form-group">
+						<div>
+							<label for="exampleFormControlTextarea1">Escriba su reclamo</label>
+						</div>
+						<div class="col">
+							<input type="text" class="form-control" placeholder="¿Qué no le agaradó?"
+								th:field="*{descripcion}">
+						</div>
+					</div>
+				</form>
+				<button type="submit" class="btn btn-success" ><i class="fas fa-save"></i> Grabar</button>
 			</div>
-			<div class="col">
-				<input type="text" class="form-control" placeholder="¿Qué no le agaradó?" th:field="*{descripcion}">
-			</div>
-		</div>
-		<button type="submit" class="btn btn-success"><i class="fas fa-save"></i> Grabar</button>
-		</form>
-		</div>
 		</section>
-	</div>
-
+	</section>
 	<footer th:replace="layout/layout :: footer"></footer>
-	
-  </body>
+
+</body>
+
 </html>
