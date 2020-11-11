@@ -405,3 +405,14 @@ text-align: center;
   background-color: #FFD700;
   border-color: #FFD700;
 }
+
+
+.my_footer{ 
+    background-color: rgb(36, 33, 33);
+    width: auto;
+    height: 240px;
+}
+
+.text_footer{
+    color: white;
+}
