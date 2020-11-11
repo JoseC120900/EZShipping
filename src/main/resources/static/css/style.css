@@ -277,3 +277,13 @@ p {
     background-size: cover;
 }
 
+.my_footer{ 
+    background-color: rgb(36, 33, 33);
+    width: auto;
+    height: 240px;
+}
+
+.text_footer{
+    color: white;
+}
+

@@ -1,35 +1,11 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"> 
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
-    <link th:href="@{css/style.css}" rel="stylesheet">
-    <link th:href="@{css/styleControl.css}" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
-    <link rel="stylesheet" th:href="@{css/bootstrap.min.css}">
+<head th:replace="layout/layout :: head"></head>
 
-    <title>EZShipping</title>
-  </head>
-  <body id="bootstrap-overrides">
-	<nav class="navbar mynav">
-		<div class="logo">
-			<h4>EZShipping</h4>
-		</div>
-		<ul class="nav-links">
-			<li><a href="/">Inicio</a></li>
-			<li><a href="personas">Personas</a></li>
-			<li><a href="#">Clientes</a></li>
-			<li><a href="#">Trabajadores</a></li>
+<body id="bootstrap-overrides">
+	<header th:replace="layout/layout :: header"></header>
 
-		</ul>
-		<div class="burger">
-			<div class="line1"></div>
-			<div class="line2"></div>
-			<div class="line3"></div>
-		</div>
-	</nav>
 	<section class="zoom">
 		<div class="adjust-title">
 			<h1>Bienvenido!</h1>
@@ -39,7 +15,7 @@
 		</div>
 
 	</section>
-	
+
 	<section class="content">
 		<div class="container">
 			<div class="row">
@@ -58,16 +34,9 @@
 			</div>
 		</div>
 	</section>
-	
-	<section class="footer">
-		
-	</section>
-	
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-	<script th:src="@{js/app.js}"></script>
-	
-  </body>
-</html>
-    
 
-   
+	<footer th:replace="layout/layout :: footer"></footer>
+
+</body>
+
+</html>
