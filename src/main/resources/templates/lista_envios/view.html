@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<script src="https://kit.fontawesome.com/a3ed5d87bf.js"></script>
+<link th:href="@{/css/style.css}" rel="stylesheet">
+<link th:href="@{/css/styleControl.css}" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap"
+	rel="stylesheet">
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+
+<title>EZShipping</title>
+</head>
+
+<body>
+	<section class="container-fluid">
+		<h2 class="text-light bg-primary">Detalles</h2>
+		<table class="table table-striped" >
+			<thead>
+				<tr>
+					<th class="text-light bg-secondary" scope="col">Código Envío</th>
+					<th class="text-light bg-secondary" scope="col">dir. Destino</th>
+					<th class="text-light bg-secondary" scope="col">Destinatario</th>
+					<th class="text-light bg-secondary" scope="col">Código Courier</th>
+					<th class="text-light bg-secondary" scope="col">dir. Origen</th>
+					<th class="text-light bg-secondary" scope="col">Tarjeta</th>
+					<th class="text-light bg-secondary" scope="col">Monto</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th th:text="${envio.id}" scope="row">.</th>
+					<td th:text="${envio.direccionDestino}">.</td>
+					<td th:text="${envio.nombreDestinatario}">.</td>
+					<th class="text-light bg-warning">ver más--><a
+						th:href="@{'/lista_envios/viewCourier-' + ${envio.trabajadorId}}"
+						th:text="${envio.trabajadorId}"></a></th>
+					<td th:text="${envio.direccionOrigen}">.</td>
+					<td th:text="${tarjeta.getNroTarjeta()}">.</td>
+					<td th:text="${envio.monto}">.</td>
+				</tr>
+			</tbody>
+		</table>
+
+
+
+
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th class="text-light bg-secondary" scope="col">Fecha</th>
+					<th class="text-light bg-secondary" scope="col">Estado</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="estadoEnvio: ${estadoEnvios}">
+					<th th:text="${estadoEnvio.getFechaEstadoPedido()}" scope="row">.</th>
+					<th th:text="${estadoEnvio.getEstado().getNombre()}" scope="row">.</th>
+
+				</tr>
+			</tbody>
+		</table>
+
+		<h2 class="text-light bg-danger">Contenido</h2>
+
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th class="text-light bg-secondary" scope="col">Código paquete</th>
+					<th class="text-light bg-secondary" scope="col">Alto</th>
+					<th class="text-light bg-secondary" scope="col">Ancho</th>
+					<th class="text-light bg-secondary" scope="col">Largo</th>
+					<th class="text-light bg-secondary" scope="col">Descripción</th>
+					<th class="text-light bg-secondary" scope="col">Peso</th>
+					<th class="text-light bg-secondary" scope="col">Precio
+						Unitario</th>
+
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="paquete: ${paquetes}">
+					<th th:text="${paquete.getId()}" scope="row">.</th>
+					<th th:text="${paquete.getAlto()}" scope="row">.</th>
+					<th th:text="${paquete.getAncho()}" scope="row">.</th>
+					<th th:text="${paquete.getLargo()}" scope="row">.</th>
+					<th th:text="${paquete.getDescripcion()}" scope="row">.</th>
+					<th th:text="${paquete.getPeso()}" scope="row">.</th>
+					<th th:text="${paquete.getPrecioUnitario()}" scope="row">.</th>
+
+
+				</tr>
+			</tbody>
+		</table>
+	</section>
+
+
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+		crossorigin="anonymous"></script>
+	<script th:src="@{js/app.js}"></script>
+	<script th:src="@{js/bootstrap.bundle.min.js}"></script>
+	<script th:src="@{/js/jquery-3.4.1.min.js}"></script>
+	<script th:src="@{/js/popper.min.js}"></script>
+	<script th:src="@{/js/bootstrap.min.js}"></script>
+	<script th:src="@{/js/chosen.jquery.min.js}"></script>
+	<script th:src="@{/js/fontawesome.min.js}"></script>
+
+</body>
+</html>
