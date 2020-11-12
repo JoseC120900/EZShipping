@@ -1,11 +1,5 @@
 @charset "ISO-8859-1";
 
-.contenido-info{
-	text-align: center;
-	display: table-cell;
-	vertical-align: middle;
-}
-
 h2.info {
 	font-size: 17px;
 	letter-spacing: 0.8px;
@@ -16,4 +10,41 @@ h2.info {
 	font-style: normal;
 	font-variant: normal;
 	text-transform: none;
+}
+
+.barra-ruta{	
+	margin-top: 75px;
+    z-index: 5;
+}
+
+.breadcrumb{
+	margin-right: 900px;	
+}
+
+#view-membresia {
+	display: flex;
+	margin-left: 100px;
+	vertical-align: middle;
+	margin-top: 180px;
+}
+
+.card {
+	margin: 10px;
+	z-index: 3;
+}
+
+.button{
+	background-color: #D8AF1A;
+	border: none;
+	color: black;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+    font-family: 'Cabin', sans-serif;
+	font-size: 16px;
+	margin: 4px 150px;
+	cursor: pointer;
+	border-radius: 8px;
+	
 }

@@ -17,22 +17,41 @@
 
 <body id="bootstrap-overrides">
 	<header th:replace="layout/layout :: header"></header>
+	<main>
+		<section class="BackGr">
+			<nav aria-label="breadcrumb" class="barra-ruta">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item">Membresías</li>
+					<li class="breadcrumb-item active" aria-current="page">
+						<span th:text="${tipoCliente.nombre}"></span>
+					</li>
+				</ol>
+			</nav>
 
-	<section class="BackGr">
-		<div class="contenido-info">
-			<h1>
-				<span th:text="${tipoCliente.nombre}"></span>
-			</h1>
+			<div id="view-membresia">
+				<div>
+					<img th:src="@{${tipoCliente.urlImage}}" class="img-fluid" alt="Responsive image">
+				</div>
+				<div class="card">
+					<div class="card-header">
+						<span th:text="${tipoCliente.nombre}"></span>
+					</div>
+					<div class="card-body">
+						<h2 class="info">
+							<span th:text="'Descuento del ' + (1.00-${tipoCliente.descuento})*100 + '%'"></span>
+							<!-- (1.00-${tipoCliente.descuento})*100 -->
+						</h2>
+					</div>
+					<div>
+						<button type="submit" class="button"> Suscribirse</button>
+					</div>
+				</div>
+			</div>
+		</section>
 
-			<h2 class="info">
-				<span th:text="'Descuento del ' + (1.00-${tipoCliente.descuento})*100 + '%'"></span>
-				<!-- (1.00-${tipoCliente.descuento})*100 -->
-			</h2>
-		</div>
-	</section>
-
-	<footer th:replace="layout/layout :: footer"></footer>
-	
 </body>
+</main>
+
+<footer th:replace="layout/layout :: footer"></footer>
 
 </html>
