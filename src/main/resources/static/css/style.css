@@ -267,6 +267,11 @@ p {
 	color: white;
 }
 
+.text_footer-href {
+	color: white;
+	cursor: pointer;
+}
+
 .hero-image {
 	/*fondo oscuro*/
 	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
@@ -297,9 +302,10 @@ p {
 	background-color: #D8AF1A;
 	text-align: center;
 	cursor: pointer;
+	border-radius: 8px;
 }
 
 .hero-text button:hover {
-  background-color: #b48f46;
-  color: white;
+	background-color: #b48f46;
+	color: white;
 }
