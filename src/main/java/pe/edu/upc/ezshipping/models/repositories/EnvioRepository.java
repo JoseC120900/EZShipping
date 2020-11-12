@@ -12,4 +12,6 @@ public interface EnvioRepository extends JpaRepository<Envio, Integer> {
 	List<Envio> findByDireccionOrigen(String direccionOrigen) throws Exception;
 
 	List<Envio> findByDireccionDestino(String direccionDestino) throws Exception;
+	
+	List<Envio> findByCodigoRastreo(String codigoRastreo) throws Exception;
 }
