@@ -51,32 +51,53 @@
 							Resultado de búsqueda: <span
 								th:text="${envioSearch.nombreDestinatario}"></span>
 						</h3>
-						<ul id="list-envio" style="list-style-type: none">
-							<li th:each="envio : ${envios}">
-
-								<div class="card" style="width: 18rem;">
-									<div class="card-body">
-										<p class="card-text"
-											th:text="'Pedido con codigo rastreo: ' + ${envio.codigoRastreo}"></p>
-										<h5 class="card-title">
-											<span th:text="'Para: ' + ${envio.nombreDestinatario}"></span>
-										</h5>
-										<p class="card-text"
-											th:text="'De ' + ${envio.direccionOrigen} + ' rumbo a ' + ${envio.direccionDestino}"></p>
-										<p class="card-text"
-											th:text="'Monto pagado por el envío: ' + ${envio.monto}"></p>
+						<div class="container">
+							<div class="row">
+								<div class="col-sm">
+										<div id="map"></div>
 									</div>
+								<div class="col-sm">
+									<ul id="list-envio" style="list-style-type: none">
+										<li th:each="envio : ${envios}">
+
+											<div class="card" style="width: 18rem;">
+												<div class="card-body">
+													<p class="card-text"
+														th:text="'Pedido con codigo rastreo: ' + ${envio.codigoRastreo}"></p>
+													<h5 class="card-title">
+														<span
+															th:text="'De: ' + ${envio.cliente.persona.nombre} + ' ' + ${envio.cliente.persona.apellido}"></span>
+													</h5>
+													<h5 class="card-title">
+														<span th:text="'Para: ' + ${envio.nombreDestinatario}"></span>
+													</h5>
+													<p class="card-text"
+														th:text="${envio.direccionOrigen} + ' rumbo a ' + ${envio.direccionDestino}"></p>
+													<ul style="list-style-type: none">
+														<li th:each="estadoEnvio : ${envio.estadoEnvios}">
+															<p
+																th:text="'Estado del envío: ' + ${estadoEnvio.estado.nombre}"></p>
+														</li>
+													</ul>												
+													<p class="card-text"
+														th:text="'Monto pagado por el envío: ' + ${envio.monto} + ' PEN'"></p>												
+												</div>												
+											</div>
+										</li>
+									</ul>									
 								</div>
-
-							</li>
-						</ul>
-
+							</div>
+						</div>
 					</section>
 				</main>
 			</div>
 		</section>
 	</section>
 
-	<footer></footer>
+	<footer>
+		<script th:src="@{../../js/map.js}"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap&libraries=&v=weekly"
+				defer></script>
+	</footer>
 </body>
 </html>

@@ -35,8 +35,9 @@ public class RastreoController {
 		model.addAttribute("envioSearch", envioSearch);
 		List<Envio> envios;
 		try {
-			envios = envioService.findByCodigoRastreo(envioSearch.getCodigoRastreo());
-			model.addAttribute("envios", envios);
+			envios = envioService.findByCodigoRastreo(envioSearch.getCodigoRastreo());		
+			model.addAttribute("envios", envios);					
+			
 		} catch (Exception e) {		
 			e.printStackTrace();
 			System.err.println(e.getMessage());
