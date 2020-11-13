@@ -51,6 +51,6 @@ public class ReclamoController {
 			System.err.println(e.getMessage());
 		}
 		// Devuelve la URL mapping
-		return "redirect:/reclamos";
+		return "/reclamos/reclamoRegistrado";
 	}
 }

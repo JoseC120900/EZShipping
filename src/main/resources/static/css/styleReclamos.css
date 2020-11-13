@@ -1,0 +1,29 @@
+.boton button {
+	border: none;
+	outline: 0;
+	display: inline-block;
+	padding: 10px 25px;
+	color: black;
+	background-color: #D8AF1A;
+	text-align: center;
+	cursor: pointer;
+	border-radius: 8px;
+	margin: 1px 950px;
+	font-family: 'Cabin', sans-serif;
+}
+
+.label-reclamo label {
+	font-family: 'Cabin', sans-serif;
+	margin: 0px 15px;
+}
+
+.form-group div {
+	margin: 5px 0px;
+}
+
+.confirmacion h1 {
+	color: white;
+	font-size: 50px;
+	font-family: 'Cabin', sans-serif;
+	margin: 0px 80px;
+}
