@@ -18,7 +18,7 @@ public class Tarjeta {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
-	@Column(name = "nro_tarjeta", length = 19, nullable = false)
+	@Column(name = "nro_tarjeta", length = 16, nullable = false)
 	private String nroTarjeta;
 
 	@Column(name = "mes_vencimiento", length = 2, nullable = false)
@@ -61,6 +61,22 @@ public class Tarjeta {
 		this.nroTarjeta = nroTarjeta;
 	}
 
+	public Integer getMes_vencimiento() {
+		return mes_vencimiento;
+	}
+
+	public void setMes_vencimiento(Integer mes_vencimiento) {
+		this.mes_vencimiento = mes_vencimiento;
+	}
+
+	public Integer getAnio_vencimiento() {
+		return anio_vencimiento;
+	}
+
+	public void setAnio_vencimiento(Integer anio_vencimiento) {
+		this.anio_vencimiento = anio_vencimiento;
+	}
+
 	public Integer getCvv() {
 		return cvv;
 	}
@@ -84,22 +100,5 @@ public class Tarjeta {
 	public void setEnvios(List<Envio> envios) {
 		this.envios = envios;
 	}
-	
-	public Integer getMes_vencimiento() {
-		return mes_vencimiento;
-	}
-
-	public void setMes_vencimiento(Integer mes_vencimiento) {
-		this.mes_vencimiento = mes_vencimiento;
-	}
-
-	public Integer getAnio_vencimiento() {
-		return anio_vencimiento;
-	}
-
-	public void setAnio_vencimiento(Integer anio_vencimiento) {
-		this.anio_vencimiento = anio_vencimiento;
-	}
-
 
 }
