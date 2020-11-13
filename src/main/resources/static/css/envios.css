@@ -1,0 +1,15 @@
+#lista-envios{
+	padding-left:0px;
+	display:flex;
+	
+}
+
+
+#lista-envios{
+	list-style:none;
+}
+
+.card{
+	margin: 15px;
+}
+

@@ -4,7 +4,7 @@ package pe.edu.upc.ezshipping.controllers;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -95,6 +95,9 @@ public class EnvioController {
 			List<Envio> buscados2=new ArrayList<>();
 			List<Envio> ultimos=new ArrayList<>();
 			Calendar c1 = Calendar.getInstance();
+			List<EstadoEnvio> uEstado= new ArrayList<EstadoEnvio>();
+			
+			Date fechaEstado;
 			
 			
 			for(int indice = 0; indice<envios.size();indice++) {
@@ -117,6 +120,19 @@ public class EnvioController {
 			ultimos.add(buscados2.get(mayor));
 			buscados2.remove(mayor);
 			}
+			/*
+			for(int indice = 0; indice<ultimos.size();indice++) {
+				Optional<Envio> optional= envioService.findById(ultimos.get(indice).getId()) ;
+				for(int indice2 = 0; indice2<optional.get().getEstadoEnvios().size();indice2++) {
+					//optional.get().getEstadoEnvios().get(optional.get().getEstadoEnvios().size()-1);
+					optional.get().getEstadoEnvios().get(optional.get().getEstadoEnvios().size()-1).getEstado().getNombre();
+					
+					
+				}
+			}
+		
+	
+			*/
 			
 			/*
 			for(int indice=0;indice<buscados.size();indice++) {
@@ -129,6 +145,7 @@ public class EnvioController {
 			*/
 			model.addAttribute("ultimos", ultimos);
 			model.addAttribute("envios", buscados);
+			//model.addAttribute("estadoEnvios2", uEstado);
 		}
 			
 		
