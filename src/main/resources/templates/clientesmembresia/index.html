@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layout/layout :: head"></head>
+
+<body id="bootstrap-overrides">
+	<header th:replace="layout/layout :: header"></header>
+
+	<section class="zoom">
+		<div class="adjust-title">
+			<h1>holitis!</h1>
+			<h2>
+				Hello, <span th:text="${nombre}"></span>
+			</h2>
+		</div>
+
+	</section>
+
+	<section class="content">
+		<p>hola</p>
+		<ul style="list-style-type: none">
+			<li th:each="tipoCliente : ${tipoClientes}">
+				<p th:text="${tipoCliente.nombre}"></p>
+				<ul style="list-style-type: none">
+					<li th:each="cliente:${tipoCliente.clientes}">
+						<p th:text="${cliente.persona.nombre}+' '+${cliente.persona.apellido}"></p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</section>
+
+	<section>
+		<div class="hero-image">
+			<div class="hero-text">
+				<h1>Accede a una membresía</h1>
+				<button>Más información</button>
+			</div>
+		</div>
+	</section>
+
+
+	<footer th:replace="layout/layout :: footer"></footer>
+
+</body>
+
+</html>

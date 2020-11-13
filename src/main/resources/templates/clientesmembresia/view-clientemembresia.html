@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"> 
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link th:href="@{css/styleKeiji.css}" rel="stylesheet">
+     <link th:href="@{css/styleControl.css}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{css/bootstrap.min.css}">
+
+    <title>EZShipping</title>
+  </head>
+  <body id="bootstrap-overrides">
+	<header th:replace="layout/layout :: header"></header>
+	<section class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">Home</li>
+              <li class="breadcrumb-item"><span th:text="${cliente.membresia}"></span></li>
+              <li class="breadcrumb-item active" aria-current="page">
+                  <span th:text="${cliente.nombre}"></span>
+              </li>
+            </ol>
+          </nav>
+          
+          <div id="view-product">
+              <div >
+                  <img id="view-image" th:src="@{${cliente.urlImage}}" class="img-fluid" alt="Responsive image">
+              </div>
+              <div class="card">
+                <div class="card-header">
+                  <span th:text="${cliente.marca}"></span>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title"><span th:text="${cliente.descripcion}"></span></h5>
+                  
+                  <form th:action="@{/pedidos/addcar}" th:object="${detallePedido}" method="post">
+                      <div class="form-group row">
+                          <table class="table table-hover">
+                            <thead>
+                              <tr>
+                                <th scope="col"></th>
+                                <th scope="col">Tienda</th>
+                                <th scope="col">Precio</th>
+                                <th scope="col">Stock</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr th:each="productoTienda : ${producto.productoTiendas}">
+                                <th scope="row"></th>
+                                <td>
+                                    <input class="form-check-input" type="radio" 
+                                        th:field="*{pedido.tienda}" th:value="${productoTienda.tienda.id}">
+                                    <label th:for="${#ids.prev('pedido.tienda')}" th:text="${productoTienda.tienda.nombre}"></label>
+                                </td>
+                                <td th:text="${productoTienda.costo}">Otto</td>
+                                <td th:text="${productoTienda.stock}">Otto</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                      </div>
+                      <div class="form-group row">
+                          <label for="cantidad" class="col-sm-4 col-form-label">Cantidad: </label>
+                             <div class="col-sm-8">
+                                <input type="number" class="form-control" th:field="*{cantidad}" placeholder="">
+                          </div>	
+                      </div>
+                      <div class="form-group text-center">
+                          <button type="submit" class="btn btn-success"><i class="fas fa-save"></i> Agregar a Carro</button>
+                      </div>				    
+                      
+                  </form>
+                </div>
+              </div>
+          </div>
+	</section>
+	<footer th:replace="layout/layout :: footer"></footer>
+	
+  </body>
+</html>
