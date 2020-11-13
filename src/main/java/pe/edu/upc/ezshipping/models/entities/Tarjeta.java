@@ -1,7 +1,6 @@
 package pe.edu.upc.ezshipping.models.entities;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -11,8 +10,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "tarjetas")
@@ -24,9 +21,11 @@ public class Tarjeta {
 	@Column(name = "nro_tarjeta", length = 16, nullable = false)
 	private String nroTarjeta;
 
-	@Column(name = "fecha_vencimiento", nullable = false)
-	@Temporal(TemporalType.DATE)
-	private Date fechaVencimiento;
+	@Column(name = "mes_vencimiento", length = 2)
+	private Integer mes_vencimiento;
+	
+	@Column(name = "anio_vencimiento", length = 4)
+	private Integer anio_vencimiento;
 
 	@Column(name = "cvv", length = 3, nullable = false)
 	private Integer cvv;
@@ -62,12 +61,20 @@ public class Tarjeta {
 		this.nroTarjeta = nroTarjeta;
 	}
 
-	public Date getFechaVencimiento() {
-		return fechaVencimiento;
+	public Integer getMes_vencimiento() {
+		return mes_vencimiento;
 	}
 
-	public void setFechaVencimiento(Date fechaVencimiento) {
-		this.fechaVencimiento = fechaVencimiento;
+	public void setMes_vencimiento(Integer mes_vencimiento) {
+		this.mes_vencimiento = mes_vencimiento;
+	}
+
+	public Integer getAnio_vencimiento() {
+		return anio_vencimiento;
+	}
+
+	public void setAnio_vencimiento(Integer anio_vencimiento) {
+		this.anio_vencimiento = anio_vencimiento;
 	}
 
 	public Integer getCvv() {
