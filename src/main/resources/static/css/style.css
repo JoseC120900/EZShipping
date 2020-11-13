@@ -1,234 +1,222 @@
-*{
-    margin: 0px;
-    padding: 0px; 
-    box-sizing: border-box;
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
 }
 
 body {
-    background-color: white;
+	background-color: white;
 }
 
 h1 {
-    color: white;
-    font-size: 100px;
-    font-family: 'Cabin', sans-serif;
-    padding-top: 80px;
+	color: white;
+	font-size: 100px;
+	font-family: 'Cabin', sans-serif;
+	padding-top: 80px;
 }
 
 p {
-    color: black;
-    text-align: justify;
-    display: flex;
-    width: 90%;
-    letter-spacing: 2px;
-    font-family: 'Cabin', sans-serif;
-    padding: 15px;
-
+	color: black;
+	text-align: justify;
+	display: flex;
+	width: 90%;
+	letter-spacing: 2px;
+	font-family: 'Cabin', sans-serif;
+	padding: 15px;
 }
 
 #bootstrap-overrides nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    min-height: 8vh;
-    font-family: 'Cabin', sans-serif;
-    background-color: white;
-    position: fixed;
-    top: 0;
-    width: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	min-height: 8vh;
+	font-family: 'Cabin', sans-serif;
+	background-color: white;
+	position: fixed;
+	top: 0;
+	width: 100%;
 }
 
 #bootstrap-overrides .navbar {
-    -webkit-box-shadow: 0 8px 6px -6px #999;
-    -moz-box-shadow: 0 8px 6px -6px #999;
-    box-shadow: 0 8px 6px -6px #999;
-    z-index: 1000;
+	-webkit-box-shadow: 0 8px 6px -6px #999;
+	-moz-box-shadow: 0 8px 6px -6px #999;
+	box-shadow: 0 8px 6px -6px #999;
+	z-index: 1000;
 }
 
 #bootstrap-overrides .logo {
-    color: black;
-    letter-spacing: 3px;
-    font-size: 26px;
+	color: black;
+	letter-spacing: 3px;
+	font-size: 26px;
 }
 
 #bootstrap-overrides .nav-links {
-    display: flex;
-    justify-content: space-around;
-    width: 45%;
-    margin: 0px;
-    padding: 0px; 
-    box-sizing: border-box;
+	display: flex;
+	justify-content: space-around;
+	width: 45%;
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
 }
 
 #bootstrap-overrides .nav-links li {
-    list-style: none;
-    margin: 0px;
-    padding: 0px; 
-    box-sizing: border-box;
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
 }
 
-#bootstrap-overrides .nav-links a{
-    text-decoration: none;
-    color: black;
-    /* font-weight: bold; */
-    font-size: 18px;
-    margin: 0px;
-    padding: 0px; 
-    box-sizing: border-box;
+#bootstrap-overrides .nav-links a {
+	text-decoration: none;
+	color: black;
+	/* font-weight: bold; */
+	font-size: 18px;
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
 }
 
 #bootstrap-overrides .burger {
-    display: none;
-    cursor: pointer;
+	display: none;
+	cursor: pointer;
 }
 
-#bootstrap-overrides .burger div{
-    width: 20px;
-    height: 2px;
-    background-color: black;
-    margin: 5px;
-    transition: all 0.3s ease;
+#bootstrap-overrides .burger div {
+	width: 20px;
+	height: 2px;
+	background-color: black;
+	margin: 5px;
+	transition: all 0.3s ease;
 }
 
 .myicons {
-    width: 150px;
-    height: 150px;
-    display: block;
-    margin-left: 105px;
-    margin-top: 60px;
-    margin-right: auto;
-    margin-bottom: 30px;
+	width: 150px;
+	height: 150px;
+	display: block;
+	margin-left: 105px;
+	margin-top: 60px;
+	margin-right: auto;
+	margin-bottom: 30px;
 }
 
-@media screen and (max-width:1024px){
-    #bootstrap-overrides .nav-links {
-       width: 50%;
-   }
-
+@media screen and (max-width:1024px) {
+	#bootstrap-overrides .nav-links {
+		width: 50%;
+	}
 }
 
-
-@media screen and (max-width:768px){
-    body {
-        overflow-x: hidden;
-    }
-
-    #bootstrap-overrides .nav-links{
-        position: absolute;
-        right: 0px;
-        height: 92vh;
-        top: 8vh;
-        background-color: white;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 40%;
-        transform: translateX(100%);
-        transition: transform 0.3s ease-in;
-        z-index: 101;
-    }
-
-    #bootstrap-overrides .nav-links a {
-        color: black;
-        opacity: 100%;
-    }
-
-    #bootstrap-overrides .burger {
-        display: block;
-    }
-
-    .zoom #layer1 {
-        width: 200%;
-        height: auto;
-    }
-
-    .zoom #layer2 {
-        width: 100%;
-        height: auto;
-    }
-
-    .myicons {
-        width: 150px;
-        height: 150px;
-        margin-left: 165px;
-        margin-right: auto;
-        margin-bottom: 30px;
-    }
+@media screen and (max-width:768px) {
+	body {
+		overflow-x: hidden;
+	}
+	#bootstrap-overrides .nav-links {
+		position: absolute;
+		right: 0px;
+		height: 92vh;
+		top: 8vh;
+		background-color: white;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 40%;
+		transform: translateX(100%);
+		transition: transform 0.3s ease-in;
+		z-index: 101;
+	}
+	#bootstrap-overrides .nav-links a {
+		color: black;
+		opacity: 100%;
+	}
+	#bootstrap-overrides .burger {
+		display: block;
+	}
+	.zoom #layer1 {
+		width: 200%;
+		height: auto;
+	}
+	.zoom #layer2 {
+		width: 100%;
+		height: auto;
+	}
+	.myicons {
+		width: 150px;
+		height: 150px;
+		margin-left: 165px;
+		margin-right: auto;
+		margin-bottom: 30px;
+	}
 }
 
 #bootstrap-overrides .nav-action {
-    transform: translateX(0%);
+	transform: translateX(0%);
 }
 
-.toggle .line1{
-    transform: rotate(-45deg) translate(-4px, 5px);
+.toggle .line1 {
+	transform: rotate(-45deg) translate(-4px, 5px);
 }
 
-.toggle .line2{
-    opacity: 0%;
+.toggle .line2 {
+	opacity: 0%;
 }
 
-.toggle .line3{
-    transform: rotate(45deg) translate(-5px, -6px);
+.toggle .line3 {
+	transform: rotate(45deg) translate(-5px, -6px);
 }
 
-.zoom{
-    width: 100%;
-    height: 400px;
-    position: relative;
-    overflow: hidden;
-    background: url(my_header.png);
-    background-size: cover;
+.zoom {
+	width: 100%;
+	height: 400px;
+	position: relative;
+	overflow: hidden;
+	background: url(my_header.png);
+	background-size: cover;
 }
 
 .zoom:before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 130px;
-    z-index: 20;
-    background: linear-gradient(transparent, white);
+	content: '';
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 130px;
+	z-index: 20;
+	background: linear-gradient(transparent, white);
 }
 
-.zoom #layer1{
-    position: absolute;
-    margin: 60px;
-    padding: 10px;
-    left: 10%;
-    transform: translateX(-40%);
-    z-index: 10;
+.zoom #layer1 {
+	position: absolute;
+	margin: 60px;
+	padding: 10px;
+	left: 10%;
+	transform: translateX(-40%);
+	z-index: 10;
 }
 
-.zoom #layer2{
-    position: absolute;
-    z-index: 9;
-    right: 0;
-    padding-left: 40%;
-    opacity: 0.8;
-
+.zoom #layer2 {
+	position: absolute;
+	z-index: 9;
+	right: 0;
+	padding-left: 40%;
+	opacity: 0.8;
 }
 
-.zoom #layer1{
-    position: absolute;
-    margin: 60px;
-    padding: 10px;
-    left: 10%;
-    transform: translateX(-40%);
-    z-index: 11;
-    opacity: 1;
+.zoom #layer1 {
+	position: absolute;
+	margin: 60px;
+	padding: 10px;
+	left: 10%;
+	transform: translateX(-40%);
+	z-index: 11;
+	opacity: 1;
 }
 
-.zoom #text{
-    position: absolute;
-    z-index: 10;
-    padding-left: 15%;
-    padding-right: 15%;
-    padding-top: 5%;
-
-    width: 100%;
-    height: auto;
-
+.zoom #text {
+	position: absolute;
+	z-index: 10;
+	padding-left: 15%;
+	padding-right: 15%;
+	padding-top: 5%;
+	width: 100%;
+	height: auto;
 }
 
 .adjust-title {
@@ -239,41 +227,85 @@ p {
 #bootstrap-overrides .adjust-title h1 {
 	font-size: 100px;
 }
+
 #bootstrap-overrides .adjust-title h2 {
 	font-size: 40px;
 }
 
 .content {
 	width: 100%;
-    height: 400px;
-    position: relative;
-    overflow: hidden;
-    background-color: white;
-    background-size: cover;
-}
-
-.footer {
-	width: 100%;
-    height: 250px;
-    position: relative;
-    overflow: hidden;
-    background: url(my_footer.png);
-    background-size: cover;
+	height: 400px;
+	position: relative;
+	overflow: hidden;
+	background-color: white;
+	background-size: cover;
 }
 
 .my_text {
 	padding-left: 120px;
 	margin-top: 40px;
 	font-size: 30px;
-	
 }
 
-.BackGr{
-    width: 100%;
-    height: 1000px;
-    position: relative;
-    overflow: hidden;
-    background: url(my_background.png);
-    background-size: cover;
+.BackGr {
+	width: 100%;
+	height: 1000px;
+	position: relative;
+	overflow: hidden;
+	background: url(my_background.png);
+	background-size: cover;
 }
 
+.my_footer {
+	background-color: rgb(36, 33, 33);
+	width: auto;
+	height: 200px;
+	font-family: 'Cabin', sans-serif;
+}
+
+.text_footer {
+	color: white;
+}
+
+.text_footer-href {
+	color: white;
+	cursor: pointer;
+}
+
+.hero-image {
+	/*fondo oscuro*/
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+		url("membresias-banner.png");
+	/* position e imagen centrada */
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.hero-text {
+	position: relative;
+	top: 50%;
+	left: 50%;
+	text-align: center;
+	transform: translate(-50%, -30%);
+	color: white;
+	left: 50%;
+	font-family: 'Cabin', sans-serif;
+}
+
+.hero-text button {
+	border: none;
+	outline: 0;
+	display: inline-block;
+	padding: 10px 25px;
+	color: black;
+	background-color: #D8AF1A;
+	text-align: center;
+	cursor: pointer;
+	border-radius: 8px;
+}
+
+.hero-text button:hover {
+	background-color: #b48f46;
+	color: white;
+}
