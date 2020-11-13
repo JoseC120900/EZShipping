@@ -1,0 +1,457 @@
+*{
+    margin: 0px;
+    padding: 0px; 
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white;
+}
+
+h1 {
+    color: white;
+    font-size: 100px;
+    font-family: 'Cabin', sans-serif;
+    padding-top: 80px;
+}
+
+p {
+    color: black;
+    text-align: justify;
+    display: flex;
+    width: 90%;
+    letter-spacing: 2px;
+    font-family: 'Cabin', sans-serif;
+    padding: 15px;
+
+}
+
+#bootstrap-overrides nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    font-family: 'Cabin', sans-serif;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+#bootstrap-overrides .navbar {
+    -webkit-box-shadow: 0 8px 6px -6px #999;
+    -moz-box-shadow: 0 8px 6px -6px #999;
+    box-shadow: 0 8px 6px -6px #999;
+    z-index: 1000;
+}
+
+#bootstrap-overrides .logo {
+    color: black;
+    letter-spacing: 3px;
+    font-size: 26px;
+}
+
+#bootstrap-overrides .nav-links {
+    display: flex;
+    justify-content: space-around;
+    width: 45%;
+    margin: 0px;
+    padding: 0px; 
+    box-sizing: border-box;
+}
+
+#bootstrap-overrides .nav-links li {
+    list-style: none;
+    margin: 0px;
+    padding: 0px; 
+    box-sizing: border-box;
+}
+
+#bootstrap-overrides .nav-links a{
+    text-decoration: none;
+    color: black;
+    /* font-weight: bold; */
+    font-size: 18px;
+    margin: 0px;
+    padding: 0px; 
+    box-sizing: border-box;
+}
+
+#bootstrap-overrides .burger {
+    display: none;
+    cursor: pointer;
+}
+
+#bootstrap-overrides .burger div{
+    width: 20px;
+    height: 2px;
+    background-color: black;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+.myicons {
+    width: 150px;
+    height: 150px;
+    display: block;
+    margin-left: 105px;
+    margin-top: 60px;
+    margin-right: auto;
+    margin-bottom: 30px;
+}
+
+@media screen and (max-width:1024px){
+    #bootstrap-overrides .nav-links {
+       width: 50%;
+   }
+
+}
+
+
+@media screen and (max-width:768px){
+    body {
+        overflow-x: hidden;
+    }
+
+    #bootstrap-overrides .nav-links{
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 40%;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in;
+        z-index: 101;
+    }
+
+    #bootstrap-overrides .nav-links a {
+        color: black;
+        opacity: 100%;
+    }
+
+    #bootstrap-overrides .burger {
+        display: block;
+    }
+
+    .zoom #layer1 {
+        width: 200%;
+        height: auto;
+    }
+
+    .zoom #layer2 {
+        width: 100%;
+        height: auto;
+    }
+
+    .myicons {
+        width: 150px;
+        height: 150px;
+        margin-left: 165px;
+        margin-right: auto;
+        margin-bottom: 30px;
+    }
+}
+
+#bootstrap-overrides .nav-action {
+    transform: translateX(0%);
+}
+
+.toggle .line1{
+    transform: rotate(-45deg) translate(-4px, 5px);
+}
+
+.toggle .line2{
+    opacity: 0%;
+}
+
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.zoom{
+    width: 100%;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+    background: url(my_header.png);
+    background-size: cover;
+}
+
+.zoom:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 130px;
+    z-index: 20;
+    background: linear-gradient(transparent, white);
+}
+
+.zoom #layer1{
+    position: absolute;
+    margin: 60px;
+    padding: 10px;
+    left: 10%;
+    transform: translateX(-40%);
+    z-index: 10;
+}
+
+.zoom #layer2{
+    position: absolute;
+    z-index: 9;
+    right: 0;
+    padding-left: 40%;
+    opacity: 0.8;
+
+}
+
+.zoom #layer1{
+    position: absolute;
+    margin: 60px;
+    padding: 10px;
+    left: 10%;
+    transform: translateX(-40%);
+    z-index: 11;
+    opacity: 1;
+}
+
+.zoom #text{
+    position: absolute;
+    z-index: 10;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-top: 5%;
+
+    width: 100%;
+    height: auto;
+
+}
+
+.adjust-title {
+	margin-top: 100px;
+	margin-left: 100px;
+}
+
+#bootstrap-overrides .adjust-title h1 {
+	font-size: 100px;
+}
+#bootstrap-overrides .adjust-title h2 {
+	font-size: 40px;
+}
+
+.content {
+	width: 100%;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+    background-color: white;
+    background-size: cover;
+}
+
+.footer {
+	width: 100%;
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+    background: url(my_footer.png);
+    background-size: cover;
+}
+
+.my_text {
+	padding-left: 120px;
+	margin-top: 40px;
+	font-size: 30px;
+	
+}
+
+.BackGr{
+    width: 100%;
+    height: 3000px;
+    position: relative;
+    overflow: hidden;
+    background: url(my_background.png);
+    background-size: cover;
+}
+
+.BackGrmembresia{
+    width: 100%;
+    height: 1000px;
+    position: relative;
+    overflow: hidden;
+    background: url(my_background.png);
+    background-size: cover;
+}
+
+.BackGrTerminos{
+    width: 100%;
+    height: 978px;
+    position: relative;
+    overflow: hidden;
+    background: url(my_background.png);
+    background-size: cover;
+}
+
+@font-face{
+    font-family: "BerkshireSwash-Regular";
+    src: url('Fonts/BerkshireSwash-Regular.ttf');
+}
+
+@font-face{
+    font-family: "FiraSans-Regular";
+    src: url('Fonts/FiraSans-Regular.ttf');
+}
+
+td{
+    font-family: FiraSans-Regular;
+}
+
+a{
+    font-family: FiraSans-Regular;
+}
+
+body, html {
+height: 100%;
+margin: 0;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+box-sizing: border-box;
+}
+
+.bg-image {
+/* The image used */
+background-image: url("background.jpg");
+
+/* Add the blur effect */
+filter: blur(8px);
+-webkit-filter: blur(8px);
+
+/* Full height */
+height: 100%;
+
+/* Center and scale the image nicely */
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
+
+/* Position text in the middle of the page/image */
+.bg-text {
+background-color: rgb(0,0,0); /* Fallback color */
+background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+color: white;
+font-weight: bold;
+border: 3px solid #f1f1f1;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+z-index: 2;
+width: 80%;
+padding: 20px;
+text-align: center;
+}
+
+.bg-textterminos {
+
+font-weight: bold;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+z-index: 2;
+width: 80%;
+padding: 20px;
+text-align: center;
+}
+
+.btn-regular {
+	background-color: white;
+	color: black; 
+	border-color: balck;
+}
+
+.btn-regular:hover {
+  color: black;
+  background-color: #D3D3D3;
+  border-color: #D3D3D3;
+}
+.btn-bronce {
+	background-color: #a46628;
+	color: black; 
+	border-color: black;
+}
+
+.btn-bronce:hover {
+  color: black;
+  background-color: #7b4d1e;
+  border-color: #7b4d1e;
+}
+.btn-plata {
+	background-color: #C0C0C0;
+	color: black; 
+	border-color: black;
+}
+
+.btn-plata:hover {
+  color: black;
+  background-color: #A9A9A9;
+  border-color: #A9A9A9;
+}
+.btn-oro {
+	background-color: #EEE8AA;
+	color: black; 
+	border-color: black;
+}
+
+.btn-oro:hover {
+  color: black;
+  background-color: #FFD700;
+  border-color: #FFD700;
+}
+
+
+.my_footer{ 
+    background-color: rgb(36, 33, 33);
+    width: auto;
+    height: 240px;
+}
+
+.text_footer{
+    color: white;
+}
+
+.d-table {
+    min-width: 800px;
+    min-height: 800px;
+    background: lightgrey;
+    display: block;
+    width: 1px solid red;
+  }
+  
+  .d-table ul {
+    list-style-type: none;
+  }
+  
+  .d-column li {
+    padding: 0px;
+    display: inline-block;
+    border: 1px solid blue;
+    background: grey;
+    width: 100px;
+    height: 50px;
+  }
+  
+  .d-row li {
+    padding: 0px;
+    display: inline-block;
+    background: lightgrey;
+    border: 1px solid red;
+    width: 100px;
+    height: 50px;
+  }
