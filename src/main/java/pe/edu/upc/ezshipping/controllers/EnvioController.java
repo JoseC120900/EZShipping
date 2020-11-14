@@ -93,6 +93,7 @@ public class EnvioController {
 			List<Envio> envios = envioService.findAll();
 			List<Envio> buscados=new ArrayList<>();
 			List<Envio> buscados2=new ArrayList<>();
+			List<Envio> buscados3=new ArrayList<>();
 			List<Envio> ultimos=new ArrayList<>();
 			Calendar c1 = Calendar.getInstance();
 			List<EstadoEnvio> uEstado= new ArrayList<EstadoEnvio>();
@@ -102,11 +103,13 @@ public class EnvioController {
 			
 			for(int indice = 0; indice<envios.size();indice++) {
 				if(envios.get(indice).getClienteId() == id) {
-					buscados.add(envios.get(indice));
+					
 					buscados2.add(envios.get(indice));
+					buscados.add(envios.get(indice));
 				}
 					
 			}
+			
 			
 			
 			for(int i=0;i<2;i++) {
@@ -120,6 +123,13 @@ public class EnvioController {
 			ultimos.add(buscados2.get(mayor));
 			buscados2.remove(mayor);
 			}
+			
+			for(int indice=0; indice<buscados2.size();indice++) {
+				buscados3.add(buscados2.get(indice));
+			
+			}
+			
+			
 			/*
 			for(int indice = 0; indice<ultimos.size();indice++) {
 				Optional<Envio> optional= envioService.findById(ultimos.get(indice).getId()) ;
@@ -144,7 +154,7 @@ public class EnvioController {
 			}
 			*/
 			model.addAttribute("ultimos", ultimos);
-			model.addAttribute("envios", buscados);
+			model.addAttribute("envios", buscados3);
 			//model.addAttribute("estadoEnvios2", uEstado);
 		}
 			

@@ -24,23 +24,72 @@
 	<main>
 
 		<!-- comentario............................ -->
-		<h1>Ultimos</h1>
-		Hola, <span th:text="${persona.getNombre()}"></span>|| Revisa aquí tus
-		últimos envíos
+		<h2>Envíos</h2>
+		<h5>
+			Hola, <span th:text="${persona.getNombre()}"></span>|| Revisa aquí
+			tus envíos
+		</h5>
+
+		<h3 class="text-light bg-warning">Últimos</h3>
 
 		<section class="container">
 
 
 			<ul id="lista-envios">
-				<li th:each="envio : ${ultimos}" >
+				<li th:each="envio : ${ultimos}">
 					<div class="card" style="width: 18rem;">
-						<img alt="imagen_envio" th:src="@{/images/logo.jpg}">
+						<img alt="imagen_envio" th:src="@{/images/logo.jpg}"
+							class="img-thumbnail">
 						<div class="card-body">
-							<h5 class="card-title"><span th:text="${envio.id}"></span></h5>
-							<p class="card-text"><span th:text="${envio.getEstadoEnvios().get(envio.getEstadoEnvios().size()-1).getFechaEstadoPedido()}"></span></p>
-							<p class="card-text"><span th:text="${envio.getEstadoEnvios().get(envio.getEstadoEnvios().size()-1).getEstado().getNombre()}"></span></p>
-							
-							<a href="@{'/lista_envios/view-' + ${envio.id}" class="btn btn-primary">Ver más</a>
+							<h5 class="card-title">
+								<span>Código: &nbsp;</span><a
+									th:href="@{'/lista_envios/view-' + ${envio.id}}"
+									th:text="${envio.id}"></a>
+							</h5>
+							<p class="card-text">
+								<span>Estado: &nbsp;</span><span
+									th:text="${envio.getEstadoEnvios().get(envio.getEstadoEnvios().size()-1).getEstado().getNombre()}"></span>
+							</p>
+							<p class="card-text">
+								<span>Fecha: &nbsp;</span><span
+									th:text="${envio.getEstadoEnvios().get(envio.getEstadoEnvios().size()-1).getFechaEstadoPedido()}"></span>
+							</p>
+
+
+							<a th:href="@{'/lista_envios/view-' + ${envio.id}}"
+								class="btn btn-warning">Ver más</a>
+						</div>
+					</div>
+				</li>
+			</ul>
+
+
+			<h3 class="text-light bg-warning">Más envíos</h3>
+
+
+<ul id="lista-envios">
+				<li th:each="envio : ${envios}">
+					<div class="card" style="width: 18rem;">
+						<img alt="imagen_envio" th:src="@{/images/logo.jpg}"
+							class="img-thumbnail">
+						<div class="card-body">
+							<h5 class="card-title">
+								<span>Código: &nbsp;</span><a
+									th:href="@{'/lista_envios/view-' + ${envio.id}}"
+									th:text="${envio.id}"></a>
+							</h5>
+							<p class="card-text">
+								<span>Estado: &nbsp;</span><span
+									th:text="${envio.getEstadoEnvios().get(envio.getEstadoEnvios().size()-1).getEstado().getNombre()}"></span>
+							</p>
+							<p class="card-text">
+								<span>Fecha: &nbsp;</span><span
+									th:text="${envio.getEstadoEnvios().get(envio.getEstadoEnvios().size()-1).getFechaEstadoPedido()}"></span>
+							</p>
+
+
+							<a th:href="@{'/lista_envios/view-' + ${envio.id}}"
+								class="btn btn-warning">Ver más</a>
 						</div>
 					</div>
 				</li>
@@ -48,9 +97,7 @@
 
 
 
-
-
-
+		<!--  
 
 			<table class="table table-striped">
 				<thead>
@@ -64,7 +111,7 @@
 				</thead>
 				<tbody>
 					<tr th:each="envio: ${ultimos}">
-						<th class="text-light bg-warning"><i class="fas fa-box"></i>----->
+						<th class="text-light bg-warning"><i class="fas fa-box"></i>-----/>
 							<a th:href="@{'/lista_envios/view-' + ${envio.id}}"
 							th:text="${envio.id}">.</a></th>
 						<td
@@ -79,10 +126,10 @@
 				</tbody>
 			</table>
 
+-->
 
 
-
-			<!-- prueba -->
+			<!-- prueba 
 			<table class="table table-striped">
 				<thead>
 					<tr>
@@ -98,13 +145,13 @@
 				</thead>
 				<tbody>
 					<tr th:each="envio: ${ultimos}">
-						<th class="text-light bg-warning"><i class="fas fa-box"></i>----->
+						<th class="text-light bg-warning"><i class="fas fa-box"></i>-----.>
 							<a th:href="@{'/lista_envios/view-' + ${envio.id}}"
 							th:text="${envio.id}">.</a></th>
 						<td th:text="${envio.direccionOrigen}" scope="row">.</td>
 						<td th:text="${envio.direccionDestino}" scope="row">.</td>
 						<td th:text="${envio.nombreDestinatario}" scope="row">.</td>
-						<th>ver más--> <a
+						<th>ver más--.> <a
 							th:href="@{'/lista_envios/viewCourier-' + ${envio.trabajadorId}}"
 							th:text="${envio.trabajadorId}"></a></th>
 
@@ -119,9 +166,11 @@
 					</tr>
 				</tbody>
 			</table>
+			
+			-->
 
 
-			<!-- comentario........................... -->
+			<!-- comentario
 
 			<h2>Mis Envíos</h2>
 			Hola, <span th:text="${persona.getNombre()}"></span>|| Revisa aquí
@@ -142,13 +191,13 @@
 				</thead>
 				<tbody>
 					<tr th:each="envio: ${envios}">
-						<th class="text-light bg-warning"><i class="fas fa-box"></i>----->
+						<th class="text-light bg-warning"><i class="fas fa-box"></i>-----.>
 							<a th:href="@{'/lista_envios/view-' + ${envio.id}}"
 							th:text="${envio.id}">.</a></th>
 						<td th:text="${envio.direccionOrigen}" scope="row">.</td>
 						<td th:text="${envio.direccionDestino}" scope="row">.</td>
 						<td th:text="${envio.nombreDestinatario}" scope="row">.</td>
-						<th>ver más--> <a
+						<th>ver más--.> <a
 							th:href="@{'/lista_envios/viewCourier-' + ${envio.trabajadorId}}"
 							th:text="${envio.trabajadorId}"></a></th>
 
@@ -163,6 +212,7 @@
 					</tr>
 				</tbody>
 			</table>
+			-->
 
 		</section>
 
