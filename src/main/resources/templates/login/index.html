@@ -27,33 +27,33 @@
 			</a>
 		</nav>
 	</header>
-	<p><p><p><p>
+	<p>
 	<div class="login-inicio">
 		<div class="container">
 			<div class="row justify-content-between">
 				<div class="content-right">
-						<form action="">							
+					<form th:action="@{/signin}" method="post">
 						<div class="form-group">
-							<input type="text" placeholder="Correo Electronico">
+							<input type="text" name="username" placeholder="Usuario">
 						</div>
 						<div class="form-group">
-							<input type="password" placeholder="Contraseña">
+							<input type="password" name="password" placeholder="Contraseña">
 						</div>
 						<div class="login">
-							<a href="" class="btn">Iniciar Sesion</a>
+							<button type="submit">Iniciar Sesion</button>
 						</div>
 						<div class="forgot">
 							<a href="">¿Olvidaste tu contraseña?</a>
 						</div>
 						<div class="create-btn">
-							<a href="" class="btn">Crear nueva cuenta</a>
+							<a href=""><button>Crear nueva cuenta</button></a>
 						</div>
 					</form>
 				</div>
 			</div>
 		</div>
 	</div>
-		
+
 </body>
 
 </html>
