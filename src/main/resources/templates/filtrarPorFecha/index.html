@@ -9,6 +9,7 @@
      <link th:href="@{css/styleControl.css}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
     <link rel="stylesheet" th:href="@{css/bootstrap.min.css}">
+    <link rel="stylesheet" href="css/styleFiltros.css">
 
     <title>EZShipping</title>
   </head>
@@ -32,21 +33,26 @@
 	</nav>
 	<section class="BackGr">
 		<h1>			
-			Filtrar clientes por fecha
+			Filtrar clientes dentro de una fecha determinada
 		</h1>
-		
-		
-			
-		<form>
-  	  	<label for="dt">Fecha de inicio: </label>
-   		<input name="dt" type="date"/>
-		</form>
-		
-		<form>
-  	  	<label for="dt">Fecha de fin: </label>
-   		<input name="dt" type="date"/>
-    	<input type="submit"/>
-		</form>
+			<p style="margin:-2.5% 0;">
+			<div class="row justify-content-between">
+				<div class="adjust-title">
+					<form>
+  	  				<label class="lbl" for="dt">Fecha de inicio: </label>
+   					<input name="dt" type="date"/>
+					</form> 
+					<p>			
+					<form>
+  	  					<label class="lbl" for="dt">Fecha de fin:</label>
+   						<input name="dt" type="date"/>
+					</form>
+					<p><p>
+					<a href="" class="btn">Buscar</a>
+					</div>
+				</div>
+			<div>
+		</div>
 	
 		<section class="differ">
             <div class="shadow">  
@@ -60,12 +66,11 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr th:each="pers : ${personas}">		
-							<td th:text="${pers.id}"></td>
-							<td th:text="${pers.nombre}"></td>
-							<td th:text="${pers.apellido}"></td>
-							<td th:text="${pers.fechaNacimiento}"></td>
-							<td th:text="${pers.email}"></td>			
+						<tr th:each="cli : ${clientes}">		
+							<td th:text="${cli.id}"></td>
+							<td th:text="${cli.dni}"></td>
+							<td th:text="${cli.persona.nombre}"></td>
+							<td th:text="${cli.tipo}"></td>	
 						</tr>
 					</tbody>
 				</table>
