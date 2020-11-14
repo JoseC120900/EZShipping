@@ -6,11 +6,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/filtrarFecha")
-public class FiltrarFechaController {
+@RequestMapping("/filtrarPorFecha")
+public class FiltrarPorFechaController {
 	
 	@GetMapping
 	public String index(Model model) {
-		return "/filtrarFecha/index";
+		return "/filtrarPorFecha/index";
 	}
 }

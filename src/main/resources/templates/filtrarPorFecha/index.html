@@ -32,9 +32,22 @@
 	</nav>
 	<section class="BackGr">
 		<h1>			
-			Filtrar por fecha
+			Filtrar clientes por fecha
 		</h1>
-
+		
+		
+			
+		<form>
+  	  	<label for="dt">Fecha de inicio: </label>
+   		<input name="dt" type="date"/>
+		</form>
+		
+		<form>
+  	  	<label for="dt">Fecha de fin: </label>
+   		<input name="dt" type="date"/>
+    	<input type="submit"/>
+		</form>
+	
 		<section class="differ">
             <div class="shadow">  
 				<table class="table table-striped">
@@ -42,7 +55,7 @@
 						<tr>
 							<th scope="col">id</th>
 							<th scope="col">DNI</th>
-							<th scope="col">***</th>
+							<th scope="col">Nombre</th>
 							<th scope="col">Tipo</th>							
 						</tr>
 					</thead>
@@ -56,7 +69,6 @@
 						</tr>
 					</tbody>
 				</table>
-				<button onclick="window.print()" class="displaybuttonprint btn btn-outline-dark">Print this page</button>
             </div>
         </section>
 	</section>
