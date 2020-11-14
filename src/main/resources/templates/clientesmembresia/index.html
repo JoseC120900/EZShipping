@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
     <link rel="stylesheet" th:href="@{css/bootstrap.min.css}">
 
+	
     <title>EZShipping</title>
   </head>
   <body id="bootstrap-overrides">
@@ -19,21 +20,21 @@
 	<section class="BackGrmembresia">
 		<div class="bg-text">
 			<center>
-		<table class="table table-striped">
-			<thead>
-				<tr>
-					<th scope="col">#</th>
-					<th scope="col">Nombre</th>
-					<th scope="col">Apellido</th>
-					<th scope="col"></th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr th:each="tipocliente : ${tipoClientes}">
-					<th th:text="${tipocliente.id}" scope="row">.</th>
-				</tr>
-			</tbody>
-		</table>
+				<div class="container">
+		<div class="listWrap">
+			<ul class="list">
+				<li th:each="tipoCliente : ${tipoClientes}">
+					<span th:text="${tipoCliente.nombre}"></span>
+				
+				<ul class="">
+					<li th:each="cliente:${tipoCliente.clientes}">
+						<p th:text="${cliente.persona.nombre}+' '+${cliente.persona.apellido}"></p>
+					</li>
+				</ul>
+			  </li>
+			</ul>
+		  </div>
+		</div>
 
 	</section>
 	
