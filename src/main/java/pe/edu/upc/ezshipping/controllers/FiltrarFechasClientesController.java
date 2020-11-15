@@ -1,6 +1,7 @@
 package pe.edu.upc.ezshipping.controllers;
 
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,8 +12,8 @@ import pe.edu.upc.ezshipping.models.entities.Cliente;
 import pe.edu.upc.ezshipping.services.ClienteService;
 
 @Controller
-@RequestMapping("/filtrarPorFecha")
-public class FiltrarPorFechaController {
+@RequestMapping("/filtrarFechasClientes")
+public class FiltrarFechasClientesController {
 	@Autowired
 	private ClienteService clienteService;
 	
@@ -21,11 +22,11 @@ public class FiltrarPorFechaController {
 		Cliente cliente = new Cliente();
 		try {
 			List<Cliente> clientes = clienteService.findAll();
-			model.addAttribute("clientes", cliente);
+			model.addAttribute("cliente", cliente);
 		} catch(Exception e) {
 			e.printStackTrace();
 			System.err.println(e.getMessage());
 		}
-		return "/filtrarPorFecha/index";
+		return "/filtrarFechasClientes/index";
 	}
 }
