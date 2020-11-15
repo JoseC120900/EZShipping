@@ -19,7 +19,12 @@
 <link rel="stylesheet" th:href="@{/css/solid.min.css}">
 </head>
 
+
+ 
+
+
 <body>
+
 	<header th:replace="layout/layout::header"></header>
 	<main>
 
@@ -30,10 +35,10 @@
 			tus envíos
 		</h5>
 
-		<h3 class="text-light bg-warning">Últimos</h3>
+		
 
 		<section class="container">
-
+		<h3 class="text-light bg-warning">Últimos</h3>
 
 			<ul id="lista-envios">
 				<li th:each="envio : ${ultimos}">
@@ -217,6 +222,9 @@
 		</section>
 
 	</main>
+	
+	
+	
 	<!-- formulario sencillo 
 	<form>
 		<div class="row">

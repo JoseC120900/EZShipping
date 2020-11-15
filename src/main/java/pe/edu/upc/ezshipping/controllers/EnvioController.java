@@ -56,7 +56,7 @@ public class EnvioController {
 	@Autowired
 	private TrabajadorService trabajadorService;
 	
-	private Integer id=2;
+	private Integer id=1;
 	@GetMapping
 	public String index(Model model) {
 		
@@ -95,10 +95,10 @@ public class EnvioController {
 			List<Envio> buscados2=new ArrayList<>();
 			List<Envio> buscados3=new ArrayList<>();
 			List<Envio> ultimos=new ArrayList<>();
-			Calendar c1 = Calendar.getInstance();
-			List<EstadoEnvio> uEstado= new ArrayList<EstadoEnvio>();
+			//Calendar c1 = Calendar.getInstance();
+			//List<EstadoEnvio> uEstado= new ArrayList<EstadoEnvio>();
 			
-			Date fechaEstado;
+			//Date fechaEstado;
 			
 			
 			for(int indice = 0; indice<envios.size();indice++) {
