@@ -382,8 +382,8 @@ text-align: center;
   border-color: #D3D3D3;
 }
 .btn-bronce {
-	background-color: #a46628;
-	color: black; 
+	background-color: #000000;
+	color: #FFFFFF; 
 	border-color: black;
 }
 
@@ -394,12 +394,12 @@ text-align: center;
 }
 .btn-plata {
 	background-color: #C0C0C0;
-	color: black; 
+	color: grey; 
 	border-color: black;
 }
 
 .btn-plata:hover {
-  color: black;
+  color: grey;
   background-color: #A9A9A9;
   border-color: #A9A9A9;
 }
