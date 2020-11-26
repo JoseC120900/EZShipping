@@ -11,6 +11,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.DefaultSecurityFilterChain;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
 @EnableWebSecurity
@@ -27,16 +28,24 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
+		
+				// ---------------------------------------------
 				// authenticated: para ir a una pagina, primero necesita autenticarse
-				// permirAll: todos pueden acceder a esa pagina
+				// permitAll: todos pueden acceder a esa pagina
+				// ---------------------------------------------
+		
 				.antMatchers("/").permitAll()
 				// .antMatchers("/reclamos").authenticated();
 				.and()
 					.formLogin()
-						.loginProcessingUrl("/signin")
+						.loginProcessingUrl("/signin") //iniciar sesion
 						.loginPage("/login")
 						.usernameParameter("username")
-						.passwordParameter("password");
+						.passwordParameter("password")
+				.and()
+						.logout() //cerrar sesion
+						.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+						.logoutSuccessUrl("/");
 	}
 
 	@Bean
