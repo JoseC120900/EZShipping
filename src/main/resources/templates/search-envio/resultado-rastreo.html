@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link th:href="@{../../css/style.css}" rel="stylesheet">
+<link th:href="@{../../css/rastreo.css}" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap"
+	rel="stylesheet">
+<link rel="stylesheet" th:href="@{../css/bootstrap.min.css}">
+</head>
+<body id="bootstrap-overrides">
+	<header></header>
+
+	<nav class="navbar mynav">
+		<div class="logo">
+			<h4>EZShipping</h4>
+		</div>
+		<ul class="nav-links">
+			<li><a href="../">Inicio</a></li>
+			<li><a href="personas">Personas</a></li>
+			<li><a href="#">Clientes</a></li>
+			<li><a href="#">Trabajadores</a></li>
+
+		</ul>
+		<div class="burger">
+			<div class="line1"></div>
+			<div class="line2"></div>
+			<div class="line3"></div>
+		</div>
+	</nav>
+	<section class="BackGr">
+		<h1>Rastrear</h1>
+
+		<section class="differRastreo">
+			<div class="shadowRastreo">
+				<form th:action="@{/rastrear/search}" th:object="${envioSearch}"
+					method="post" class="form-inline get_aligned">
+					<input th:field="*{codigoRastreo}" class="form-control mr-sm-2"
+						type="search" placeholder="Buscar con codigo de rastreo"
+						aria-label="Search">
+					<button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Rastrear</button>
+				</form>
+
+				<main class="get_aligned2">
+					<section class="container">
+
+						<h3>
+							Resultado de búsqueda: 
+						</h3>
+						<div class="container">
+							<div class="row">
+								<div class="col-sm">
+										<div id="map"></div>
+									</div>
+								<div class="col-sm">
+									<ul id="list-envio" style="list-style-type: none">
+										<li th:each="envio : ${envios}">
+
+											<div class="card" style="width: 18rem;">
+												<div class="card-body">
+													<p class="card-text"
+														th:text="'Pedido con codigo rastreo: ' + ${envio.codigoRastreo}"></p>
+													<h5 class="card-title">
+														<span
+															th:text="'De: ' + ${envio.cliente.persona.nombre} + ' ' + ${envio.cliente.persona.apellido}"></span>
+													</h5>
+													<h5 class="card-title">
+														<span th:text="'Para: ' + ${envio.nombreDestinatario}"></span>
+													</h5>
+													<p class="card-text"
+														th:text="${envio.direccionOrigen} + ' rumbo a ' + ${envio.direccionDestino}"></p>
+													<ul style="list-style-type: none">
+														<li th:each="estadoEnvio : ${envio.estadoEnvios}">
+															<p
+																th:text="'Estado del envío: ' + ${estadoEnvio.estado.nombre}"></p>
+														</li>
+													</ul>												
+													<p class="card-text"
+														th:text="'Monto pagado por el envío: ' + ${envio.monto} + ' PEN'"></p>												
+												</div>												
+											</div>
+										</li>
+									</ul>									
+								</div>
+							</div>
+						</div>
+					</section>
+				</main>
+			</div>
+		</section>
+	</section>
+
+	<footer>
+		<script th:src="@{../../js/map.js}"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap&libraries=&v=weekly"
+				defer></script>
+	</footer>
+</body>
+</html>
