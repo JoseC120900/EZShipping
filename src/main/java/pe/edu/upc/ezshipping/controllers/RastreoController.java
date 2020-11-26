@@ -32,7 +32,6 @@ public class RastreoController {
 	
 	@PostMapping("search")
 	public String search(@ModelAttribute("envioSearch") Envio envioSearch, Model model) {
-		model.addAttribute("envioSearch", envioSearch);
 		List<Envio> envios;
 		try {
 			envios = envioService.findByCodigoRastreo(envioSearch.getCodigoRastreo());		

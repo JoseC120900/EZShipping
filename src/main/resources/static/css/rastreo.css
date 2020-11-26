@@ -25,6 +25,11 @@
 	padding-top: 15px;
 	margin-left: 230px;
 }
+.details {
+	margin-left: 100px;
+	width: 350px;
+	height: 300px;
+}
 
 #map {
   height: 490px;
