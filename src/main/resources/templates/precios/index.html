@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"> 
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link th:href="@{css/style.css}" rel="stylesheet">
+     <link th:href="@{css/styleControl.css}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{css/bootstrap.min.css}">
+
+    <title>EZShipping</title>
+  </head>
+  <body id="bootstrap-overrides">
+	<nav class="navbar mynav">
+		<div class="logo">
+			<h4>EZShipping</h4>
+		</div>
+		<ul class="nav-links">
+			<li><a href="/">Inicio</a></li>
+			<li><a href="#">Nosotros</a></li>
+			<li><a href="#">Servicios</a></li>
+			<li><a href="#">Contáctanos</a></li>
+
+		</ul>
+		<div class="burger">
+			<div class="line1"></div>
+			<div class="line2"></div>
+			<div class="line3"></div>
+		</div>
+	</nav>
+	<section class="BackGr">
+		<h1>			
+			Calculadora de precios
+		</h1>
+
+		<section class="differ">
+            <div class="shadow">	
+            <!-- 			
+				<form th:object="${tipos}" method="post">
+					<select class="form-control"
+						id="dropTipos" name="nombre">
+						<option value="0">select Tipo de Membresia</option>
+						<option th:each="tipos : ${tipos}"
+							th:value="${tipos.nombre}" th:text="${tipos.nombre}" th:href="@{'/precios/search-' + ${tipos.id}}"></option>
+					</select>					
+				</form>
+				-->
+
+				<div class="container">
+					<div class="row">
+						<div class="card card-member" style="width: 18rem;" th:each="tipos : ${tipos}">
+							<div class="col-sm-12 col-md-12 col-lg-12">
+								<img src="images/logo.jpg" class="card-img-top" alt="...">
+								<div class="card-body">
+									<h5 class="card-title" th:text="${tipos.nombre}"></h5>								
+									<a th:href="@{'/precios/search-' + ${tipos.id}}" class="btn btn-outline-light btn-member" >Calcular</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>			
+
+				</div></section>
+	</section>
+	
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+	<script th:src="@{js/app.js}"></script>
+	
+  </body>
+</html>
