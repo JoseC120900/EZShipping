@@ -10,32 +10,30 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.util.Assert;
 
 import pe.edu.upc.ezshipping.models.entities.Persona;
+import pe.edu.upc.ezshipping.models.entities.TipoCliente;
 import pe.edu.upc.ezshipping.services.PersonaService;
+import pe.edu.upc.ezshipping.services.TipoClienteService;
 
 @SpringBootTest
 class SpringEzshippingApplicationTests {
 
 	@Autowired
-	PersonaService personaService;
+	TipoClienteService tipoclienteService;
 	
 	@Test
 	void contextLoads() {		
-		Persona persona = new Persona();
-		persona.setNombre("Jose");
-		persona.setApellido("Donayre");
-		SimpleDateFormat DateFor = new SimpleDateFormat("dd/MM/yyyy");
-		try{
-		Date date = DateFor.parse("21/02/2000");		
-		persona.setFechaNacimiento(date);
-		}catch (ParseException e) {e.printStackTrace();}
-		persona.setEmail("JoseDona@gmail.com");
+		TipoCliente tipo = new TipoCliente();
+		tipo.setNombre("Black");
+		tipo.setDescuento(0.35);
 				
 		try {
-			personaService.save(persona);
+			tipoclienteService.save(tipo);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		Assert.isTrue(true);	
 	}
+	
+	
 }
