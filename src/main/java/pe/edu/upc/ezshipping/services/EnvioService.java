@@ -9,4 +9,5 @@ public interface EnvioService extends CrudService<Envio, Integer> {
 
 	List<Envio> findByDireccionDestino(String direccionDestino) throws Exception;
 
+	List<Envio> findByCodigoRastreo(String codigoRastreo) throws Exception;
 }
