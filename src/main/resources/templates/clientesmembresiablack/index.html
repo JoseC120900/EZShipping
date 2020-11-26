@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link th:href="@{css/styleKeiji.css}" rel="stylesheet">
+<link th:href="@{css/styleControl.css}" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap"
+	rel="stylesheet">
+<link rel="stylesheet" th:href="@{css/bootstrap.min.css}">
+
+
+<title>EZShipping</title>
+</head>
+<body id="bootstrap-overrides">
+	<header th:replace="layout/layout :: header"></header>
+
+
+	<section class="BackGrmembresia">
+		<div class="bg-text">
+			<center>
+				<div>
+					<div>
+
+						<h3 th:each="tipoCliente : ${tipoClientes}">
+							<span th:text="${tipoCliente.nombre}"></span>
+							<div class="card" style="width: 18rem;">
+								<img alt="imagen_silver" th:src="@{/images/black.png}"
+									class="img-thumbnail">
+								<div class="card-body">
+									<li th:each="cliente:${tipoCliente.clientes}">
+										<h5 class="card-title">
+											<button class="myBtn myBtn1"
+												th:text="${cliente.persona.nombre}+' '+${cliente.persona.apellido}"></button>
+											<div id="myModal" class="modal">
+
+												<!-- Modal content -->
+												<div class="modal-content" style="color: black;">
+													
+													<h4>
+														<span>Codigo: &nbsp;</span><span
+															th:text="${cliente.persona.id}"></span>
+													</h4>
+													<h4 class="card-text">
+														<span> Nombre y Apellido:&nbsp;</span><span
+															th:text="*{cliente.persona.nombre}+' '+${cliente.persona.apellido}"></span>
+													</h4>
+													<h4 class="card-text">
+														<span> DNI:&nbsp;</span><span
+															th:text="*{cliente.DNI}"></span>
+													</h4>
+													<h4 class="card-text">
+														<span> Email:&nbsp;</span><span
+															th:text="*{cliente.persona.email}"></span>
+													</h4>
+													<h4 class="card-text">
+														<span> Fecha Nacimiento:&nbsp;</span><span
+															th:text="*{cliente.persona.getFechaNacimiento()}"></span>
+													</h4>
+													<div class="footer">
+													<span class="close" style="text-align: right;">Cerrar</span>
+													</div>
+													
+												</div>
+
+											</div>
+										</h5>
+									</li>
+								</div>
+							</div>
+
+
+						</h3>
+
+					</div>
+					<div style="text-align: left; padding-top: 50px;">
+				<button onclick="location.href = '../clientesmembresia';" type="button" class="btn btn-info">REGRESAR</button>
+			</div>
+					
+				</div>
+
+
+
+				<script>
+				// Get the modal
+				var modal = document.getElementsByClassName('modal');
+
+				// Get the button that opens the modal
+				var btn = document.getElementsByClassName("myBtn");
+
+
+				// Get the <span> element that closes the modal
+				var span = document.getElementsByClassName("close");
+
+				// When the user clicks the button, open the modal 
+				
+				
+				
+				for(let i=0; i < btn.length; i++){
+			
+					btn[i].onclick = function() {
+						console.log(i);
+						
+							
+							modal[i].style.display = "block";
+							
+					}
+					}
+				// When the user clicks on <span> (x), close the modal
+				for(let i=0; i< btn.length; i++){
+					span[i].onclick = function() {
+						
+						
+							modal[i].style.display = "none";
+							
+					    
+					}
+					}
+				
+				// When the user clicks anywhere outside of the modal, close it
+				window.onclick = function(event) {
+				    if (event.target == modal) {
+				        modal.style.display = "none";
+				    }
+				}
+</script>
+	</section>
+
+
+
+	<footer th:replace="layout/layout :: footer"></footer>
+</body>
+</html>
