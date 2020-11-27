@@ -70,8 +70,41 @@
 						Email: <strong><span th:text="${trabajador.persona.email}"></span></strong>
 					</p>
 					<div class="editar">
-						<a href="#"><button type="button">Editar</button></a>
+						<a onclick="openForm()"><button type="button">Editar</button></a>
 					</div>
+					<div class="form-popup" id="myForm">
+						<form>
+							<div>
+								<label for="name">Nombre: </label>
+								<input type="text" th:field="*{trabajador.persona.nombre}" id="name"
+									placeholder="Nombre">
+							</div>
+							<div>
+								<label for="name">Apellido: </label>
+								<input type="text" th:field="*{trabajador.persona.apellido}" id="name"
+									placeholder="Apellido">
+							</div>
+							<div>
+								<label for="name">Fecha de contratación: </label>
+								<input type="text" th:field="*{trabajador.fechaContratacion}" id="name"
+									placeholder="Fecha de contratación">
+							</div>
+							<div>
+								<label for="name">Correo electrónico: </label>
+								<input type="text" th:field="*{trabajador.persona.email}" id="name"
+									placeholder="Correo electrónico">
+							</div>
+						</form>
+					</div>
+					<!-- <script>
+						function openForm() {
+							document.getElementById("myForm").style.display = "block";
+						}
+
+						function closeForm() {
+							document.getElementById("myForm").style.display = "none";
+						}
+					</script> -->
 				</div>
 			</div>
 
