@@ -24,6 +24,9 @@ public class TipoCliente {
 	@Column(name = "descuento", length = 10, nullable = false)
 	private Double descuento;
 	
+	@Column(name = "url_image", length = 100)
+	private String urlImage;
+	
 	@OneToMany(mappedBy = "tipoCliente")
 	private List<Cliente> clientes;
 	
@@ -65,6 +68,14 @@ public class TipoCliente {
 
 	public void setClientes(List<Cliente> clientes) {
 		this.clientes = clientes;
+	}
+
+	public String getUrlImage() {
+		return urlImage;
+	}
+
+	public void setUrlImage(String urlImage) {
+		this.urlImage = urlImage;
 	}
 	
 }
