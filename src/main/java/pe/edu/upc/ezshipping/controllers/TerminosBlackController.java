@@ -7,12 +7,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 
 @Controller
-@RequestMapping("/terminosoro")
-public class TerminosOroController {
+@RequestMapping("/terminosblack")
+public class TerminosBlackController {
 	
 	@GetMapping
 	public String index(Model model) {
 		
-		return "/terminosoro/index";
+		return "/terminosblack/index";
 	}
 }

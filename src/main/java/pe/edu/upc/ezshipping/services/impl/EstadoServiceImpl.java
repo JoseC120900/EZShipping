@@ -56,4 +56,9 @@ public class EstadoServiceImpl implements EstadoService, Serializable {
 		return estadoRepository.findByNombre(nombre);
 	}
 
+	@Transactional
+	@Override
+	public long count() throws Exception {
+		return estadoRepository.count();
+	}
 }

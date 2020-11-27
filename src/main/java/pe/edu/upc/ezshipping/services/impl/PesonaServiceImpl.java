@@ -56,5 +56,11 @@ public class PesonaServiceImpl implements PersonaService, Serializable {
 		return personaRepository.findByEmail(email);
 
 	}
+	
+	@Transactional
+	@Override
+	public long count() throws Exception {
+		return personaRepository.count();
+	}
 
 }
