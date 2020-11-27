@@ -17,8 +17,161 @@
 
 <body>
 	<section class="container-fluid">
-		<h2 class="text-light bg-primary">Detalles</h2>
-		<table class="table table-striped" >
+
+		<!--  <h2 class="text-light bg-primary">Detalles</h2> -->
+
+		<h1></h1>
+
+
+		<section class="container">
+			<div class="card" style="width: 40rem;">
+
+				<div class="card-header text-light bg-primary">
+					<h4>Detalles</h4>
+				</div>
+				<div class="card-body card">
+
+					<h5>
+						<span>Código Envío: &nbsp;</span><a th:text="${envio.id}"></a>
+					</h5>
+
+					<h5 class="card-text">
+						<span> Dirección Destino: &nbsp;</span><span
+							th:text="${envio.direccionDestino}"></span>
+					</h5>
+
+					<h5 class="card-text">
+						<span> Dirección Origen: &nbsp;</span><span
+							th:text="${envio.direccionOrigen}"></span>
+					</h5>
+
+					<h5 class="card-text">
+						<span>Destinatario: &nbsp;</span><span
+							th:text="${envio.nombreDestinatario}"></span>
+					</h5>
+
+					<h5 class="card-text">
+						<span>Tarjeta: &nbsp;</span><span
+							th:text="${tarjeta.getNroTarjeta()}"></span>
+					</h5>
+
+					<h5 class="card-text">
+						<span>Monto: &nbsp;</span><span th:text="${envio.monto}"></span>
+					</h5>
+
+					<h5 class="card-text">
+						<span>Código Courier: &nbsp;</span><span
+							th:text="${envio.trabajadorId}"></span>
+					</h5>
+
+
+					<a
+						th:href="@{'/lista_envios/viewCourier-' + ${envio.trabajadorId}}"
+						class="btn btn-warning">Ver Courier</a>
+				</div>
+			</div>
+
+		</section>
+
+		<h1></h1>
+
+
+		<div class="card-header text-light bg-danger">
+			<h4>Contenido</h4>
+		</div>
+		<ul id="lista-envios">
+
+			<li th:each="paquete : ${paquetes}">
+				<div class="card" style="width: 70rem;">
+
+					<div class="card-header text-light bg-danger">
+						<h4>
+							<span>Paquete: &nbsp;</span><a th:text="${paquete.getId()}"></a>
+						</h4>
+					</div>
+
+
+					<div class="card-body card-columns">
+
+
+						<h5 class="card-text">
+							<span> Alto(cm): &nbsp;</span><span
+								th:text="${paquete.getAlto()}"></span>
+						</h5>
+
+						<h5 class="card-text">
+							<span> Ancho(cm): &nbsp;</span><span
+								th:text="${paquete.getAncho()}"></span>
+						</h5>
+
+						<h5 class="card-text">
+							<span>Largo(cm): &nbsp;</span><span
+								th:text="${paquete.getLargo()}"></span>
+						</h5>
+
+						<h5 class="card-text">
+							<span>Descripción: &nbsp;</span><span
+								th:text="${paquete.getDescripcion()}"></span>
+						</h5>
+
+						<h5 class="card-text">
+							<span>Peso(kg): &nbsp;</span><span th:text="${paquete.getPeso()}"></span>
+						</h5>
+
+						<h5 class="card-text">
+							<span>Precio(soles): &nbsp;</span><span
+								th:text="${paquete.getPrecioUnitario()}"></span>
+						</h5>
+
+					</div>
+
+				</div>
+			</li>
+		</ul>
+
+		<h2></h2>
+
+
+
+		<div class="card-header text-light bg-secondary">
+			<h4>Historial Estados</h4>
+		</div>
+		<ul id="lista-envios">
+
+			<li th:each="estadoEnvio: ${estadoEnvios}">
+				<div class="card" style="width: 70rem;">
+
+					<div class="card-header text-light bg-warning"></div>
+
+
+					<div class="card-body card-columns">
+
+
+						<h5 class="card-text">
+							<span> Fecha: &nbsp;</span><span
+								th:text="${estadoEnvio.getFechaEstadoPedido()}"></span>
+						</h5>
+
+						<h5 class="card-text">
+							<span> Estado: &nbsp;</span><span
+								th:text="${estadoEnvio.getEstado().getNombre()}"></span>
+						</h5>
+
+
+					</div>
+
+				</div>
+			</li>
+		</ul>
+
+
+
+
+
+
+		<!--  
+
+		<table class="table table-striped">
 			<thead>
 				<tr>
 					<th class="text-light bg-secondary" scope="col">Código Envío</th>
@@ -35,7 +188,7 @@
 					<th th:text="${envio.id}" scope="row">.</th>
 					<td th:text="${envio.direccionDestino}">.</td>
 					<td th:text="${envio.nombreDestinatario}">.</td>
-					<th class="text-light bg-warning">ver más--><a
+					<th class="text-light bg-warning">ver más<a
 						th:href="@{'/lista_envios/viewCourier-' + ${envio.trabajadorId}}"
 						th:text="${envio.trabajadorId}"></a></th>
 					<td th:text="${envio.direccionOrigen}">.</td>
@@ -44,9 +197,9 @@
 				</tr>
 			</tbody>
 		</table>
+-->
 
-
-
+		<!-- 
 
 		<table class="table table-striped">
 			<thead>
@@ -63,7 +216,10 @@
 				</tr>
 			</tbody>
 		</table>
+		
+		 -->
 
+		<!-- 
 		<h2 class="text-light bg-danger">Contenido</h2>
 
 		<table class="table table-striped">
@@ -94,6 +250,10 @@
 				</tr>
 			</tbody>
 		</table>
+		
+		 -->
+
+
 	</section>
 
 

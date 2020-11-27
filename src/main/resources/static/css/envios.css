@@ -1,12 +1,17 @@
 #lista-envios{
 	padding-left:0px;
 	display:flex;
+	list-style:none;
 	
 }
 
 
-#lista-envios{
-	list-style:none;
+
+#view-Courier{
+	display:flex;
+	margin-left:20px;
+	align-items:start;
+	justify-content:center;
 }
 
 .card{

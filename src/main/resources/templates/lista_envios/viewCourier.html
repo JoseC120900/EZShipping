@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 <!--  
@@ -44,7 +43,7 @@
 
 
 				<div class="card">
-					<div class="card-header">Información del Courier</div>
+					<div class="card-header"><h5>Información del Courier</h5></div>
 					<div class="card-body">
 
 						<h4>
@@ -60,6 +59,10 @@
 								th:text="${courier.getFechaContratacion()}"></span>
 						</h4>
 
+						<h4 class="card-text">
+							<span>TOTAL ENVÍOS: &nbsp;</span><span th:text="${totalEnvios}"></span>
+						</h4>
+
 					</div>
 				</div>
 
@@ -68,7 +71,14 @@
 		</section>
 
 
+
+
 		<section class="container">
+			<h2></h2>
+			<h1></h1>
+			<h3 class="text-light bg-warning">
+				&nbsp; Tus envíos con <span th:text="*{nombreApellidos}"></span>
+			</h3>
 			<ul id="lista-envios">
 				<li th:each="envio : ${envios}">
 					<div class="card" style="width: 18rem;">

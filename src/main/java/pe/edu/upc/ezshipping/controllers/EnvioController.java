@@ -218,6 +218,7 @@ public class EnvioController {
 		Optional<Persona> optional2;
 		List<Envio> enviosCourierCliente = new ArrayList<Envio>();
 		String nombreApellido;
+		Integer totalEnvios=0;
 		
 		
 		try {
@@ -228,8 +229,13 @@ public class EnvioController {
 			
 			
 			for(int indice=0; indice<envios.size();indice++) {
-				if(envios.get(indice).getClienteId()==idc && envios.get(indice).getTrabajadorId()==id) {
+				if(envios.get(indice).getTrabajadorId()==id) {
+					
+					totalEnvios++;
+					
+					if(envios.get(indice).getClienteId()==idc) {
 					enviosCourierCliente.add(envios.get(indice));
+					}
 				}
 				
 			}
@@ -240,6 +246,7 @@ public class EnvioController {
 			model.addAttribute("courier", optional.get());
 			model.addAttribute("envios", enviosCourierCliente);
 			model.addAttribute("nombreApellidos", nombreApellido);
+			model.addAttribute("totalEnvios", totalEnvios);
 			
 			
 			return "lista_envios/viewCourier";
