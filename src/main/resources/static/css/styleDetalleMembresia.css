@@ -1,0 +1,54 @@
+@charset "ISO-8859-1";
+
+h2.info {
+	font-size: 17px;
+	letter-spacing: 0.8px;
+	word-spacing: 0.8px;
+	color: #000000;
+	font-weight: normal;
+	text-decoration: none;
+	font-style: normal;
+	font-variant: normal;
+	text-transform: none;
+}
+
+.barra-ruta{	
+	margin-top: 75px;
+    z-index: 5;
+}
+
+.breadcrumb{
+	margin-right: 900px;	
+}
+
+#view-membresia {
+	display: flex;
+	margin-left: 100px;
+	vertical-align: middle;
+	margin-top: 180px;
+}
+
+.card {
+	margin: 10px;
+	z-index: 3;
+}
+
+.button{
+	background-color: #D8AF1A;
+	border: none;
+	color: black;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+    font-family: 'Cabin', sans-serif;
+	font-size: 16px;
+	margin: 4px 150px;
+	cursor: pointer;
+	border-radius: 8px;
+}
+
+.button:hover {
+  background-color: #b48f46;
+  color: white;
+}
