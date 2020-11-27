@@ -1,5 +1,7 @@
+
 <!doctype html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
+<!--  
 <head>
 <meta charset="utf-8">
 <meta name="viewport"
@@ -10,39 +12,107 @@
 <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
 <link rel="stylesheet" th:href="@{/css/solid.min.css}">
 </head>
+-->
+<head th:replace="layout/layout::head">
+<script src="https://kit.fontawesome.com/a3ed5d87bf.js"></script>
+<link rel="stylesheet" th:href="@{/css/solid.min.css}">
+</head>
+
+
 <body>
 
-	
+	<main>
 		<h2>Courier</h2>
-	
-	
-	<table class="table table-striped">
-		<thead>
-			<tr>
-				<th scope="col">Nombre</th>
-				<th scope="col">Apellido</th>
-				<th scope="col">Courier desde</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<th th:text="${persona.getNombre()}" scope="row">.</th>
-				<th th:text="${persona.getApellido()}" scope="row">.</th>
-				<th th:text="${courier.getFechaContratacion()}" scope="row">.</th>
-			
-			</tr>
-		</tbody>
-	</table>
-	
+
+		<nav aria-label="breadcrumb">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item">Inicio</li>
+				<li class="breadcrumb-item">Envios</li>
+				<li class="breadcrumb-item"><span></span></li>
+				<li class="breadcrumb-item active" aria-current="page"></li>
+			</ol>
+		</nav>
+
+		<section class="container">
+
+			<div id="view-Courier">
+
+				<div>
+					<img th:src="@{${courier.getUrlImagen()}}" class="img-fluid"
+						alt="Imagen Courier">
+				</div>
 
 
-	<script th:src="@{js/bootstrap.bundle.min.js}"></script>
-	<script th:src="@{/js/jquery-3.4.1.min.js}"></script>
-	<script th:src="@{/js/popper.min.js}"></script>
-	<script th:src="@{/js/bootstrap.min.js}"></script>
-	<script th:src="@{/js/chosen.jquery.min.js}"></script>
-	<script th:src="@{/js/fontawesome.min.js}"></script>
-	<script th:src="@{/js/sweetalert.min.js}"></script>
+				<div class="card">
+					<div class="card-header">Información del Courier</div>
+					<div class="card-body">
+
+						<h4>
+							<span>CÓDIGO: &nbsp;</span><a th:text="${courier.id}"></a>
+						</h4>
+
+						<h4 class="card-text">
+							<span> NOMBRE: &nbsp;</span><span th:text="*{nombreApellidos}"></span>
+						</h4>
+
+						<h4 class="card-text">
+							<span>DESDE: &nbsp;</span><span
+								th:text="${courier.getFechaContratacion()}"></span>
+						</h4>
+
+					</div>
+				</div>
+
+			</div>
+
+		</section>
+
+
+		<section class="container">
+			<ul id="lista-envios">
+				<li th:each="envio : ${envios}">
+					<div class="card" style="width: 18rem;">
+						<img alt="imagen_envio" th:src="@{/images/logo.jpg}"
+							class="img-thumbnail">
+						<div class="card-body">
+							<h5 class="card-title">
+								<span>Código: &nbsp;</span><a
+									th:href="@{'/lista_envios/view-' + ${envio.id}}"
+									th:text="${envio.id}"></a>
+							</h5>
+							<p class="card-text">
+								<span>Estado: &nbsp;</span><span
+									th:text="${envio.getEstadoEnvios().get(envio.getEstadoEnvios().size()-1).getEstado().getNombre()}"></span>
+							</p>
+							<p class="card-text">
+								<span>Fecha: &nbsp;</span><span
+									th:text="${envio.getEstadoEnvios().get(envio.getEstadoEnvios().size()-1).getFechaEstadoPedido()}"></span>
+							</p>
+
+
+							<a th:href="@{'/lista_envios/view-' + ${envio.id}}"
+								class="btn btn-warning">Ver más</a>
+						</div>
+					</div>
+				</li>
+			</ul>
+
+
+
+		</section>
+
+
+	</main>
+
+	<footer th:replace="layout/layout :: footer">
+		<script th:src="@{js/bootstrap.bundle.min.js}"></script>
+		<script th:src="@{/js/jquery-3.4.1.min.js}"></script>
+		<script th:src="@{/js/popper.min.js}"></script>
+		<script th:src="@{/js/bootstrap.min.js}"></script>
+		<script th:src="@{/js/chosen.jquery.min.js}"></script>
+		<script th:src="@{/js/fontawesome.min.js}"></script>
+		<script th:src="@{/js/sweetalert.min.js}"></script>
+	</footer>
 
 </body>
 </html>

@@ -56,14 +56,14 @@ public class EnvioController {
 	@Autowired
 	private TrabajadorService trabajadorService;
 	
-	private Integer id=1;
+	private Integer idc=1;
 	@GetMapping
 	public String index(Model model) {
 		
 		
 		
 		try {
-			Optional <Persona> optional = personaService.findById(id);
+			Optional <Persona> optional = personaService.findById(idc);
 			if(optional.isPresent()) {
 				model.addAttribute("persona", optional.get());
 			}
@@ -76,7 +76,7 @@ public class EnvioController {
 		}
 		
 		try {
-			Optional <Cliente> optional = clienteService.findById(id);
+			Optional <Cliente> optional = clienteService.findById(idc);
 			if(optional.isPresent()) {
 				model.addAttribute("cliente", optional.get());
 			}
@@ -102,7 +102,7 @@ public class EnvioController {
 			
 			
 			for(int indice = 0; indice<envios.size();indice++) {
-				if(envios.get(indice).getClienteId() == id) {
+				if(envios.get(indice).getClienteId() == idc) {
 					
 					buscados2.add(envios.get(indice));
 					buscados.add(envios.get(indice));
@@ -216,13 +216,31 @@ public class EnvioController {
 	{
 		Optional<Trabajador> optional;
 		Optional<Persona> optional2;
+		List<Envio> enviosCourierCliente = new ArrayList<Envio>();
+		String nombreApellido;
+		
 		
 		try {
 			
 			optional = trabajadorService.findById(id);
 			optional2 = personaService.findById(optional.get().getPersonaId());
+			List<Envio> envios = envioService.findAll();
+			
+			
+			for(int indice=0; indice<envios.size();indice++) {
+				if(envios.get(indice).getClienteId()==idc && envios.get(indice).getTrabajadorId()==id) {
+					enviosCourierCliente.add(envios.get(indice));
+				}
+				
+			}
+			
+			nombreApellido= optional2.get().getNombre() + " " + optional2.get().getApellido();
+			
 			model.addAttribute("persona", optional2.get());
 			model.addAttribute("courier", optional.get());
+			model.addAttribute("envios", enviosCourierCliente);
+			model.addAttribute("nombreApellidos", nombreApellido);
+			
 			
 			return "lista_envios/viewCourier";
 		}
