@@ -40,30 +40,34 @@
 
 												<!-- Modal content -->
 												<div class="modal-content" style="color: black;">
-													
-													<h4>
+													<div class="modal-header">
+        <h3 class="modal-title">INFORMACIÓN ADICIONAL</h3>
+        
+      </div>
+													<h5>
 														<span>Codigo: &nbsp;</span><span
 															th:text="${cliente.persona.id}"></span>
-													</h4>
-													<h4 class="card-text">
+													</h5>
+													<h5 class="card-text">
 														<span> Nombre y Apellido:&nbsp;</span><span
 															th:text="*{cliente.persona.nombre}+' '+${cliente.persona.apellido}"></span>
-													</h4>
-													<h4 class="card-text">
+													</h5>
+													<h5 class="card-text">
 														<span> DNI:&nbsp;</span><span
 															th:text="*{cliente.DNI}"></span>
-													</h4>
-													<h4 class="card-text">
+													</h5>
+													<h5 class="card-text">
 														<span> Email:&nbsp;</span><span
 															th:text="*{cliente.persona.email}"></span>
-													</h4>
-													<h4 class="card-text">
+													</h5>
+													<h5 class="card-text">
 														<span> Fecha Nacimiento:&nbsp;</span><span
 															th:text="*{cliente.persona.getFechaNacimiento()}"></span>
-													</h4>
-													<div class="footer">
-													<span class="close" style="text-align: right;">Cerrar</span>
-													</div>
+													</h5>
+													<div class="modal-footer">
+												
+												<button id="close" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+											</div>
 													
 												</div>
 
@@ -93,7 +97,7 @@
 
 
 				// Get the <span> element that closes the modal
-				var span = document.getElementsByClassName("close");
+				var span = document.getElementsByClassName("btn");
 
 				// When the user clicks the button, open the modal 
 				

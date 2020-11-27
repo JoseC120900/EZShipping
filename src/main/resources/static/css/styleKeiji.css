@@ -267,7 +267,7 @@ p {
 
 .BackGrmembresia {
 	width: 100%;
-	height: 1100px;
+	height: 737px;
 	position: relative;
 	overflow: hidden;
 	background: url(my_background.png);
@@ -340,6 +340,7 @@ body, html {
 	width: 80%;
 	padding: 20px;
 	text-align: center;
+	height: 500px;
 }
 
 .bg-textterminos {
@@ -589,3 +590,12 @@ body, html {
 
 .mostar{display:block;}
 .ocultar{display:none;}
+
+.my-custom-scrollbar {
+position: relative;
+height: 450px;
+overflow: auto;
+}
+.table-wrapper-scroll-y {
+display: block;
+}
