@@ -20,13 +20,13 @@
 	<header th:replace="layout/layout :: header"></header>
 
 
-	<section class="BackGrmembresia">
+	<section class="BackGrenvio">
 	<div style="margin-bottom: 30px;">
 		<h1 style="padding-left: 50px">
 			<b> Lista de Envíos Totales </b>
 		</h1>
 		</div>
-		<div class="bg-text" style="margin-top: 40px;" >
+		<div class="bg-textenvio" style="margin-top: 40px;" >
 			<center>
 
 				<div class="table-wrapper-scroll-y my-custom-scrollbar">
@@ -100,9 +100,14 @@
 							</tr>
 						</tbody>
 					</table>
+					
 				</div>
+				<div style="text-align: left; padding-top: 50px;">
+				<button onclick="location.href = '../';" type="button" class="btn btn-info">REGRESAR</button>
+			</div>
 			</center>
 		</div>
+		
 		<script>
 				// Get the modal
 				var modal = document.getElementsByClassName('modal');
