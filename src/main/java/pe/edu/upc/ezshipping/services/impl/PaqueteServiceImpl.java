@@ -55,4 +55,10 @@ public class PaqueteServiceImpl implements PaqueteService, Serializable {
 	public Optional<Paquete> findByDescripcion(String descripcion) throws Exception {
 		return paqueteRepository.findByDescripcion(descripcion);
 	}
+	
+	@Transactional
+	@Override
+	public long count() throws Exception {
+		return paqueteRepository.count();
+	}
 }
