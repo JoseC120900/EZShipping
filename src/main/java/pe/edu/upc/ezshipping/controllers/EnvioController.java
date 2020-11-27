@@ -114,14 +114,16 @@ public class EnvioController {
 			
 			for(int i=0;i<2;i++) {
 				int mayor=0;
+				int pos=0;
 			for(int indice=0; indice<buscados2.size();indice++) {
 				if(buscados2.get(indice).getId()>mayor) {
-					mayor=indice;
+					mayor=buscados2.get(indice).getId();
+					pos=indice;
 				}
 				
 			}
-			ultimos.add(buscados2.get(mayor));
-			buscados2.remove(mayor);
+			ultimos.add(buscados2.get(pos));
+			buscados2.remove(pos);
 			}
 			
 			for(int indice=0; indice<buscados2.size();indice++) {
