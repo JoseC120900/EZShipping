@@ -55,5 +55,13 @@ public class ReclamoServiceImpl implements ReclamoService, Serializable {
 	public Optional<Reclamo> findByDescripcion(String descripcion) throws Exception {
 		return reclamoRepository.findByDescripcion(descripcion);
 	}
+	
+	@Transactional
+	@Override
+	public long count() throws Exception {
+		return reclamoRepository.count();
+	}
+	
+	
 
 }

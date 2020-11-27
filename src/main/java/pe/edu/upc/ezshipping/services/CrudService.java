@@ -7,6 +7,8 @@ public interface CrudService<T, ID> {
 	T save(T entity) throws Exception; // devolver un objeto, si no manda un error para que no quede cargando
 
 	T update(T entity) throws Exception;
+	
+	long count () throws Exception;
 
 	void deleteById(ID id) throws Exception;
 
