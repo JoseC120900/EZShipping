@@ -33,6 +33,9 @@ public class Envio {
 	@Column(name = "direccion_destino", length = 100, nullable = false)
 	private String direccionDestino;
 	
+	@Column(name = "codigo_rastreo", length = 10)
+	private String codigoRastreo;
+	
 	@ManyToOne
 	@JoinColumn(name = "trabajador_id")
 	private Trabajador trabajador;
@@ -224,4 +227,13 @@ public class Envio {
 	public void setReclamoId(Integer reclamoId) {
 		this.reclamoId = reclamoId;
 	}
+
+	public String getCodigoRastreo() {
+		return codigoRastreo;
+	}
+
+	public void setCodigoRastreo(String codigoRastreo) {
+		this.codigoRastreo = codigoRastreo;
+	}
+	
 }
