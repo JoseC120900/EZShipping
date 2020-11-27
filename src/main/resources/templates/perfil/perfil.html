@@ -21,17 +21,14 @@
 	<header th:replace="layout/layout :: header"></header>
 
 	<main class="perfil">
-		<div class="barraRuta">
-			<nav aria-label="breadcrumb">
+		<section class="container">
+			<div class="barraRuta">
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item">Inicio</li>
 					<li class="breadcrumb-item">Usuario</li>
 					<li class="breadcrumb-item active" aria-current="page">Ver mi perfil</li>
 				</ol>
-			</nav>
-		</div>
-		<section class="container">
-
+			</div>
 			<div class="card w-50">
 				<div class="card-header">
 					Perfil del usuario
@@ -53,7 +50,9 @@
 					<p class="card-text">
 						Membresía: <strong><span th:text="${cliente.tipoCliente.nombre}"></span></strong>
 					</p>
-					<a href="#" class="btn btn-primary">Editar</a>
+					<div class="editar">
+						<a href="#"><button type="button">Editar</button></a>
+					</div>
 				</div>
 
 				<div class="card-body" th:if="${{#authentication.getPrincipal().getSegmento()}} == 'TRABAJADOR'">
@@ -70,8 +69,9 @@
 					<p class="card-text">
 						Email: <strong><span th:text="${trabajador.persona.email}"></span></strong>
 					</p>
-
-					<a href="#" class="btn btn-primary">Editar</a>
+					<div class="editar">
+						<a href="#"><button type="button">Editar</button></a>
+					</div>
 				</div>
 			</div>
 

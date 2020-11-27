@@ -27,7 +27,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests()
+		http
+			.authorizeRequests()
 		
 				// ---------------------------------------------
 				// authenticated: para ir a una pagina, primero necesita autenticarse
@@ -50,6 +51,13 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 				// .antMatchers("/clientesmembresiablack").hasRole("ADMIN")
 				// .antMatchers("/clientesenvios").hasRole("ADMIN")
 				//--------dylan--------
+				//.antMatchers("/rastrear").hasRole("CUSTOMER")
+				//.antMatchers("/rastrear/search").hasRole("CUSTOMER")
+				//.antMatchers("/precios").hasRole("CUSTOMER")
+				//.antMatchers("/preciossearch-2").hasRole("CUSTOMER")
+				//.antMatchers("/preciossearch-3").hasRole("CUSTOMER")
+				//.antMatchers("/preciossearch-4").hasRole("CUSTOMER")
+				//.antMatchers("/envio").hasRole("CUSTOMER")
 				//--------jose--------
 				// .antMatchers("/reclamos").authenticated()
 				// .antMatchers("/membresias/index").hasRole("CUSTOMER")

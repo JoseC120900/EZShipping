@@ -1,12 +1,26 @@
 .perfil {
-	margin-top: 150px;
+	margin-top: 100px;
 	margin-bottom: 100px;
 }
 
-.breadcrumb {
-	margin-top: 90px;
+.barraRuta {
+	margin-left: 500px;
+	margin-right: 340px;
 }
 
-.barraRuta{
-	position: static;
+.editar button{
+	font-family: 'Cabin', sans-serif !important;
+	border: none;
+	outline: 0;
+	display: inline-block;
+	color: black;
+	background-color: #D8AF1A;
+	text-align: center;
+	cursor: pointer;
+	border-radius: 8px;
+	font-size: 20px;
+	height: 50px;
+	width: 100px;
+	line-height: 50px;
+	padding: 0 17px;
 }

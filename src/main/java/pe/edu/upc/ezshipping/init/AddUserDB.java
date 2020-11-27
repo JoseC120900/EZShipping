@@ -100,9 +100,6 @@ public class AddUserDB implements CommandLineRunner {
 		usuarioRepository.save(trabajador1);
 		usuarioRepository.save(trabajador2);
 		usuarioRepository.save(trabajador3);*/
-
-
-
 	}
 
 }

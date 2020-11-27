@@ -31,7 +31,7 @@
 					<a href="/">Inicio</a>
 				</li>
 				<li class="nav-item" sec:authorize="hasRole('ROLE_ADMIN')">
-					<a href="#">Administrar</a>
+					<a href="/administrar">Administrar</a>
 				</li>
 				<li>
 					<a href="#">Sobre Nosotros</a>
@@ -51,12 +51,12 @@
 						<i class="fas fa-user-circle" style="margin-right: 10px;"></i><span
 							sec:authentication="name">Username</span>
 					</a>
-					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 						<a class="dropdown-item" th:href="@{/perfil}">
 							<i class="fas fa-id-card"></i> Ver mi perfil
 						</a>
-						<a class="dropdown-item" th:href="@{/perfil}">
-							<i class="fas fa-box-open"></i> Ver historial de envíos
+						<a class="dropdown-item" th:href="@{/}" sec:authorize="hasRole('ROLE_CUSTOMER')"></a>
+						<i class="fas fa-box-open"></i> Ver historial de envíos
 						</a>
 						<div class="dropdown-divider"></div>
 						<a class="dropdown-item" th:href="@{/logout}"> <i class="fas fa-sign-out-alt"></i>Salir</a>
@@ -69,6 +69,11 @@
 				<div class="line3"></div>
 			</div>
 		</nav>
+		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+		<link id="active_style" rel="stylesheet"
+			href="//netdna.bootstrapcdn.com/bootswatch/3.1.1/cosmo/bootstrap.min.css">
 	</header>
 
 	<footer th:fragment="footer">
