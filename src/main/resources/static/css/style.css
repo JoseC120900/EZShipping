@@ -256,6 +256,14 @@ p {
 	background-size: cover;
 }
 
+/*---------
+	header
+----------*/
+
+
+/*---------
+	footer
+----------*/
 .my_footer {
 	background-color: rgb(36, 33, 33);
 	width: auto;
@@ -272,6 +280,9 @@ p {
 	cursor: pointer;
 }
 
+/*---------
+	banner
+----------*/
 .hero-image {
 	/*fondo oscuro*/
 	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),

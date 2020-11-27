@@ -35,7 +35,30 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 				// ---------------------------------------------
 		
 				.antMatchers("/").permitAll()
-				// .antMatchers("/reclamos").authenticated();
+				// .antMatchers("/contactanos").authenticated()
+				//--------jason--------
+				// .antMatchers("/lista_envios").hasRole("CUSTOMER")
+				//--------keiji--------
+				// .antMatchers("/terminos").hasAnyRole("CUSTOMER", "ADMIN", "COURIER")
+				// .antMatchers("/terminosblack").hasAnyRole("CUSTOMER", "ADMIN", "COURIER")
+				// .antMatchers("/terminossilver").hasAnyRole("CUSTOMER", "ADMIN", "COURIER")
+				// .antMatchers("/terminosgold").hasAnyRole("CUSTOMER", "ADMIN", "COURIER")
+				// .antMatchers("/terminossin").hasAnyRole("CUSTOMER", "ADMIN", "COURIER")
+				// .antMatchers("/clientesmembresia").hasRole("ADMIN")
+				// .antMatchers("/clientesmembresiasilver").hasRole("ADMIN")
+				// .antMatchers("/clientesmembresiagold").hasRole("ADMIN")
+				// .antMatchers("/clientesmembresiablack").hasRole("ADMIN")
+				// .antMatchers("/clientesenvios").hasRole("ADMIN")
+				//--------dylan--------
+				//--------jose--------
+				// .antMatchers("/reclamos").authenticated()
+				// .antMatchers("/membresias/index").hasRole("CUSTOMER")
+				// .antMatchers("/membresias/view-Gold").hasRole("CUSTOMER")
+				// .antMatchers("/membresias/view-Black").hasRole("CUSTOMER")
+				// .antMatchers("/membresias/view-Silver").hasRole("CUSTOMER")
+				//--------jacobo--------
+				// .antMatchers("/tarjetas").hasRole("CUSTOMER")
+				// .antMatchers("/filtrar_fecha").hasRole("ADMIN")
 				.and()
 					.formLogin()
 						.loginProcessingUrl("/signin") //iniciar sesion

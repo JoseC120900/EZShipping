@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 <head th:fragment="head">
 	<!-- Required meta tags -->
@@ -10,6 +10,7 @@
 	<link th:href="@{css/style.css}" rel="stylesheet">
 	<link th:href="@{css/styleControl.css}" rel="stylesheet">
 	<link rel="stylesheet" th:href="@{css/bootstrap.min.css}">
+	<link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
 
 	<title>EZShipping</title>
 </head>
@@ -26,11 +27,41 @@
 			</a>
 
 			<ul class="nav-links">
-				<li><a href="/">Inicio</a></li>
-				<li><a href="#">Servicios</a></li>
-				<li><a href="#">Sobre Nosotros</a></li>
-				<li><a href="#">Contáctanos</a></li>
+				<li>
+					<a href="/">Inicio</a>
+				</li>
+				<li class="nav-item" sec:authorize="hasRole('ROLE_ADMIN')">
+					<a href="#">Administrar</a>
+				</li>
+				<li>
+					<a href="#">Sobre Nosotros</a>
+				</li>
+				<li>
+					<a href="#">Contáctanos</a>
+				</li>
+			</ul>
 
+			<a sec:authorize="isAnonymous()" th:href="@{/login}" type="button" class="btn btn-outline-primary">
+				<i class="fas fa-user"></i> Iniciar Sesión
+			</a>
+			<ul sec:authorize="isAuthenticated()" class="navbar-nav" style="margin-right: 50px; ">
+				<li class="nav-item dropdown">
+					<a class="btn btn-outline-info dropdown-toggle" id="navbarDropdown" role="button"
+						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<i class="fas fa-user-circle" style="margin-right: 10px;"></i><span
+							sec:authentication="name">Username</span>
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" th:href="@{/perfil}">
+							<i class="fas fa-id-card"></i> Ver mi perfil
+						</a>
+						<a class="dropdown-item" th:href="@{/perfil}">
+							<i class="fas fa-box-open"></i> Ver historial de envíos
+						</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" th:href="@{/logout}"> <i class="fas fa-sign-out-alt"></i>Salir</a>
+					</div>
+				</li>
 			</ul>
 			<div class="burger">
 				<div class="line1"></div>

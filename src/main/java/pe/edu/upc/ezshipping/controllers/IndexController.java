@@ -11,7 +11,6 @@ public class IndexController {
 	
 	@GetMapping
 	public String index(Model model) {
-		model.addAttribute("nombre", "Dylan Delgado");
 		return "index";
 	}
 	
