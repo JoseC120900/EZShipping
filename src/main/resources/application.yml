@@ -1,10 +1,13 @@
-# PostgreSQL
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5432/ezshippingdb
     username: postgres
+<<<<<<< HEAD
+    password: postgres
+=======
     password: Upc2020.
+>>>>>>> 9d7514aa1781e1726f4a168779edc7da4aa9d7b6
   jpa:
     database: postgresql
     hibernate:
@@ -17,5 +20,3 @@ spring:
 
 server:
   port: 8090
-  
-  
