@@ -21,6 +21,25 @@
 
 
 	<section class="BackGrmembresia">
+	<center>
+		<h1 style="top: 80px; margin-top: 10px;">
+			<b> Clientes por Membresía </b>
+		</h1>
+	
+		</center>
+	<h1 style="padding-left: 50px; margin-top: -110px;">	<b>	
+			<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+		</b></h1>
+
+
+
+				<div id="mySidenav" class="sidenav" style="z-index: 4">
+				<a>.</a>
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="/clientesenvios">Envíos</a>
+  <a href="/clientesmembresia">Membresías</a>
+  <a href="/listaclientes">Clientes</a>
+</div>
 		<div class="bg-text">
 			<center>
 				<div>
@@ -132,6 +151,25 @@
 				    }
 				}
 </script>
+		<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+<script type="text/javascript">
+
+    function toggle_visibility(id) {
+       var e = document.getElementById(id);
+       if(e.style.display == 'block')
+          e.style.display = 'none';
+       else
+          e.style.display = 'block';
+    }
+    </script>
 	</section>
 
 
