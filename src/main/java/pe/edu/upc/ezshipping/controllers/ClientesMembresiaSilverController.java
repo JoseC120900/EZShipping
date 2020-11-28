@@ -20,7 +20,7 @@ public class ClientesMembresiaSilverController {
 
 
 
-    private Integer id=1;
+    private Integer id=2;
     @GetMapping
 	public String index(Model model) {
     	
