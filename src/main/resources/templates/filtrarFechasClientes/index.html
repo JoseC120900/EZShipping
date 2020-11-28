@@ -11,14 +11,27 @@
 <link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap"
 	rel="stylesheet">
 <link rel="stylesheet" th:href="@{css/bootstrap.min.css}">
-<link rel="stylesheet" href="css/styleFiltros.css">
+
 
 <title>EZShipping</title>
 </head>
 <body id="bootstrap-overrides">
 	<header th:replace="layout/layout :: header"></header>
 	<section class="BackGrTarjetas">
-		<p style="margin-top: 0px;">
+	<h1 style="padding-left: 50px; margin-top: 30px;">	<b>	
+			<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+		</b></h1>
+
+
+				<div id="mySidenav" class="sidenav">
+				<a>.</a>
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="/clientesenvios">Envíos</a>
+  <a href="/clientesmembresia">Membresías</a>
+  <a href="/listaclientes">Clientes</a>
+  <a href="/filtrarFechasClientes">Clientes Fecha</a>
+</div>
+		<p style="margin-top: -100px;">
 		<h1 >Filtrar clientes dentro de una
 			fecha determinada</h1>
 		
@@ -35,7 +48,7 @@
 						type="date" />
 				</form>
 				<p>
-					<a href="" class="btn"> Buscar </a>
+					<a href="" class="btn btn-primary"> Buscar </a>
 			</div>
 		</div>
 		<div></div>
@@ -63,7 +76,15 @@
 			</div>
 		</section>
 	</section>
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
 
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
