@@ -20,16 +20,16 @@ public class Envio {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	
+
 	@Column(name = "monto", length = 10, nullable = false)
 	private Float monto;
-	
+
 	@Column(name = "nombre_destinatario", length = 20, nullable = false)
 	private String nombreDestinatario;
-	
+
 	@Column(name = "direccion_origen", length = 100, nullable = false)
 	private String direccionOrigen;
-	
+
 	@Column(name = "direccion_destino", length = 100, nullable = false)
 	private String direccionDestino;
 	
@@ -69,6 +69,19 @@ public class Envio {
 
 	@OneToMany(mappedBy = "envio")
 	private List<Paquete> paquetes;
+	
+	@Column(name="url_imagen",length=50)
+	private String urlImagen;
+
+	
+
+	public String getUrlImagen() {
+		return urlImagen;
+	}
+
+	public void setUrlImagen(String urlImagen) {
+		this.urlImagen = urlImagen;
+	}
 
 	public Envio() {
 		estadoEnvios = new ArrayList<EstadoEnvio>();
@@ -79,11 +92,11 @@ public class Envio {
 		this.reclamoId = 0;
 
 	}
-	
+
 	public String getIdString() {
 		return Integer.toString(id);
 	}
-	
+
 	public Integer getId() {
 		return id;
 	}

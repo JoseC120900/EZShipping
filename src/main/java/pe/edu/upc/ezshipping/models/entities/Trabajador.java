@@ -40,6 +40,17 @@ public class Trabajador {
 
 	@Transient
 	private Integer personaId;
+	
+	@Column(name="url_imagen",length=50)
+	private String urlImagen;
+
+	public String getUrlImagen() {
+		return urlImagen;
+	}
+
+	public void setUrlImagen(String urlImagen) {
+		this.urlImagen = urlImagen;
+	}
 
 	public Trabajador() {
 		envios = new ArrayList<Envio>();
