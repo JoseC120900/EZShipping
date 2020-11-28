@@ -1,0 +1,26 @@
+.lbl{
+	font-family: 'Cabin';
+	font-size: 20px;
+	text-align: center;
+	cursor: pointer;
+	border: none;
+	outline: 0;
+	color: black;
+	padding: 0px;
+}
+
+.btn{
+	font-family: 'Cabin', sans-serif!important;
+	border: none;
+	outline: 0;
+	color: black;
+	background-color: #D8AF1A;
+	text-align: center;
+	cursor: pointer;
+	border-radius: 8px;
+	font-size: 20px;
+	line-height: 50px;
+	margin-bottom: 10px;
+	padding: 0 17px!important;
+	border: 1px solid #000000;
+}

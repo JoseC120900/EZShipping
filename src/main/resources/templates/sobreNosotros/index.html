@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="head">
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
+	<link th:href="@{css/style.css}" rel="stylesheet">
+	<link th:href="@{css/styleControl.css}" rel="stylesheet">
+	<link rel="stylesheet" th:href="@{css/bootstrap.min.css}">
+
+	<title>EZShipping</title>
+</head>
+
+<body id="bootstrap-overrides">
+	<header th:fragment="header">
+		<nav class="navbar mynav">
+			<a class="navbar-brand" href="#">
+				<div class="logo">
+					<img th:src="@{/images/logo.jpg}" width="50" height="50" class="d-inline-block align-top" alt=""
+						loading="lazy">
+					EZShipping
+				</div>
+			</a>
+			<ul class="nav-links">
+				<li><a href="/">Inicio</a></li>
+				<li><a href="#">Servicios</a></li>
+				<li><a href="/sobreNosotros">Sobre Nosotros</a></li>
+				<li><a href="/contacto">Contáctanos</a></li>
+
+			</ul>
+		<div class="burger">
+			<div class="line1"></div>
+			<div class="line2"></div>
+			<div class="line3"></div>
+		</div>
+	</nav>
+	<section class="BackGr">
+		<h1>			
+			Sobre Nosotros
+		</h1>
+		
+		<p style="color: #000000;  margin:0% "><h2>
+		╠════════ Historia de la compañia ════════╣
+		</h2>
+		<h5><p style="text-align: justify">
+		El 23 de marzo de 1987, dos jóvenes empresarios decidieron formar EZShipping, empresa de correo peruano enfocado inicialmente al correo nacional. Al pasar los años, se convirtió 
+		en una empresa con importantes unidades de negocios.
+		</p></h5>
+		<h3> <p style="color: #551A0D; margin:-1.3% 0">
+		██ 1992 ██  1992  ██  1992 ██</p>
+		</h3>
+		
+		<h4> <p style="color: #000000;  margin:-1.3% 0">	
+		Logramos una gran cartera de clientes</p>	
+		</h4>
+		<h5> <p style="text-align: justify;  margin:-1.1% 0"> Ya con la experiencia adquirida y en virtud al prestigio ganado por los servicios brindados, EZShipping S.A.C., 
+		alcanza una importante cartera que supera los 600 clientes corporativos pertenecientes a diversos sectores.</p></h5>
+		
+		<h3> <p style="color: #551A0D; margin:-1.3% 0">
+		██ 2004 ██ 2004 ██ 2004 ██</p>
+		</h3>
+		
+		<h4> <p style="color: #000000;  margin:-1.1% 0">	
+		Nacemos con el nombre de EZSHipping</p>
+		</h4>
+		<h5> <p style="text-align: justify;  margin:-1.1% 0"> Años más tarde, se decide cambiar la razón social a EZShipping. Desde entonces, siendo una marca muy reconocida en 
+		el sector, EZShipping se convierte en una organización empresarial con alrededor de 289 oficinas a nivel nacional, todas 
+		adecuadamente equipadas y con la debida infraestructura.</p></h5>
+		
+		<h3> <p style="color: #551A0D">
+		██ 2011 ██ 2011 ██ 2011 ██</p>
+		</h3>
+		
+		<h4> <p style="color: #000000;  margin:-1.1% 0">	
+		Nos convertimos en una importante unidad de negocios</p>
+		</h4>
+		<h5><p style="text-align: justify;  margin:-1.1% 0">Continuando con su espíritu de crecimiento, EZShipping inicia una nueva etapa al lanzar nuevas unidades de negocio
+		y nuevos servicios de cobertura nacional, servicios de trámites, de carga, 
+		distribución de mercadería, y servicios de exportación e importación internacional. Asimismo, ingresa al mundo de las 
+		compras por internet con el servicio de Olva Compras.</p></h5>
+		
+		<h3> <p style="color: #551A0D">
+		██ 2015 ██ 2015 ██ 2015 ██</p>
+		</h3>
+		
+		<h4> <p style="color: #000000;  margin:-1.1% 0">	
+		Cubrimos todos los destinos a nivel nacional</p>
+		</h4>
+		<h5><p style="text-align: justify;  margin:-1.1% 0">A la actualidad, EZShipping es una empresa sólida que cuenta con un gran almacén central, 19 oficinas de atención 
+		al público ubicados en distritos estratégicos de Lima, 289 oficinas en las principales provincias del país, y 
+		con más de mil trabajadores formalmente contratados.</p></h5>
+	
+	</section>
+	
+	<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+	<script src="js/main_metodopago.js"></script>
+	
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+	<script th:src="@{js/app.js}"></script>
+	
+  </body>
+</html>
