@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 <head th:replace="layout/layout :: head"></head>
 
@@ -7,10 +7,17 @@
 	<header th:replace="layout/layout :: header"></header>
 
 	<section class="zoom">
-		<div class="adjust-title">
+		<div class="adjust-title" sec:authorize="isAnonymous()">
 			<h1>Bienvenido!</h1>
 			<h2>
-				Hello, <span th:text="${nombre}"></span>
+				<span>Envía "easy" ahora!</span>
+			</h2>
+		</div>
+
+		<div class="adjust-title" sec:authorize="isAuthenticated()">
+			<h1>Estás de vuelta!</h1>
+			<h2>
+				<span sec:authentication="name">Username</span>
 			</h2>
 		</div>
 

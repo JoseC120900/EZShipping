@@ -266,6 +266,9 @@ p {
 	background-size: cover;
 }
 
+/*---------
+	footer
+----------*/
 .my_footer {
 	background-color: rgb(36, 33, 33);
 	width: auto;
@@ -282,6 +285,9 @@ p {
 	cursor: pointer;
 }
 
+/*---------
+	banner
+----------*/
 .hero-image {
 	/*fondo oscuro*/
 	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
@@ -318,4 +324,28 @@ p {
 .hero-text button:hover {
 	background-color: #b48f46;
 	color: white;
+}
+
+@media (min-width: 1080px) {
+  .navbar-expand-custom {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+  .navbar-expand-custom .navbar-nav {
+    flex-direction: row;
+  }
+  .navbar-expand-custom .navbar-nav .nav-link {
+    padding-right: .5rem;
+    padding-left: .5rem;
+  }
+  .navbar-expand-custom .navbar-collapse {
+    display: flex!important;
+  }
+  .navbar-expand-custom .navbar-toggler {
+    display: none;
+  }
+  .navbar-expand-custom .navbar-nav .dropdown-menu {
+    position:absolute;
+  }
 }
