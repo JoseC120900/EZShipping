@@ -16,7 +16,6 @@ h1 {
 }
 
 p {
-	color: black;
 	text-align: justify;
 	display: flex;
 	width: 90%;
@@ -256,7 +255,11 @@ p {
 	background-size: cover;
 }
 
-a:hover {
+.container a{
+  color: black;
+}
+
+.container a:hover {
   color: orange;
 }
 
