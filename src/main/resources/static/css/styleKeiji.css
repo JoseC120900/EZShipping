@@ -310,6 +310,15 @@ p {
 	background-size: cover;
 }
 
+.BackGrEnvios {
+	width: 100%;
+	height: 2500px;
+	position: relative;
+	overflow: hidden;
+	background: url(my_background.png);
+	background-size: cover;
+}
+
 .BackGradministrar {
 	width: 100%;
 	height: 737px;
@@ -1136,4 +1145,9 @@ a.button:hover{
   .navbar-expand-custom .navbar-nav .dropdown-menu {
     position:absolute;
   }
+}
+
+.break {
+  flex-basis: 100%;
+  height: 0;
 }

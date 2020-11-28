@@ -7,6 +7,8 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,6 +24,7 @@ import pe.edu.upc.ezshipping.models.entities.Paquete;
 import pe.edu.upc.ezshipping.models.entities.Persona;
 import pe.edu.upc.ezshipping.models.entities.Tarjeta;
 import pe.edu.upc.ezshipping.models.entities.Trabajador;
+import pe.edu.upc.ezshipping.security.UsuarioDetails;
 import pe.edu.upc.ezshipping.services.ClienteService;
 import pe.edu.upc.ezshipping.services.EnvioService;
 import pe.edu.upc.ezshipping.services.EstadoService;
@@ -54,27 +57,22 @@ public class EnvioController {
 	@Autowired
 	private TrabajadorService trabajadorService;
 
-	private Integer idc = 1;
+	private Integer idc = 3;
 
 	@GetMapping
 	public String index(Model model) {
 
-		try {
-			Optional<Persona> optional = personaService.findById(idc);
-			if (optional.isPresent()) {
-				model.addAttribute("persona", optional.get());
-			} else {
-				return "";
-			}
-		} catch (Exception e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
+
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		UsuarioDetails usuarioDetails = (UsuarioDetails) authentication.getPrincipal();
+		
 
 		try {
-			Optional<Cliente> optional = clienteService.findById(idc);
+			Optional<Cliente> optional = clienteService.findById(usuarioDetails.getIdSegmento());
 			if (optional.isPresent()) {
+				Optional<Persona> optional2 = personaService.findById(optional.get().getPersonaId());
 				model.addAttribute("cliente", optional.get());
+				model.addAttribute("persona", optional2.get());
 			} else {
 				return "";
 			}
@@ -95,7 +93,7 @@ public class EnvioController {
 			// Date fechaEstado;
 
 			for (int indice = 0; indice < envios.size(); indice++) {
-				if (envios.get(indice).getClienteId() == idc) {
+				if (envios.get(indice).getClienteId() == usuarioDetails.getIdSegmento()) {
 
 					buscados2.add(envios.get(indice));
 					buscados.add(envios.get(indice));
@@ -126,37 +124,45 @@ public class EnvioController {
 
 			for (int indice = 0; indice < ultimos.size(); indice++) {
 
-				if (ultimos.get(indice).getEstadoEnvios().get(ultimos.get(indice).getEstadoEnvios().size() - 1)
-						.getEstado().getId() == 1) {
-					ultimos.get(indice).setUrlImagen("/images/estados/cola.jpg");
-				}
+				if (ultimos.get(indice).getEstadoEnvios().size() > 0) {
+					if (ultimos.get(indice).getEstadoEnvios().get(ultimos.get(indice).getEstadoEnvios().size() - 1)
+							.getEstado().getId() == 1) {
+						ultimos.get(indice).setUrlImagen("/images/estados/cola.jpg");
+					}
 
-				else if (ultimos.get(indice).getEstadoEnvios().get(ultimos.get(indice).getEstadoEnvios().size() - 1)
-						.getEstado().getId() == 2) {
-					ultimos.get(indice).setUrlImagen("/images/estados/enviado.jpg");
-				}
+					else if (ultimos.get(indice).getEstadoEnvios().get(ultimos.get(indice).getEstadoEnvios().size() - 1)
+							.getEstado().getId() == 2) {
+						ultimos.get(indice).setUrlImagen("/images/estados/enviado.jpg");
+					}
 
-				else {
-					ultimos.get(indice).setUrlImagen("/images/estados/recibido.jpg");
+					else {
+						ultimos.get(indice).setUrlImagen("/images/estados/recibido.jpg");
 
+					}
+				} else {
+					ultimos.get(indice).setUrlImagen("/images/logo.jpg");
 				}
 			}
 
 			for (int indice = 0; indice < buscados3.size(); indice++) {
 
-				if (buscados3.get(indice).getEstadoEnvios().get(buscados3.get(indice).getEstadoEnvios().size() - 1)
-						.getEstado().getId() == 1) {
-					buscados3.get(indice).setUrlImagen("/images/estados/cola.jpg");
-				}
+				if (buscados3.get(indice).getEstadoEnvios().size() > 0) {
+					if (buscados3.get(indice).getEstadoEnvios().get(buscados3.get(indice).getEstadoEnvios().size() - 1)
+							.getEstado().getId() == 1) {
+						buscados3.get(indice).setUrlImagen("/images/estados/cola.jpg");
+					}
 
-				else if (buscados3.get(indice).getEstadoEnvios().get(buscados3.get(indice).getEstadoEnvios().size() - 1)
-						.getEstado().getId() == 2) {
-					buscados3.get(indice).setUrlImagen("/images/estados/enviado.jpg");
-				}
+					else if (buscados3.get(indice).getEstadoEnvios()
+							.get(buscados3.get(indice).getEstadoEnvios().size() - 1).getEstado().getId() == 2) {
+						buscados3.get(indice).setUrlImagen("/images/estados/enviado.jpg");
+					}
 
-				else {
-					buscados3.get(indice).setUrlImagen("/images/estados/recibido.jpg");
+					else {
+						buscados3.get(indice).setUrlImagen("/images/estados/recibido.jpg");
 
+					}
+				} else {
+					buscados3.get(indice).setUrlImagen("/images/logo.jpg");
 				}
 			}
 
@@ -219,6 +225,8 @@ public class EnvioController {
 		List<Envio> enviosCourierCliente = new ArrayList<Envio>();
 		String nombreApellido;
 		Integer totalEnvios = 0;
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		UsuarioDetails usuarioDetails = (UsuarioDetails) authentication.getPrincipal();
 
 		try {
 
@@ -231,7 +239,7 @@ public class EnvioController {
 
 					totalEnvios++;
 
-					if (envios.get(indice).getClienteId() == idc) {
+					if (envios.get(indice).getClienteId() == usuarioDetails.getIdSegmento()) {
 						enviosCourierCliente.add(envios.get(indice));
 					}
 				}

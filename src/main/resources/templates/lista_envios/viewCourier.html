@@ -18,7 +18,7 @@
 
 <body id="bootstrap-overrides">
 	<header th:replace="layout/layout :: header"></header>
-<section class="BackGrTarjetas">
+<section class="BackGrEnvios">
 	<main style="margin-top: 100px; margin-left: 50px;">
 		<h2>Courier</h2>
 
@@ -79,6 +79,7 @@
 				&nbsp; Tus envíos con <span th:text="*{nombreApellidos}"></span>
 			</h3>
 			<ul id="lista-envios">
+			<div class="break">
 				<li th:each="envio : ${envios}">
 					<div class="card" style="width: 18rem;">
 						<img th:src="@{${envio.getUrlImagen()}}" class="img-fluid" alt="Imagen envio">
@@ -101,7 +102,7 @@
 							<a th:href="@{'/lista_envios/view-' + ${envio.id}}" class="btn btn-warning">Ver más</a>
 						</div>
 					</div>
-				</li>
+				</li></div>
 			</ul>
 
 

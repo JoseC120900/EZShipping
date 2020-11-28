@@ -18,7 +18,7 @@
 
 <body id="bootstrap-overrides">
 	<header th:replace="layout/layout :: header"></header>
-<section class="BackGrTarjetas">
+<section class="BackGrEnvios">
 	<main style="margin-top: 100px; margin-left: 50px;">
 
 		<!-- comentario............................ -->
@@ -36,6 +36,7 @@
 			<h3 class="text-light bg-warning">&nbsp; Últimos</h3>
 
 			<ul id="lista-envios">
+			
 				<li th:each="envio : ${ultimos}">
 					<div class="card" style="width: 18rem;">
 
@@ -49,14 +50,14 @@
 								<span>Código: &nbsp;</span><a th:href="@{'/lista_envios/view-' + ${envio.id}}"
 									th:text="${envio.id}"></a>
 							</h5>
-							<p class="card-text">
+							<span th:if="${envio.getEstadoEnvios().size()>0}"><p class="card-text">
 								<span>Estado: &nbsp;</span><span
 									th:text="${envio.getEstadoEnvios().get(envio.getEstadoEnvios().size()-1).getEstado().getNombre()}"></span>
 							</p>
 							<p class="card-text">
 								<span>Fecha: &nbsp;</span><span
 									th:text="${envio.getEstadoEnvios().get(envio.getEstadoEnvios().size()-1).getFechaEstadoPedido()}"></span>
-							</p>
+							</p></span>
 
 
 							<a th:href="@{'/lista_envios/view-' + ${envio.id}}" class="btn btn-warning">Ver más</a>
@@ -69,7 +70,8 @@
 			<h3 class="text-light bg-warning">&nbsp; Más envíos</h3>
 
 
-			<ul id="lista-envios">
+			<ul id="lista-envios" >
+			<div class="break">
 				<li th:each="envio : ${envios}">
 					<div class="card" style="width: 18rem;">
 						<img th:src="@{${envio.getUrlImagen()}}" class="img-fluid" alt="Imagen envio">
@@ -78,20 +80,20 @@
 								<span>Código: &nbsp;</span><a th:href="@{'/lista_envios/view-' + ${envio.id}}"
 									th:text="${envio.id}"></a>
 							</h5>
-							<p class="card-text">
+							<span th:if="${envio.getEstadoEnvios().size()>0}"><p class="card-text">
 								<span>Estado: &nbsp;</span><span
 									th:text="${envio.getEstadoEnvios().get(envio.getEstadoEnvios().size()-1).getEstado().getNombre()}"></span>
 							</p>
 							<p class="card-text">
 								<span>Fecha: &nbsp;</span><span
 									th:text="${envio.getEstadoEnvios().get(envio.getEstadoEnvios().size()-1).getFechaEstadoPedido()}"></span>
-							</p>
+							</p></span>
 
 
 							<a th:href="@{'/lista_envios/view-' + ${envio.id}}" class="btn btn-warning">Ver más</a>
 						</div>
 					</div>
-				</li>
+				</li></div>
 			</ul>
 
 
