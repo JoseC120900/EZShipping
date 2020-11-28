@@ -8,7 +8,7 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	<link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
-	<link th:href="@{css/style.css}" rel="stylesheet">
+	<link th:href="@{css/styleKeiji.css}" rel="stylesheet">
 	<link th:href="@{css/styleControl.css}" rel="stylesheet">
 	<link rel="stylesheet" th:href="@{css/bootstrap.min.css}">
 	<link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
@@ -21,16 +21,16 @@
 	<header th:fragment="header">
 		<nav class="navbar mynav">
 			<a class="navbar-brand" href="#">
-				<div class="logo">
+				<div class="logo" style="font-family: 'Cabin', sans-serif;">
 					<img th:src="@{/images/logo.jpg}" width="50" height="50"
 						class="d-inline-block align-top" alt="" loading="lazy">
 					EZShipping
 				</div>
 			</a>
 
-			<ul class="nav-links">
+			<ul class="nav-links" style="font-family: 'Cabin', sans-serif;">
 				<li>
-					<a href="/">Inicio</a>
+					<a href="/" >Inicio</a>
 				</li>
 				<li class="nav-item" sec:authorize="hasRole('ROLE_ADMIN')">
 					<a href="/administrar">Administrar</a>
@@ -47,7 +47,7 @@
 				<i class="fas fa-user"></i> Iniciar Sesión
 			</a>
 			<ul sec:authorize="isAuthenticated()" class="navbar-nav" style="margin-right: 50px; ">
-				<li class="nav-item dropdown">
+				<li class="nav-item dropdown" style="margin-top: 0;">
 					<a class="btn btn-outline-info dropdown-toggle" id="navbarDropdown" role="button"
 						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						<i class="fas fa-user-circle" style="margin-right: 10px;"></i><span
@@ -95,7 +95,7 @@
 					<div class="row">
 						<div class="col-sm-6 col-md-12 col-lg-6">
 							<p>
-								<a href="/terminos" class="text_footer-href">Términos y condiciones</a>
+								<a href="/terminos" class="text_footer-href" style="color: white;">Términos y condiciones</a>
 							</p>
 						</div>
 						<div class="col-sm-6 col-md-12 col-lg-6">

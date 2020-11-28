@@ -294,7 +294,16 @@ p {
 
 .BackGrTerminos {
 	width: 100%;
-	height: 978px;
+	height: 737px;
+	position: relative;
+	overflow: hidden;
+	background: url(my_background.png);
+	background-size: cover;
+}
+
+.BackGrTarjetas {
+	width: 100%;
+	height: 1200px;
 	position: relative;
 	overflow: hidden;
 	background: url(my_background.png);
@@ -311,27 +320,27 @@ p {
 }
 
 @font-face {
-	font-family: "BerkshireSwash-Regular";
+	font-family: 'Cabin', sans-serif;
 	src: url('Fonts/BerkshireSwash-Regular.ttf');
 }
 
 @font-face {
-	font-family: "FiraSans-Regular";
+	font-family: 'Cabin', sans-serif;
 	src: url('Fonts/FiraSans-Regular.ttf');
 }
 
 td {
-	font-family: FiraSans-Regular;
+	font-family: 'Cabin', sans-serif;
 }
 
 a {
-	font-family: FiraSans-Regular;
+	font-family: 'Cabin', sans-serif;
 }
 
 body, html {
 	height: 100%;
 	margin: 0;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: 'Cabin', sans-serif;
 }
 
 * {
@@ -367,7 +376,7 @@ body, html {
 	width: 80%;
 	padding: 20px;
 	text-align: center;
-	height: 700px;
+	height: 2750px;
 }
 
 .bg-textcontacto {
@@ -667,7 +676,7 @@ form > input, form > textarea, form > label {
 }
 
 .bodyadmin {
-  font-family: "Lato", sans-serif;
+  font-family: 'Cabin', sans-serif;
 }
 
 .sidenav {
@@ -1064,3 +1073,67 @@ a.button:hover{
 }
 
 
+/*---------
+	banner
+----------*/
+.hero-image {
+	/*fondo oscuro*/
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+		url("membresias-banner.png");
+	/* position e imagen centrada */
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.hero-text {
+	position: relative;
+	top: 50%;
+	left: 50%;
+	text-align: center;
+	transform: translate(-50%, -30%);
+	color: white;
+	left: 50%;
+	font-family: 'Cabin', sans-serif;
+}
+
+.hero-text button {
+	border: none;
+	outline: 0;
+	display: inline-block;
+	padding: 10px 25px;
+	color: black;
+	background-color: #D8AF1A;
+	text-align: center;
+	cursor: pointer;
+	border-radius: 8px;
+}
+
+.hero-text button:hover {
+	background-color: #b48f46;
+	color: white;
+}
+
+@media (min-width: 1080px) {
+  .navbar-expand-custom {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+  .navbar-expand-custom .navbar-nav {
+    flex-direction: row;
+  }
+  .navbar-expand-custom .navbar-nav .nav-link {
+    padding-right: .5rem;
+    padding-left: .5rem;
+  }
+  .navbar-expand-custom .navbar-collapse {
+    display: flex!important;
+  }
+  .navbar-expand-custom .navbar-toggler {
+    display: none;
+  }
+  .navbar-expand-custom .navbar-nav .dropdown-menu {
+    position:absolute;
+  }
+}
