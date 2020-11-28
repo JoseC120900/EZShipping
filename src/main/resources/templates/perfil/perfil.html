@@ -77,9 +77,9 @@
 
 
 					<!-- Modal -->
-					<div class="modal modalAnimate fade" id="myModal" tabindex="-1"
-						role="dialog" aria-labelledby="myModal" aria-hidden="true"
-						data-animation-in="fadeInLeft" data-animation-out="bounceOut">
+					<div class="modal modalAnimate fade" id="myModal" tabindex="-1" role="dialog"
+						aria-labelledby="myModal" aria-hidden="true" data-animation-in="fadeInLeft"
+						data-animation-out="bounceOut">
 						<div class="modal-dialog modal-dialog-centered" role="document">
 							<div class="modal-dialog">
 								<div class="modal-content">
@@ -107,14 +107,14 @@
 														placeholder="Apellido">
 												</div>
 												<div>
-													<label for="name">Fecha de contratación: </label> <input
-														type="text" th:field="*{trabajador.fechaContratacion}"
-														id="name" placeholder="Fecha de contratación">
+													<label for="name">Fecha de contratación: </label> <input type="text"
+														th:field="*{trabajador.fechaContratacion}" id="name"
+														placeholder="Fecha de contratación">
 												</div>
 												<div>
-													<label for="name">Correo electrónico: </label> <input
-														type="text" th:field="*{trabajador.persona.email}"
-														id="name" placeholder="Correo electrónico">
+													<label for="name">Correo electrónico: </label> <input type="text"
+														th:field="*{trabajador.persona.email}" id="name"
+														placeholder="Correo electrónico">
 												</div>
 											</form>
 										</div>
@@ -130,31 +130,30 @@
 
 								</div>
 
-									<!-- Modal footer -->
-									<div class="modal-footer">
-										<button type="button" class="btn btn-danger"
-											data-dismiss="modal">Cerrar</button>
-									</div>
+								<!-- Modal footer -->
+								<div class="modal-footer">
+									<button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
 								</div>
 							</div>
 						</div>
 					</div>
+				</div>
 
-					<script>
+				<script>
 
 					function modalAnimation(animation) {
-					  $('.modal .modal-dialog').attr('class', 'modal-dialog  ' + animation + ' animated');
+						$('.modal .modal-dialog').attr('class', 'modal-dialog  ' + animation + ' animated');
 					};
 					$('.modalAnimate').on('show.bs.modal', function (e) {
-					  var anim = $(this).attr('data-animation-in');
-					  modalAnimation(anim);
+						var anim = $(this).attr('data-animation-in');
+						modalAnimation(anim);
 					});
 					$('.modalAnimate').on('hide.bs.modal', function (e) {
-					  var anim = $(this).attr('data-animation-out');
-					  modalAnimation(anim);
+						var anim = $(this).attr('data-animation-out');
+						modalAnimation(anim);
 					});
-					</script>
-				</div>
+				</script>
+			</div>
 			</div>
 
 		</section>

@@ -65,7 +65,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 				.antMatchers("/envio/new/detail/confirm").hasRole("CUSTOMER")
 //				--------jose--------
 				 .antMatchers("/reclamos").authenticated()
-				 .antMatchers("/membresias/index").hasRole("CUSTOMER")
+				 .antMatchers("/membresias").hasRole("CUSTOMER")
 				 .antMatchers("/membresias/view-Gold").hasRole("CUSTOMER")
 				 .antMatchers("/membresias/view-Black").hasRole("CUSTOMER")
 				 .antMatchers("/membresias/view-Silver").hasRole("CUSTOMER")

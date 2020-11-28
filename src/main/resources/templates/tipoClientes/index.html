@@ -6,7 +6,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	<link th:href="@{css/style.css}" rel="stylesheet">
+	<link th:href="@{css/styleKeiji.css}" rel="stylesheet">
 	<link th:href="@{css/styleMembresias.css}" rel="stylesheet">
 	<link th:href="@{css/styleControl.css}" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
@@ -18,16 +18,18 @@
 <body id="bootstrap-overrides">
 	<header th:replace="layout/layout :: header"></header>
 
-	<section class="BackGr">
+	<section class="BackGrTerminos">
 
-		<div class="contenido-saludo">
-			<h1 class="encabezado-membresia">
-				Bienvenido Dylan!
-			</h1>
+		<div th:if="${{#authentication.getPrincipal().getSegmento()}} == 'CLIENTE'">
+			<div class="contenido-saludo">
+				<h1 class="encabezado-membresia">
+					Bienvenido <span th:text="${cliente.persona.nombre}"></span>
+				</h1>
 
-			<h2 class="encabezado-marketing">
-				Es tiempo de crecer, elige tu membresía EZShipping
-			</h2>
+				<h2 class="encabezado-marketing">
+					Es tiempo de crecer, elige tu membresía EZShipping
+				</h2>
+			</div>
 		</div>
 
 		<div class="container">
