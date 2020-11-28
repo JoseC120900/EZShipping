@@ -66,8 +66,19 @@ public class Envio {
 
 	@OneToMany(mappedBy = "envio")
 	private List<Paquete> paquetes;
+	
+	@Column(name="url_imagen",length=50)
+	private String urlImagen;
 
 	
+
+	public String getUrlImagen() {
+		return urlImagen;
+	}
+
+	public void setUrlImagen(String urlImagen) {
+		this.urlImagen = urlImagen;
+	}
 
 	public Envio() {
 		estadoEnvios = new ArrayList<EstadoEnvio>();
