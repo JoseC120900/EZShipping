@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+ <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link th:href="@{../../css/style.css}" rel="stylesheet">
+     <link th:href="@{../../css/styleControl.css}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{../../css/bootstrap.min.css}">
+
+    <title>EZShipping</title>
+  </head>
+<body id="bootstrap-overrides">
+	<nav class="navbar mynav">
+		<div class="logo">
+			<h4>EZShipping</h4>
+		</div>
+		<ul class="nav-links">
+			<li><a href="/">Inicio</a></li>
+			<li><a href="#">Nosotros</a></li>
+			<li><a href="#">Servicios</a></li>
+			<li><a href="#">Contáctanos</a></li>
+
+		</ul>
+		<div class="burger">
+			<div class="line1"></div>
+			<div class="line2"></div>
+			<div class="line3"></div>
+		</div>
+	</nav>
+	<section class="BackGr">
+		<h1 class="differH">			
+			Confirmar envío
+		</h1>
+
+		<form class="differ" th:object="${envio}" th:action="@{/envio/back}">
+            <div class="shadow container reScale">
+            <div class="row">
+            <div class="col-sm-3 col-md-3 col-lg-6">            	
+            	<p>Para: </p>	
+            	<input type="text" class="form-control" placeholder="Nombre del destinatario" th:field="*{nombreDestinatario}" readonly>		
+            	<p>Dirección de origen: </p>	
+            	<input type="text" class="form-control" placeholder="Dirección de origen" th:field="*{direccionOrigen}" readonly>		
+            	<p>Dirección de destino: </p>	
+            	<input type="text" class="form-control" placeholder="Dirección de destino" th:field="*{direccionDestino}" readonly>		
+           	</div> 
+           	      
+           	<div class="col-sm-3 col-md-3 col-lg-6">   
+            	<p>Cliente: </p>	
+            	<input type="text" class="form-control" value="1" th:field="*{cliente.persona.nombre}" readonly>	           
+            	<p>Tarjeta Utilizada: </p>	
+            	<input type="text" class="form-control" value="1" th:field="*{tarjeta.nroTarjeta}" readonly>	                    
+            	<p>Courier Asignado: </p>
+            	<input type="text" class="form-control" value="1" th:field="*{trabajador.persona.nombre}" readonly>
+            	<p>Monto del envío: </p>
+            	<input type="text" class="form-control" value="1" th:field="*{monto}" readonly>
+            	<p>Código de Rastreo del envío: </p>
+            	<input type="text" class="form-control" value="1" th:field="*{codigoRastreo}" readonly>	 
+            	
+            </div>       
+            </div>
+            	<button class="badge badge-success differB" type="submit">
+            		Continuar
+            	</button>
+            </div>
+        </form>	  
+        	        
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+	<script th:src="@{js/app.js}"></script>
+	
+  </body>
+  <script>
+	
+  </script>
+  <style>
+  .differH{
+  	margin-left: 30px;
+  }
+  .differB{
+  	margin-top: 30px;
+  }
+  .reScale{
+  	height: 720px; important; 
+  	width: 2000px; important;
+  	margin-left: 0px; important; 
+  }
+  </style>
+</html>
