@@ -256,6 +256,10 @@ p {
 	background-size: cover;
 }
 
+a:hover {
+  color: orange;
+}
+
 /*---------
 	footer
 ----------*/
