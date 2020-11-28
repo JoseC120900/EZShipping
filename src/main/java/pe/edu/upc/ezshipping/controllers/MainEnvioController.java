@@ -3,7 +3,9 @@ package pe.edu.upc.ezshipping.controllers;
 import java.util.ArrayList;
 import java.util.Optional;
 
+import org.springframework.security.core.Authentication;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -16,10 +18,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
+import pe.edu.upc.ezshipping.security.UsuarioDetails;
+import pe.edu.upc.ezshipping.models.entities.Cliente;
 import pe.edu.upc.ezshipping.models.entities.Envio;
 import pe.edu.upc.ezshipping.models.entities.Paquete;
 import pe.edu.upc.ezshipping.models.entities.Tarjeta;
 import pe.edu.upc.ezshipping.models.entities.Trabajador;
+import pe.edu.upc.ezshipping.services.ClienteService;
 import pe.edu.upc.ezshipping.services.EnvioService;
 import pe.edu.upc.ezshipping.services.PaqueteService;
 import pe.edu.upc.ezshipping.services.TarjetaService;
@@ -41,12 +46,30 @@ public class MainEnvioController {
 	
 	@Autowired
 	private PaqueteService paqueteService;
+	
+	@Autowired
+	private ClienteService clienteService;
 		
 	//para el main page
 	@GetMapping("/new")
 	public String nuevo(Model model) {	
 		Envio envio = new Envio();
-		envio.setMonto((float) 0);;
+		envio.setMonto((float) 0);
+		
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		UsuarioDetails usuarioDetails = (UsuarioDetails) authentication.getPrincipal();
+		
+		try {
+			Optional<Cliente> optional = clienteService.findById(usuarioDetails.getIdSegmento());
+			if(optional.isPresent()) {
+				envio.setCliente(optional.get());
+				model.addAttribute("cliente", optional.get());
+			}
+		} catch (Exception e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}		
+				
 		
 		ArrayList<Tarjeta> tarjetas = new ArrayList<Tarjeta>();
 		ArrayList<Trabajador> trabajadores = new ArrayList<Trabajador>();
@@ -60,11 +83,7 @@ public class MainEnvioController {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}			
-		
-		if(tarjetas.isEmpty()) {
-			return "/precios";
-		}
+		}					
 		
 		//Get trabajador aleatorio
 		try {
@@ -75,12 +94,12 @@ public class MainEnvioController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		trabajadorAleatorio = trabajadores.get(0);		
+		
 		int random_number =  (int) (Math.random() * (999 - 100 + 1) + 100);		
 		String new_code = "UPC2020"+ String.valueOf(random_number);
 		envio.setCodigoRastreo(new_code);
 		
-		model.addAttribute("trabajador", trabajadorAleatorio);
+		model.addAttribute("trabajador", trabajadores);
 		model.addAttribute("tarjetas", tarjetas);
 		model.addAttribute("envio", envio);
 		return "/generate-envio/nuevo";

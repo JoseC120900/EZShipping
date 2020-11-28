@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
  <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -35,7 +35,7 @@
 			Realizar un envío
 		</h1>
 
-		<form class="differ" th:action="@{/envio/detail/}" th:object="${envio}" method="post">
+		<form class="differ" th:action="@{/envio/detail/}" th:object="${envio}" method="post" th:if="${{#authentication.getPrincipal().getSegmento()}} == 'CLIENTE'">
             <div class="shadow container reScale">
             <div class="row">
             <div class="col-sm-3 col-md-3 col-lg-6">            	
@@ -49,7 +49,9 @@
            	      
            	<div class="col-sm-3 col-md-3 col-lg-6">   
             	<p>Cliente: </p>	
-            	<input type="text" class="form-control" value="1" th:field="*{clienteId}">	           
+            	<select th:field="*{cliente}" class="form-control">            		
+            		<option th:each="Cliente : ${cliente}" th:value="${Cliente.id}" th:text="${cliente.persona.nombre} + ' ' + ${cliente.persona.apellido}"> </option>
+            	</select>               
             	<p>Tarjeta: </p>	
             	<select th:field="*{tarjeta}" class="form-control">
             		<option value="" > Seleccione Tarjeta </option>

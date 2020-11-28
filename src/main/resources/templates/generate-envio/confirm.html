@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
  <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -50,18 +50,18 @@
            	<div class="col-sm-3 col-md-3 col-lg-6">   
             	<p>Cliente: </p>	
             	<input type="text" class="form-control" value="1" th:field="*{cliente.persona.nombre}" readonly>	           
-            	<p>Tarjeta: </p>	
+            	<p>Tarjeta Utilizada: </p>	
             	<input type="text" class="form-control" value="1" th:field="*{tarjeta.nroTarjeta}" readonly>	                    
-            	<p>Couriers Disponibles: </p>
+            	<p>Courier Asignado: </p>
             	<input type="text" class="form-control" value="1" th:field="*{trabajador.persona.nombre}" readonly>
-            	<p>Monto: </p>
+            	<p>Monto del envío: </p>
             	<input type="text" class="form-control" value="1" th:field="*{monto}" readonly>
             	<p>Código de Rastreo del envío: </p>
             	<input type="text" class="form-control" value="1" th:field="*{codigoRastreo}" readonly>	 
             	
             </div>       
             </div>
-            	<button class="badge badge-success differB" type="button">
+            	<button class="badge badge-success differB" type="submit">
             		Continuar
             	</button>
             </div>
