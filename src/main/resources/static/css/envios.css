@@ -1,0 +1,47 @@
+#lista-envios{
+	
+	padding-left:0px;
+	display:flex;
+	list-style:none;
+}
+
+#lista-enviopaquetes{
+	list-style:none;
+}
+#card-envio{
+	padding-left:0px;
+	display:flex;
+	list-style:none;
+}
+
+
+
+#view-Courier{
+	display:flex;
+	margin-left:20px;
+	align-items:start;
+	justify-content:center;
+}
+
+.card{
+	margin: 15px;
+}
+
+#button{
+	border:none;
+	outline:0;
+	display:inline-block;
+	padding:10px 25px;
+	color: black;
+	background color: #D8AF1A;
+	text-align:center;
+	cursor:pointer;
+	border-radius:8px;
+	
+	
+}
+
+#button:hover{
+	background-color:#b48f46;
+	color:white;
+}

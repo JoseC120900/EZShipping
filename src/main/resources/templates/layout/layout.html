@@ -1,17 +1,20 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 <head th:fragment="head">
-	<!-- Required meta tags -->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	<link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
-	<link th:href="@{css/style.css}" rel="stylesheet">
-	<link th:href="@{css/styleControl.css}" rel="stylesheet">
-	<link rel="stylesheet" th:href="@{css/bootstrap.min.css}">
+<link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap"
+	rel="stylesheet">
+<link rel="stylesheet" th:href="@{/css/style.css}">
+<link rel="stylesheet" th:href="@{/css/styleControl.css}">
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+<link rel="stylesheet" th:href="@{/css/envios.css}">
 
-	<title>EZShipping</title>
+<title>EZShipping</title>
 </head>
 
 <body id="bootstrap-overrides">
@@ -19,8 +22,8 @@
 		<nav class="navbar mynav">
 			<a class="navbar-brand" href="#">
 				<div class="logo">
-					<img th:src="@{/images/logo.jpg}" width="50" height="50" class="d-inline-block align-top" alt=""
-						loading="lazy">
+					<img th:src="@{/images/logo.jpg}" width="50" height="50"
+						class="d-inline-block align-top" alt="" loading="lazy">
 					EZShipping
 				</div>
 			</a>
@@ -57,8 +60,10 @@
 								<div class="row">
 									<div class="col-sm-12 col-md-12 col-lg-12">
 										<img src="/images/footer/visa.png" width="70px" height="50px">
-										<img src="/images/footer/mastercard.png" width="70px" height="50px">
-										<img src="/images/footer/americanexpress.png" width="70px" height="50px">
+										<img src="/images/footer/mastercard.png" width="70px"
+											height="50px"> <img
+											src="/images/footer/americanexpress.png" width="70px"
+											height="50px">
 									</div>
 								</div>
 							</div>
