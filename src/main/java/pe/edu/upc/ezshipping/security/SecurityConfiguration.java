@@ -73,6 +73,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 				 .antMatchers("/tarjetas").hasRole("CUSTOMER")
 				 .antMatchers("/filtrarFechasClientes").hasRole("ADMIN")
 				 .antMatchers("/sobreNosotros").permitAll()
+				 .antMatchers("/contacto").hasRole("CUSTOMER")
 				.and()
 					.formLogin()
 						.loginProcessingUrl("/signin") //iniciar sesion

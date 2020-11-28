@@ -2,10 +2,9 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 <head th:fragment="head">
-<!-- Required meta tags -->
-<meta charset="utf-8">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	<link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
 	<link th:href="@{css/styleKeiji.css}" rel="stylesheet">
@@ -13,8 +12,7 @@
 	<link rel="stylesheet" th:href="@{css/bootstrap.min.css}">
 	<link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
 
-
-<title>EZShipping</title>
+	<title>EZShipping</title>
 </head>
 
 <body id="bootstrap-overrides">
@@ -22,15 +20,15 @@
 		<nav class="navbar mynav">
 			<a class="navbar-brand" href="#">
 				<div class="logo" style="font-family: 'Cabin', sans-serif;">
-					<img th:src="@{/images/logo.jpg}" width="50" height="50"
-						class="d-inline-block align-top" alt="" loading="lazy">
+					<img th:src="@{/images/logo.jpg}" width="50" height="50" class="d-inline-block align-top" alt=""
+						loading="lazy">
 					EZShipping
 				</div>
 			</a>
 
 			<ul class="nav-links" style="font-family: 'Cabin', sans-serif;">
 				<li>
-					<a href="/" >Inicio</a>
+					<a href="/">Inicio</a>
 				</li>
 				<li class="nav-item" sec:authorize="hasRole('ROLE_ADMIN')">
 					<a href="/administrar">Administrar</a>
@@ -64,7 +62,7 @@
 							<i class="fas fa-box-open"></i> Ver historial de entregas
 						</a>
 						<div class="dropdown-divider"></div>
-						<a class="dropdown-item" th:href="@{/logout}"> 
+						<a class="dropdown-item" th:href="@{/logout}">
 							<i class="fas fa-sign-out-alt"></i>Salir
 						</a>
 					</div>
@@ -95,7 +93,8 @@
 					<div class="row">
 						<div class="col-sm-6 col-md-12 col-lg-6">
 							<p>
-								<a href="/terminos" class="text_footer-href" style="color: white;">Términos y condiciones</a>
+								<a href="/terminos" class="text_footer-href" style="color: white;">Términos y
+									condiciones</a>
 							</p>
 						</div>
 						<div class="col-sm-6 col-md-12 col-lg-6">
@@ -104,10 +103,8 @@
 								<div class="row">
 									<div class="col-sm-12 col-md-12 col-lg-12">
 										<img src="/images/footer/visa.png" width="70px" height="50px">
-										<img src="/images/footer/mastercard.png" width="70px"
-											height="50px"> <img
-											src="/images/footer/americanexpress.png" width="70px"
-											height="50px">
+										<img src="/images/footer/mastercard.png" width="70px" height="50px"> <img
+											src="/images/footer/americanexpress.png" width="70px" height="50px">
 									</div>
 								</div>
 							</div>

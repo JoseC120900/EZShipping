@@ -1,204 +1,351 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security"> 
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
-    <link th:href="@{css/styleKeiji.css}" rel="stylesheet">
-     <link th:href="@{css/styleControl.css}" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
-    <link rel="stylesheet" th:href="@{css/bootstrap.min.css}">
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>EZShipping</title>
-  </head>
-  <body id="bootstrap-overrides">
+	<link th:href="@{css/styleKeiji.css}" rel="stylesheet">
+	<link th:href="@{css/styleControl.css}" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
+	<link rel="stylesheet" th:href="@{css/bootstrap.min.css}">
+	<link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+
+	<title>EZShipping</title>
+</head>
+
+<body id="bootstrap-overrides">
 	<header th:replace="layout/layout :: header"></header>
 	<section class="BackGr">
 		<div class="bg-text">
 			<center>
-			<form>
-				<table>
-					<tr>
-						<h1><b>TÉRMINOS Y CONDICIONES CLIENTE GOLD</b></h1>
-					</tr>
-				</table>
-			</form>
-			<form>
-				<table>
-					<tr>
-						<h4 style="text-align: left;"><b>Definiciones</b></h4>
-						<td>En esta Guía aérea, “nosotros”, “nuestro/a” y “EZShipping” se refieren a Federal Express Corporation, sus subsidiarias, sucursales y entidades controladas, y a sus respectivos empleados, representantes y contratistas independientes. “Tú”, “tu” y "tuyo" se refieren al remitente y a sus empleados, directivos y representantes. Si tu envío se origina fuera de los Estados Unidos, tu contrato de transporte se celebra con la subsidiaria, sucursal, entidad controlada o el contratista independiente de EZShipping que acepta tu envío originalmente.</td>
-					</tr>
-					<tr>
-						<td>"Paquete” significa cualquier recipiente o sobre que nosotros aceptamos para ser entregado, incluido cualquier artículo que presentes mediante la utilización de nuestros sistemas automatizados, medidores, manifiestos o guías aéreas. “Envío” significa todos los paquetes presentados a nosotros y aceptados por nosotros bajo una sola Guía aérea.</td>
-					</tr>
-				</table>
-			</form>
-			<form>
-				<table>
-					<tr>
-						<h4 style="text-align: left;"><b>Aceptación de los Términos</b></h4>
-						<td>Conformidad con los términos al entregarnos tu envío, aceptas, independientemente de si firmas o no el frente de esta Guía aérea, para ti mismo o como agente y en nombre de otra persona, que tienes un interés en este envío, todos los términos de esta Guía aérea NO NEGOCIABLE y, según corresponda, todos los términos en cualquier acuerdo servicios de transporte celebrado entre EZShipping y tú que cubra este envío, en cualquier tarifa aplicable y en nuestra Guía de Servicios o Condiciones Generales de Transporte actuales, copias de las cuales están disponibles a pedido. Si existen contradicciones entre la Guía aérea y dichos documentos vigentes, regirán el acuerdo de transporte, la tarifa, la Guía de Servicios o las Condiciones Generales de Transporte, en dicho orden de prioridad. Ninguna persona está autorizada a alterar o modificar los términos de nuestro acuerdo. Esta Guía aérea será vinculante para nosotros cuando se acepte el envío; podemos marcar esta Guía aérea con un número de empleado como nuestra firma, o nuestro nombre impreso será suficiente para representar nuestra firma de esta Guía aérea.</td>
-					</tr>
-				</table>
-			</form>
-			<form>
-				<table>
-					<tr>
-						<h4 style="text-align: left;"><b>Tus Obligaciones</b></h4>
-						<td>Garantizas que todos los artículos en el envío están descritos apropiadamente en esta Guía aérea y cualquier documento de exportación, y que son artículos aceptables para su transporte por parte nuestra, y que el envío esté debidamente identificado, dirigido (incluido el código postal) y empacado para asegurar un transporte seguro con un cuidado razonable en su manejo. Eres responsable de todos los cargos y posibles recargos, derechos aduaneros y tasas fiscales, que incluyen honorarios relacionados con nuestro pago anticipado de las mismas, sanciones y multas del gobierno, impuestos y honorarios de abogados y costos legales, relacionados con este envío.</td>
-					</tr>
-				</table>
-			</form>
-			<form>
-				<table>
-					<tr>
-						<h4 style="text-align: left;"><b>Transporte Terrestre</b></h4>
-						<td>Debes tener en cuenta que los envíos transportados parcial o exclusivamente por tierra, ya sea que haya o no un acuerdo explícito para hacerlo, hacia o desde un país signatario de la Convención sobre el Contrato para el Transporte Internacional de Mercancías por Tierra (el “CMR”), están sujetos a los términos y condiciones del CMR, no obstante cualquier otra disposición a la que haga referencia o se encuentre en la Guía aérea que indique lo contrario, excepto que las limitaciones superiores de responsabilidad definidas en estas condiciones sigan siendo aplicables contrariamente a lo que se indica en el CMR.</td>
-					</tr>
-				</table>
-			</form>
-			<form>
-				<table>
-					<tr>
-						<h4 style="text-align: left;"><b>Límite de Responsabilidad</b></h4>
-						<td>De no estar regulada por la Convención de Varsovia, el CMR u otros tratados internacionales, leyes, otras regulaciones, órdenes o requisitos gubernamentales, nuestra máxima responsabilidad por daño, pérdida, retraso, entrega incompleta, entrega equivocada, falta de entrega, información errónea u omisión de información en relación con tu envío se limita por esta Guía aérea a 100 USD por envío o 9.07 USD por libra (20 USD) por kilogramo) (o el equivalente en su moneda local), lo que sea mayor, a menos que declares un valor superior del transporte, como se describe más adelante.</td>
-					</tr>
-					<tr>
-						<td>Si declaras un valor superior, debes pagar un cargo adicional por cada 100 USD (o el equivalente en moneda local) adicionales del valor declarado para transporte. Llámanos o consulta nuestras listas de tarifas en el momento del envío con el fin de obtener información sobre dicho cargo adicional.</td>
-					</tr>
-					<tr>
-						<td>Si declaras un valor superior del transporte y pagas el cargo adicional, nuestra máxima responsabilidad corresponderá al valor declarado para el transporte o los daños reales, el que sea menor. No ofrecemos seguros de responsabilidad civil por carga ni seguros contra todo riesgo.</td>
-					</tr>
-				</table>
-			</form>
-			<form>
-				<table>
-					<tr>
-						<h4 style="text-align: left;"><b>Límites de valor declarado</b></h4>
-						<td>El valor declarado más alto que permitimos para un envío a través de EZShipping Envelope o EZShipping Pak es 100 USD o 9.07 USD por libra (20USD por kilogramo) (o el equivalente en su moneda local), lo que sea mayor. Para otros envíos, en particular envíos de valor extraordinario, incluidos, entre otros, joyas, obras de arte, antigüedades, metales preciosos y pieles o abrigos de pieles, el valor declarado de transporte es limitado y depende del contenido y el destino del envío.</td>
-					</tr>
-					<tr>
-						<td>Consulta la Guía de Servicios, nuestras Condiciones generales de transporte o cualquier tarifa aplicable para obtener más información acerca de los límites del valor declarado.</td>
-					</tr>
-					<tr>
-						<td>Si envías más de un paquete usando una sola Guía Aérea, el valor declarado para transporte de cada paquete se determinará dividiendo el valor total declarado para transporte por la cantidad de paquetes del envío.</td>
-					</tr>
-				</table>
-			</form>
-			<form>
-				<table>
-					<tr>
-						<h4 style="text-align: left;"><b>Responsabilidades que no asumimos</b></h4>
-						<td>SUJETO A LAS CONDICIONES DEL SERVICIO CONTENIDAS EN ESTA GUÍA AÉREA, ANTE CUALQUIER TARIFA APLICABLE, NUESTRA GUÍA DE SERVICIOS O NUESTRAS CONDICIONES GENERALES DE TRANSPORTE, NO SEREMOS RESPONSABLES POR DAÑOS, YA SEAN DIRECTOS, ACCIDENTALES, ESPECIALES O CONSECUENTES, QUE SUPEREN EL VALOR DECLARADO DE 100 USD O 9.07 USD POR LIBRA (20 USD POR KILOGRAMO) (O EL EQUIVALENTE EN SU MONEDA LOCAL), LO QUE SEA MAYOR, INDEPENDIENTEMENTE DE SI SABÍAMOS O DEBERÍAMOS HABER SABIDO QUE SE PODÍAN PRODUCIR DICHOS DAÑOS, LO QUE INCLUYE, A MODO DE EJEMPLO, PÉRDIDA DE INGRESOS O GANANCIAS.</td>
-					</tr>
-					<tr>
-						<td>No seremos responsables de tus actos u omisiones, lo que incluye, a modo de ejemplo, la declaración incorrecta de la carga, los errores o deficiencias en el embalaje, en la protección, en el marcado o en la dirección del envío, o las acciones u omisiones del destinatario o de cualquier otra persona interesada en el envío. Asimismo, no seremos responsables si tú o el destinatario violan cualquiera de los términos de nuestro acuerdo. No seremos responsables por pérdidas, daños, retrasos, entregas incompletas, entregas equivocadas, falta de entrega, información errónea u omisión de suministro de información en relación con envíos de dinero en efectivo, divisas o cualquier otro artículo prohibido.</td>
-					</tr>
-					<tr>
-						<td>No seremos responsables por pérdidas, daños, retrasos, entregas incompletas, entregas erróneas, falta de entrega, información errónea u omisión de suministro de información en relación con tu envío que hubiera sido causado por circunstancias fuera de nuestro control, lo que incluye, a modo de ejemplo, desastres naturales, riesgos aéreos, condiciones climáticas, demoras mecánicas, actos de enemigos públicos, guerras, huelgas, conmociones civiles o acciones u omisiones de autoridades públicas (incluidos funcionarios de aduana y sanitarios) con autoridad real o aparente.</td>
-					</tr>
-				</table>
-			</form>
-			<form>
-				<table>
-					<tr>
-						<h4 style="text-align: left;"><b>Sin garantías</b></h4>
-						<td>No ofrecemos garantías, ni expresas ni implícitas.</td>
-					</tr>
-				</table>
-			</form>
-			<form>
-				<table>
-					<tr>
-						<h4 style="text-align: left;"><b>Reclamos por pérdidas, daños o demoras</b></h4>
-						<td>TODOS LOS RECLAMOS DEBEN HACERSE POR ESCRITO Y DENTRO DE PLAZOS ESTRICTOS. CONSULTA LAS TARIFAS APLICABLES, NUESTRA GUÍA DE SERVICIOS O NUESTRAS CONDICIONES GENERALES DE TRANSPORTE PARA OBTENER MÁS INFORMACIÓN.</td>
-					</tr>
-					<tr>
-						<td>El derecho a iniciar un reclamo por daños y perjuicios contra nosotros se extinguirá a menos que se inicie una acción dentro del período de dos (2) años desde la fecha de entrega del envío o desde la fecha en la que el envío debió haberse entregado.</td>
-					</tr>
-					<tr>
-						<td>Dentro de los veintiún (21) días posteriores a que nos hayas notificado de tu reclamo, este debe ser documentado, para lo cual debes enviarnos toda la información relevante relacionada con tu reclamo. No estamos obligados a actuar respecto de un reclamo hasta que se hayan pagado todos los cargos de transporte; el importe del reclamo no podrá deducirse de dichos cargos.</td>
-					</tr>
-					<tr>
-						<td>Si el destinatario acepta el envío sin dejar registrado ningún daño en el registro de entregas, asumiremos que el envío se entregó en buenas condiciones. Para que nosotros podamos considerar un reclamo por daños, el contenido, la caja de cartón original y el embalaje deben ponerse a nuestra disposición para su inspección.</td>
-					</tr>
-				</table>
-			</form>
-			<form>
-				<table>
-					<tr>
-						<h4 style="text-align: left;"><b>Derecho a inspección</b></h4>
-					</tr>
-					<tr>
-						<td style="text-align: left;">A nuestro criterio o a petición de las autoridades gubernamentales, es posible que tu envío se abra o se someta a inspección por nosotros o dichas autoridades en cualquier momento.</td>
-					</tr>
-				</table>
-			</form>
-			<form>
-				<table>
-					<tr>
-						<h4 style="text-align: left;"><b>Responsabilidad dele pago</b></h4>
-						<td>Incluso si nos proporcionas diferentes instrucciones de pago, serás el principal responsable de todos los cargos, incluidos los gastos de transporte y posibles recargos, derechos aduaneros y tasas fiscales, que incluyen honorarios relacionados con nuestro pago anticipado de las mismas, sanciones y multas del gobierno, y honorarios de abogados y costos legales, relacionados con este envío. También serás responsable de los gastos en los que pudiéramos incurrir al devolverte el envío o al almacenarlo en espera de que se disponga de él.</td>
-					</tr>
-				</table>
-			</form>
-			<form>
-				<table>
-					<tr>
-						<h4 style="text-align: left;"><b>Liberación aduanal</b></h4>
-						<td>Al otorgarnos este envío, por el presente documento nos designas como tu agente y como agente del destinatario, únicamente para efectuar la liberación aduanal, y nos certificas como el destinatario nominal a los efectos de designar un agente aduanal para realizar la liberación aduanal. En algunas instancias, las autoridades locales pueden requerir documentos adicionales para confirmar nuestra designación. Eres responsable de proporcionar la documentación y confirmación adecuadas cuando sea necesario.</td>
-					</tr>
-					<tr>
-						<td>Garantizas y eres responsable del cumplimiento con todas las leyes, reglas y regulaciones aplicables, lo que incluye, a modo de ejemplo, los derechos aduaneros; las leyes de importación, exportación y reexportación; y las regulaciones gubernamentales de cualquier país hacia, desde, a través o sobre el que su envío pueda transportarse. Aceptas presentar dicha información y completar y adjuntar dichos documentos a esta Guía aérea según sea necesario para cumplir con dichas leyes, reglas y regulaciones. No somos responsables ante ti ni ante ninguna otra persona por ninguna pérdida o gasto debido a un incumplimiento de tu parte con esta disposición.</td>
-					</tr>
-					<tr>
-						<td>También eres responsable de todos los cargos, incluidos gastos de transporte y posibles recargos, todos los derechos aduaneros y tasas fiscales, que incluyen honorarios relacionados con nuestro pago anticipado de las mismas, sanciones y multas del gobierno, impuestos y honorarios de abogados y costos legales, relacionados con este envío.</td>
-					</tr>
-				</table>
-			</form>
-			<form>
-				<table>
-					<tr>
-						<h4 style="text-align: left;"><b>Control de exportaciones</b></h4>
-						<td>Autorizas a EZShipping para que actúe como agente de transporte para los fines del control de las exportaciones y los controles aduanales. Certificas por este medio que todas las declaraciones e información contenidas en esta Guía aérea y en documentos anexos relativos a la exportación son veraces y correctas. Más aun, comprendes que podrán imponerse sanciones civiles y penales, incluidos cargos por falsificación y venta, por realizar declaraciones falsas o fraudulentas; por la violación de alguna de las leyes de exportación de los Estados Unidos, incluidas, entre otras, 13 USC Sec. 305; 22 USC Sec. 401; 18 USC Sec. 1001; y 50 USC App. 2410; o por la violación de leyes de exportación de otros países.</td>
-					</tr>
-				</table>
-			</form>
-			<form>
-				<table>
-					<tr>
-						<h4 style="text-align: left;"><b>Carta de instrucción</b></h4>
-						<td>En caso de no completar todos los documentos requeridos para el transporte, o si los documentos que entregas no son apropiados para los servicios o destinos solicitados, nos das la instrucción, por este medio y cuando lo permita la ley, de completar, corregir o reemplazar los documentos en tu nombre o en nombre del destinatario y a tu propia cuenta. Sin embargo, no estamos obligados a hacerlo. Si es necesario emplear un sustituto de la guía aérea para completar la entrega de tu envío y nosotros completamos dicho documento, los términos de esta Guía aérea continuarán seguirán vigentes. No somos responsables ante ti ni ante ninguna otra persona por nuestras acciones en tu nombre de acuerdo con esta disposición.</td>
-					</tr>
-				</table>
-			</form>
-			<form>
-				<table>
-					<tr>
-						<h4 style="text-align: left;"><b>Artículos no aceptables pra el transporte</b></h4>
-						<td>No aceptamos transporte de dinero (que incluye, entre otros, monedas o instrumentos negociables equivalentes a dinero, como bonos o acciones endosados). EXCLUIMOS TODA RESPONSABILIDAD SOBRE EL ENVÍO DE DICHOS ARTÍCULOS ACEPTADOS POR ERROR. Podrán aceptarse otros elementos para el envío solo a destinos limitados o bajo condiciones restringidas. Nos reservamos el derecho de rechazar paquetes sobre la base de estas limitaciones o por motivos de seguridad. Puedes consultar nuestra Guía de servicios, Condiciones generales de transporte o cualquier tarifa aplicable para obtener más información.</td>
-					</tr>
-					<tr>
-						<td>Ley imperativa si alguna disposición contenida o referida en esta Guía aérea es contraria a cualquier tratado internacional, ley, norma gubernamental, orden o requerimiento aplicables, dicha disposición permanecerá en vigencia como parte de nuestro acuerdo en la medida en que no sea invalidada. La invalidez o inaplicabilidad de cualquier disposición no afectará las demás disposiciones contenidas o a las que se hace referencia en la presente Guía aérea.</td>
-					</tr>
-					<tr>
-						<td>Excepto en el caso de que se indique lo contrario, la dirección del remitente que figura en el frente de esta Guía aérea es el lugar de ejecución y de partida, y la dirección del destinatario que figura en el frente de esta Guía aérea es el lugar de destino. Excepto en el caso que se indique lo contrario, el primer transportador de este envío es Federal Express Corporation, P.O. Box 727, Memphis, TN 38194, EE. UU.</td>
-					</tr>
-				</table>
-			</form>
-			<div style="text-align: left; padding-top: 50px;">
-				<button onclick="location.href = '../terminos';" type="button" class="btn btn-info">REGRESAR</button>
-			</div>
+				<form>
+					<table>
+						<tr>
+							<h1><b>TÉRMINOS Y CONDICIONES CLIENTE GOLD</b></h1>
+						</tr>
+					</table>
+				</form>
+				<form>
+					<table>
+						<tr>
+							<h4 style="text-align: left;"><b>Definiciones</b></h4>
+							<td>En esta Guía aérea, “nosotros”, “nuestro/a” y “EZShipping” se refieren a Federal Express
+								Corporation, sus subsidiarias, sucursales y entidades controladas, y a sus respectivos
+								empleados, representantes y contratistas independientes. “Tú”, “tu” y "tuyo" se refieren
+								al remitente y a sus empleados, directivos y representantes. Si tu envío se origina
+								fuera de los Estados Unidos, tu contrato de transporte se celebra con la subsidiaria,
+								sucursal, entidad controlada o el contratista independiente de EZShipping que acepta tu
+								envío originalmente.</td>
+						</tr>
+						<tr>
+							<td>"Paquete” significa cualquier recipiente o sobre que nosotros aceptamos para ser
+								entregado, incluido cualquier artículo que presentes mediante la utilización de nuestros
+								sistemas automatizados, medidores, manifiestos o guías aéreas. “Envío” significa todos
+								los paquetes presentados a nosotros y aceptados por nosotros bajo una sola Guía aérea.
+							</td>
+						</tr>
+					</table>
+				</form>
+				<form>
+					<table>
+						<tr>
+							<h4 style="text-align: left;"><b>Aceptación de los Términos</b></h4>
+							<td>Conformidad con los términos al entregarnos tu envío, aceptas, independientemente de si
+								firmas o no el frente de esta Guía aérea, para ti mismo o como agente y en nombre de
+								otra persona, que tienes un interés en este envío, todos los términos de esta Guía aérea
+								NO NEGOCIABLE y, según corresponda, todos los términos en cualquier acuerdo servicios de
+								transporte celebrado entre EZShipping y tú que cubra este envío, en cualquier tarifa
+								aplicable y en nuestra Guía de Servicios o Condiciones Generales de Transporte actuales,
+								copias de las cuales están disponibles a pedido. Si existen contradicciones entre la
+								Guía aérea y dichos documentos vigentes, regirán el acuerdo de transporte, la tarifa, la
+								Guía de Servicios o las Condiciones Generales de Transporte, en dicho orden de
+								prioridad. Ninguna persona está autorizada a alterar o modificar los términos de nuestro
+								acuerdo. Esta Guía aérea será vinculante para nosotros cuando se acepte el envío;
+								podemos marcar esta Guía aérea con un número de empleado como nuestra firma, o nuestro
+								nombre impreso será suficiente para representar nuestra firma de esta Guía aérea.</td>
+						</tr>
+					</table>
+				</form>
+				<form>
+					<table>
+						<tr>
+							<h4 style="text-align: left;"><b>Tus Obligaciones</b></h4>
+							<td>Garantizas que todos los artículos en el envío están descritos apropiadamente en esta
+								Guía aérea y cualquier documento de exportación, y que son artículos aceptables para su
+								transporte por parte nuestra, y que el envío esté debidamente identificado, dirigido
+								(incluido el código postal) y empacado para asegurar un transporte seguro con un cuidado
+								razonable en su manejo. Eres responsable de todos los cargos y posibles recargos,
+								derechos aduaneros y tasas fiscales, que incluyen honorarios relacionados con nuestro
+								pago anticipado de las mismas, sanciones y multas del gobierno, impuestos y honorarios
+								de abogados y costos legales, relacionados con este envío.</td>
+						</tr>
+					</table>
+				</form>
+				<form>
+					<table>
+						<tr>
+							<h4 style="text-align: left;"><b>Transporte Terrestre</b></h4>
+							<td>Debes tener en cuenta que los envíos transportados parcial o exclusivamente por tierra,
+								ya sea que haya o no un acuerdo explícito para hacerlo, hacia o desde un país signatario
+								de la Convención sobre el Contrato para el Transporte Internacional de Mercancías por
+								Tierra (el “CMR”), están sujetos a los términos y condiciones del CMR, no obstante
+								cualquier otra disposición a la que haga referencia o se encuentre en la Guía aérea que
+								indique lo contrario, excepto que las limitaciones superiores de responsabilidad
+								definidas en estas condiciones sigan siendo aplicables contrariamente a lo que se indica
+								en el CMR.</td>
+						</tr>
+					</table>
+				</form>
+				<form>
+					<table>
+						<tr>
+							<h4 style="text-align: left;"><b>Límite de Responsabilidad</b></h4>
+							<td>De no estar regulada por la Convención de Varsovia, el CMR u otros tratados
+								internacionales, leyes, otras regulaciones, órdenes o requisitos gubernamentales,
+								nuestra máxima responsabilidad por daño, pérdida, retraso, entrega incompleta, entrega
+								equivocada, falta de entrega, información errónea u omisión de información en relación
+								con tu envío se limita por esta Guía aérea a 100 USD por envío o 9.07 USD por libra (20
+								USD) por kilogramo) (o el equivalente en su moneda local), lo que sea mayor, a menos que
+								declares un valor superior del transporte, como se describe más adelante.</td>
+						</tr>
+						<tr>
+							<td>Si declaras un valor superior, debes pagar un cargo adicional por cada 100 USD (o el
+								equivalente en moneda local) adicionales del valor declarado para transporte. Llámanos o
+								consulta nuestras listas de tarifas en el momento del envío con el fin de obtener
+								información sobre dicho cargo adicional.</td>
+						</tr>
+						<tr>
+							<td>Si declaras un valor superior del transporte y pagas el cargo adicional, nuestra máxima
+								responsabilidad corresponderá al valor declarado para el transporte o los daños reales,
+								el que sea menor. No ofrecemos seguros de responsabilidad civil por carga ni seguros
+								contra todo riesgo.</td>
+						</tr>
+					</table>
+				</form>
+				<form>
+					<table>
+						<tr>
+							<h4 style="text-align: left;"><b>Límites de valor declarado</b></h4>
+							<td>El valor declarado más alto que permitimos para un envío a través de EZShipping Envelope
+								o EZShipping Pak es 100 USD o 9.07 USD por libra (20USD por kilogramo) (o el equivalente
+								en su moneda local), lo que sea mayor. Para otros envíos, en particular envíos de valor
+								extraordinario, incluidos, entre otros, joyas, obras de arte, antigüedades, metales
+								preciosos y pieles o abrigos de pieles, el valor declarado de transporte es limitado y
+								depende del contenido y el destino del envío.</td>
+						</tr>
+						<tr>
+							<td>Consulta la Guía de Servicios, nuestras Condiciones generales de transporte o cualquier
+								tarifa aplicable para obtener más información acerca de los límites del valor declarado.
+							</td>
+						</tr>
+						<tr>
+							<td>Si envías más de un paquete usando una sola Guía Aérea, el valor declarado para
+								transporte de cada paquete se determinará dividiendo el valor total declarado para
+								transporte por la cantidad de paquetes del envío.</td>
+						</tr>
+					</table>
+				</form>
+				<form>
+					<table>
+						<tr>
+							<h4 style="text-align: left;"><b>Responsabilidades que no asumimos</b></h4>
+							<td>SUJETO A LAS CONDICIONES DEL SERVICIO CONTENIDAS EN ESTA GUÍA AÉREA, ANTE CUALQUIER
+								TARIFA APLICABLE, NUESTRA GUÍA DE SERVICIOS O NUESTRAS CONDICIONES GENERALES DE
+								TRANSPORTE, NO SEREMOS RESPONSABLES POR DAÑOS, YA SEAN DIRECTOS, ACCIDENTALES,
+								ESPECIALES O CONSECUENTES, QUE SUPEREN EL VALOR DECLARADO DE 100 USD O 9.07 USD POR
+								LIBRA (20 USD POR KILOGRAMO) (O EL EQUIVALENTE EN SU MONEDA LOCAL), LO QUE SEA MAYOR,
+								INDEPENDIENTEMENTE DE SI SABÍAMOS O DEBERÍAMOS HABER SABIDO QUE SE PODÍAN PRODUCIR
+								DICHOS DAÑOS, LO QUE INCLUYE, A MODO DE EJEMPLO, PÉRDIDA DE INGRESOS O GANANCIAS.</td>
+						</tr>
+						<tr>
+							<td>No seremos responsables de tus actos u omisiones, lo que incluye, a modo de ejemplo, la
+								declaración incorrecta de la carga, los errores o deficiencias en el embalaje, en la
+								protección, en el marcado o en la dirección del envío, o las acciones u omisiones del
+								destinatario o de cualquier otra persona interesada en el envío. Asimismo, no seremos
+								responsables si tú o el destinatario violan cualquiera de los términos de nuestro
+								acuerdo. No seremos responsables por pérdidas, daños, retrasos, entregas incompletas,
+								entregas equivocadas, falta de entrega, información errónea u omisión de suministro de
+								información en relación con envíos de dinero en efectivo, divisas o cualquier otro
+								artículo prohibido.</td>
+						</tr>
+						<tr>
+							<td>No seremos responsables por pérdidas, daños, retrasos, entregas incompletas, entregas
+								erróneas, falta de entrega, información errónea u omisión de suministro de información
+								en relación con tu envío que hubiera sido causado por circunstancias fuera de nuestro
+								control, lo que incluye, a modo de ejemplo, desastres naturales, riesgos aéreos,
+								condiciones climáticas, demoras mecánicas, actos de enemigos públicos, guerras, huelgas,
+								conmociones civiles o acciones u omisiones de autoridades públicas (incluidos
+								funcionarios de aduana y sanitarios) con autoridad real o aparente.</td>
+						</tr>
+					</table>
+				</form>
+				<form>
+					<table>
+						<tr>
+							<h4 style="text-align: left;"><b>Sin garantías</b></h4>
+							<td>No ofrecemos garantías, ni expresas ni implícitas.</td>
+						</tr>
+					</table>
+				</form>
+				<form>
+					<table>
+						<tr>
+							<h4 style="text-align: left;"><b>Reclamos por pérdidas, daños o demoras</b></h4>
+							<td>TODOS LOS RECLAMOS DEBEN HACERSE POR ESCRITO Y DENTRO DE PLAZOS ESTRICTOS. CONSULTA LAS
+								TARIFAS APLICABLES, NUESTRA GUÍA DE SERVICIOS O NUESTRAS CONDICIONES GENERALES DE
+								TRANSPORTE PARA OBTENER MÁS INFORMACIÓN.</td>
+						</tr>
+						<tr>
+							<td>El derecho a iniciar un reclamo por daños y perjuicios contra nosotros se extinguirá a
+								menos que se inicie una acción dentro del período de dos (2) años desde la fecha de
+								entrega del envío o desde la fecha en la que el envío debió haberse entregado.</td>
+						</tr>
+						<tr>
+							<td>Dentro de los veintiún (21) días posteriores a que nos hayas notificado de tu reclamo,
+								este debe ser documentado, para lo cual debes enviarnos toda la información relevante
+								relacionada con tu reclamo. No estamos obligados a actuar respecto de un reclamo hasta
+								que se hayan pagado todos los cargos de transporte; el importe del reclamo no podrá
+								deducirse de dichos cargos.</td>
+						</tr>
+						<tr>
+							<td>Si el destinatario acepta el envío sin dejar registrado ningún daño en el registro de
+								entregas, asumiremos que el envío se entregó en buenas condiciones. Para que nosotros
+								podamos considerar un reclamo por daños, el contenido, la caja de cartón original y el
+								embalaje deben ponerse a nuestra disposición para su inspección.</td>
+						</tr>
+					</table>
+				</form>
+				<form>
+					<table>
+						<tr>
+							<h4 style="text-align: left;"><b>Derecho a inspección</b></h4>
+						</tr>
+						<tr>
+							<td style="text-align: left;">A nuestro criterio o a petición de las autoridades
+								gubernamentales, es posible que tu envío se abra o se someta a inspección por nosotros o
+								dichas autoridades en cualquier momento.</td>
+						</tr>
+					</table>
+				</form>
+				<form>
+					<table>
+						<tr>
+							<h4 style="text-align: left;"><b>Responsabilidad dele pago</b></h4>
+							<td>Incluso si nos proporcionas diferentes instrucciones de pago, serás el principal
+								responsable de todos los cargos, incluidos los gastos de transporte y posibles recargos,
+								derechos aduaneros y tasas fiscales, que incluyen honorarios relacionados con nuestro
+								pago anticipado de las mismas, sanciones y multas del gobierno, y honorarios de abogados
+								y costos legales, relacionados con este envío. También serás responsable de los gastos
+								en los que pudiéramos incurrir al devolverte el envío o al almacenarlo en espera de que
+								se disponga de él.</td>
+						</tr>
+					</table>
+				</form>
+				<form>
+					<table>
+						<tr>
+							<h4 style="text-align: left;"><b>Liberación aduanal</b></h4>
+							<td>Al otorgarnos este envío, por el presente documento nos designas como tu agente y como
+								agente del destinatario, únicamente para efectuar la liberación aduanal, y nos
+								certificas como el destinatario nominal a los efectos de designar un agente aduanal para
+								realizar la liberación aduanal. En algunas instancias, las autoridades locales pueden
+								requerir documentos adicionales para confirmar nuestra designación. Eres responsable de
+								proporcionar la documentación y confirmación adecuadas cuando sea necesario.</td>
+						</tr>
+						<tr>
+							<td>Garantizas y eres responsable del cumplimiento con todas las leyes, reglas y
+								regulaciones aplicables, lo que incluye, a modo de ejemplo, los derechos aduaneros; las
+								leyes de importación, exportación y reexportación; y las regulaciones gubernamentales de
+								cualquier país hacia, desde, a través o sobre el que su envío pueda transportarse.
+								Aceptas presentar dicha información y completar y adjuntar dichos documentos a esta Guía
+								aérea según sea necesario para cumplir con dichas leyes, reglas y regulaciones. No somos
+								responsables ante ti ni ante ninguna otra persona por ninguna pérdida o gasto debido a
+								un incumplimiento de tu parte con esta disposición.</td>
+						</tr>
+						<tr>
+							<td>También eres responsable de todos los cargos, incluidos gastos de transporte y posibles
+								recargos, todos los derechos aduaneros y tasas fiscales, que incluyen honorarios
+								relacionados con nuestro pago anticipado de las mismas, sanciones y multas del gobierno,
+								impuestos y honorarios de abogados y costos legales, relacionados con este envío.</td>
+						</tr>
+					</table>
+				</form>
+				<form>
+					<table>
+						<tr>
+							<h4 style="text-align: left;"><b>Control de exportaciones</b></h4>
+							<td>Autorizas a EZShipping para que actúe como agente de transporte para los fines del
+								control de las exportaciones y los controles aduanales. Certificas por este medio que
+								todas las declaraciones e información contenidas en esta Guía aérea y en documentos
+								anexos relativos a la exportación son veraces y correctas. Más aun, comprendes que
+								podrán imponerse sanciones civiles y penales, incluidos cargos por falsificación y
+								venta, por realizar declaraciones falsas o fraudulentas; por la violación de alguna de
+								las leyes de exportación de los Estados Unidos, incluidas, entre otras, 13 USC Sec. 305;
+								22 USC Sec. 401; 18 USC Sec. 1001; y 50 USC App. 2410; o por la violación de leyes de
+								exportación de otros países.</td>
+						</tr>
+					</table>
+				</form>
+				<form>
+					<table>
+						<tr>
+							<h4 style="text-align: left;"><b>Carta de instrucción</b></h4>
+							<td>En caso de no completar todos los documentos requeridos para el transporte, o si los
+								documentos que entregas no son apropiados para los servicios o destinos solicitados, nos
+								das la instrucción, por este medio y cuando lo permita la ley, de completar, corregir o
+								reemplazar los documentos en tu nombre o en nombre del destinatario y a tu propia
+								cuenta. Sin embargo, no estamos obligados a hacerlo. Si es necesario emplear un
+								sustituto de la guía aérea para completar la entrega de tu envío y nosotros completamos
+								dicho documento, los términos de esta Guía aérea continuarán seguirán vigentes. No somos
+								responsables ante ti ni ante ninguna otra persona por nuestras acciones en tu nombre de
+								acuerdo con esta disposición.</td>
+						</tr>
+					</table>
+				</form>
+				<form>
+					<table>
+						<tr>
+							<h4 style="text-align: left;"><b>Artículos no aceptables pra el transporte</b></h4>
+							<td>No aceptamos transporte de dinero (que incluye, entre otros, monedas o instrumentos
+								negociables equivalentes a dinero, como bonos o acciones endosados). EXCLUIMOS TODA
+								RESPONSABILIDAD SOBRE EL ENVÍO DE DICHOS ARTÍCULOS ACEPTADOS POR ERROR. Podrán aceptarse
+								otros elementos para el envío solo a destinos limitados o bajo condiciones restringidas.
+								Nos reservamos el derecho de rechazar paquetes sobre la base de estas limitaciones o por
+								motivos de seguridad. Puedes consultar nuestra Guía de servicios, Condiciones generales
+								de transporte o cualquier tarifa aplicable para obtener más información.</td>
+						</tr>
+						<tr>
+							<td>Ley imperativa si alguna disposición contenida o referida en esta Guía aérea es
+								contraria a cualquier tratado internacional, ley, norma gubernamental, orden o
+								requerimiento aplicables, dicha disposición permanecerá en vigencia como parte de
+								nuestro acuerdo en la medida en que no sea invalidada. La invalidez o inaplicabilidad de
+								cualquier disposición no afectará las demás disposiciones contenidas o a las que se hace
+								referencia en la presente Guía aérea.</td>
+						</tr>
+						<tr>
+							<td>Excepto en el caso de que se indique lo contrario, la dirección del remitente que figura
+								en el frente de esta Guía aérea es el lugar de ejecución y de partida, y la dirección
+								del destinatario que figura en el frente de esta Guía aérea es el lugar de destino.
+								Excepto en el caso que se indique lo contrario, el primer transportador de este envío es
+								Federal Express Corporation, P.O. Box 727, Memphis, TN 38194, EE. UU.</td>
+						</tr>
+					</table>
+				</form>
+				<div style="text-align: left; padding-top: 50px;">
+					<button onclick="location.href = '../terminos';" type="button"
+						class="btn btn-info">REGRESAR</button>
+				</div>
 			</center>
 		</div>
-		
-		
+
+
 
 	</section>
-	
-<footer th:replace="layout/layout :: footer"></footer>
-	
-  </body>
+
+	<footer th:replace="layout/layout :: footer"></footer>
+
+</body>
+
 </html>

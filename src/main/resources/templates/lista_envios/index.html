@@ -11,6 +11,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
 	<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
 	<link rel="stylesheet" th:href="@{/css/envios.css}">
+	<link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
 
 
 	<title>EZShipping</title>
@@ -18,87 +19,93 @@
 
 <body id="bootstrap-overrides">
 	<header th:replace="layout/layout :: header"></header>
-<section class="BackGrEnvios">
-	<main style="margin-top: 100px; margin-left: 50px;">
+	<section class="BackGrEnvios">
+		<main style="margin-top: 100px; margin-left: 50px;">
 
-		<!-- comentario............................ -->
-		<h2>Envíos</h2>
-		<h5>
-			Hola, <span th:text="${persona.getNombre()}"></span>|| Revisa aquí
-			tus envíos
-		</h5>
-
-
+			<!-- comentario............................ -->
+			<h2>Envíos</h2>
+			<h5>
+				Hola, <span th:text="${persona.getNombre()}"></span>|| Revisa aquí
+				tus envíos
+			</h5>
 
 
 
-		<section class="container">
-			<h3 class="text-light bg-warning">&nbsp; Últimos</h3>
-
-			<ul id="lista-envios">
-			
-				<li th:each="envio : ${ultimos}">
-					<div class="card" style="width: 18rem;">
 
 
-						<!-- <img alt="imagen_envio" th:src="@{/images/logo.jpg}" -->
-						<img th:src="@{${envio.getUrlImagen()}}" class="img-fluid" alt="Imagen envio">
+			<section class="container">
+				<h3 class="text-light bg-warning">&nbsp; Últimos</h3>
+
+				<ul id="lista-envios">
+
+					<li th:each="envio : ${ultimos}">
+						<div class="card" style="width: 18rem;">
 
 
-						<div class="card-body">
-							<h5 class="card-title">
-								<span>Código: &nbsp;</span><a th:href="@{'/lista_envios/view-' + ${envio.id}}"
-									th:text="${envio.id}"></a>
-							</h5>
-							<span th:if="${envio.getEstadoEnvios().size()>0}"><p class="card-text">
-								<span>Estado: &nbsp;</span><span
-									th:text="${envio.getEstadoEnvios().get(envio.getEstadoEnvios().size()-1).getEstado().getNombre()}"></span>
-							</p>
-							<p class="card-text">
-								<span>Fecha: &nbsp;</span><span
-									th:text="${envio.getEstadoEnvios().get(envio.getEstadoEnvios().size()-1).getFechaEstadoPedido()}"></span>
-							</p></span>
+							<!-- <img alt="imagen_envio" th:src="@{/images/logo.jpg}" -->
+							<img th:src="@{${envio.getUrlImagen()}}" class="img-fluid" alt="Imagen envio">
 
 
-							<a th:href="@{'/lista_envios/view-' + ${envio.id}}" class="btn btn-warning">Ver más</a>
+							<div class="card-body">
+								<h5 class="card-title">
+									<span>Código: &nbsp;</span><a th:href="@{'/lista_envios/view-' + ${envio.id}}"
+										th:text="${envio.id}"></a>
+								</h5>
+								<span th:if="${envio.getEstadoEnvios().size()>0}">
+									<p class="card-text">
+										<span>Estado: &nbsp;</span><span
+											th:text="${envio.getEstadoEnvios().get(envio.getEstadoEnvios().size()-1).getEstado().getNombre()}"></span>
+									</p>
+									<p class="card-text">
+										<span>Fecha: &nbsp;</span><span
+											th:text="${envio.getEstadoEnvios().get(envio.getEstadoEnvios().size()-1).getFechaEstadoPedido()}"></span>
+									</p>
+								</span>
+
+
+								<a th:href="@{'/lista_envios/view-' + ${envio.id}}" class="btn btn-warning">Ver más</a>
+							</div>
 						</div>
+					</li>
+				</ul>
+
+
+				<h3 class="text-light bg-warning">&nbsp; Más envíos</h3>
+
+
+				<ul id="lista-envios">
+					<div class="break">
+						<li th:each="envio : ${envios}">
+							<div class="card" style="width: 18rem;">
+								<img th:src="@{${envio.getUrlImagen()}}" class="img-fluid" alt="Imagen envio">
+								<div class="card-body">
+									<h5 class="card-title">
+										<span>Código: &nbsp;</span><a th:href="@{'/lista_envios/view-' + ${envio.id}}"
+											th:text="${envio.id}"></a>
+									</h5>
+									<span th:if="${envio.getEstadoEnvios().size()>0}">
+										<p class="card-text">
+											<span>Estado: &nbsp;</span><span
+												th:text="${envio.getEstadoEnvios().get(envio.getEstadoEnvios().size()-1).getEstado().getNombre()}"></span>
+										</p>
+										<p class="card-text">
+											<span>Fecha: &nbsp;</span><span
+												th:text="${envio.getEstadoEnvios().get(envio.getEstadoEnvios().size()-1).getFechaEstadoPedido()}"></span>
+										</p>
+									</span>
+
+
+									<a th:href="@{'/lista_envios/view-' + ${envio.id}}" class="btn btn-warning">Ver
+										más</a>
+								</div>
+							</div>
+						</li>
 					</div>
-				</li>
-			</ul>
-
-
-			<h3 class="text-light bg-warning">&nbsp; Más envíos</h3>
-
-
-			<ul id="lista-envios" >
-			<div class="break">
-				<li th:each="envio : ${envios}">
-					<div class="card" style="width: 18rem;">
-						<img th:src="@{${envio.getUrlImagen()}}" class="img-fluid" alt="Imagen envio">
-						<div class="card-body">
-							<h5 class="card-title">
-								<span>Código: &nbsp;</span><a th:href="@{'/lista_envios/view-' + ${envio.id}}"
-									th:text="${envio.id}"></a>
-							</h5>
-							<span th:if="${envio.getEstadoEnvios().size()>0}"><p class="card-text">
-								<span>Estado: &nbsp;</span><span
-									th:text="${envio.getEstadoEnvios().get(envio.getEstadoEnvios().size()-1).getEstado().getNombre()}"></span>
-							</p>
-							<p class="card-text">
-								<span>Fecha: &nbsp;</span><span
-									th:text="${envio.getEstadoEnvios().get(envio.getEstadoEnvios().size()-1).getFechaEstadoPedido()}"></span>
-							</p></span>
-
-
-							<a th:href="@{'/lista_envios/view-' + ${envio.id}}" class="btn btn-warning">Ver más</a>
-						</div>
-					</div>
-				</li></div>
-			</ul>
+				</ul>
 
 
 
-			<!--  
+				<!--  
 
 			<table class="table table-striped">
 				<thead>
@@ -130,7 +137,7 @@
 -->
 
 
-			<!-- prueba 
+				<!-- prueba 
 			<table class="table table-striped">
 				<thead>
 					<tr>
@@ -171,7 +178,7 @@
 			-->
 
 
-			<!-- comentario
+				<!-- comentario
 
 			<h2>Mis Envíos</h2>
 			Hola, <span th:text="${persona.getNombre()}"></span>|| Revisa aquí
@@ -215,11 +222,11 @@
 			</table>
 			-->
 
-		</section>
+			</section>
 
-	</main>
+		</main>
 
-</section>
+	</section>
 
 
 

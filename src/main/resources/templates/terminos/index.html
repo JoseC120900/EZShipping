@@ -1,46 +1,56 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security"> 
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
-    <link th:href="@{css/styleKeiji.css}" rel="stylesheet">
-     <link th:href="@{css/styleControl.css}" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
-    <link rel="stylesheet" th:href="@{css/bootstrap.min.css}">
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>EZShipping</title>
-  </head>
-  <body id="bootstrap-overrides">
+	<link th:href="@{css/styleKeiji.css}" rel="stylesheet">
+	<link th:href="@{css/styleControl.css}" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
+	<link rel="stylesheet" th:href="@{css/bootstrap.min.css}">
+	<link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+
+	<title>EZShipping</title>
+</head>
+
+<body id="bootstrap-overrides">
 	<header th:replace="layout/layout :: header"></header>
 	<section class="BackGrTerminos">
-		<h1 style="padding-left: 50px">	<b>	
-			Términos y Condiciones
-		</b></h1>
+		<h1 style="padding-left: 50px"> <b>
+				Términos y Condiciones
+			</b></h1>
 
 		<div class="bg-textterminos">
-				<form>
+			<form>
 				<table>
 					<tr>
-						<h2 style="text-align: left; margin-bottom: 50px;"><b>Elija el tipo de membresía que desea visualizar.</b></h2>
+						<h2 style="text-align: left; margin-bottom: 50px;"><b>Elija el tipo de membresía que desea
+								visualizar.</b></h2>
 					</tr>
 				</table>
 			</form>
-			<button onclick="location.href = 'terminossin';" type="button" class="btn-regular btn-lg btn-block">SIN MEMBRESIA</button>
-			<button onclick="location.href = 'terminosblack';" type="button" class="btn-bronce btn-lg btn-block">BLACK</button>
-			<button onclick="location.href = 'terminossilver';" type="button" class="btn-plata btn-lg btn-block">SILVER</button>
-			<button onclick="location.href = 'terminosgold';" type="button" class="btn-oro btn-lg btn-block">GOLD</button>
+			<button onclick="location.href = 'terminossin';" type="button" class="btn-regular btn-lg btn-block">SIN
+				MEMBRESIA</button>
+			<button onclick="location.href = 'terminosblack';" type="button"
+				class="btn-bronce btn-lg btn-block">BLACK</button>
+			<button onclick="location.href = 'terminossilver';" type="button"
+				class="btn-plata btn-lg btn-block">SILVER</button>
+			<button onclick="location.href = 'terminosgold';" type="button"
+				class="btn-oro btn-lg btn-block">GOLD</button>
 			<form style="margin-top: 50px">
 				<table>
 					<tr>
-						<button onclick="location.href = '../';" type="button" class="btn btn-outline-info">VOLVER AL INICIO</button>
+						<button onclick="location.href = '../';" type="button" class="btn btn-outline-info">VOLVER AL
+							INICIO</button>
 					</tr>
 				</table>
 			</form>
 		</div>
 	</section>
 	<footer th:replace="layout/layout :: footer"></footer>
-	
-  </body>
+
+</body>
+
 </html>
