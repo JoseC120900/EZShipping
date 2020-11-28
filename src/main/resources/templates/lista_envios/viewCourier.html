@@ -1,26 +1,25 @@
 <!doctype html>
-<html lang="es" xmlns:th="http://www.thymeleaf.org">
-<!--  
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
+<!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<script src="https://kit.fontawesome.com/a3ed5d87bf.js"></script>
+
 <link th:href="@{/css/style.css}" rel="stylesheet">
 <link th:href="@{/css/styleControl.css}" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap"
+	rel="stylesheet">
 <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
-<link rel="stylesheet" th:href="@{/css/solid.min.css}">
+<link rel="stylesheet" th:href="@{/css/envios.css}">
+
+
+<title>EZShipping</title>
 </head>
--->
-<head th:replace="layout/layout::head">
-<script src="https://kit.fontawesome.com/a3ed5d87bf.js"></script>
-<link rel="stylesheet" th:href="@{/css/solid.min.css}">
-</head>
+<body id="bootstrap-overrides">
+	<header th:replace="layout/layout :: header"></header>
 
-
-<body>
-
-	<main>
+	<main style="margin-top: 100px; margin-left: 50px;">
 		<h2>Courier</h2>
 
 		<nav aria-label="breadcrumb">
@@ -43,7 +42,9 @@
 
 
 				<div class="card">
-					<div class="card-header"><h5>Información del Courier</h5></div>
+					<div class="card-header">
+						<h5>Información del Courier</h5>
+					</div>
 					<div class="card-body">
 
 						<h4>
@@ -82,7 +83,8 @@
 			<ul id="lista-envios">
 				<li th:each="envio : ${envios}">
 					<div class="card" style="width: 18rem;">
-						<img alt="imagen_envio" th:src="@{/images/logo.jpg}"
+						<img th:src="@{${envio.getUrlImagen()}}" class="img-fluid"
+						alt="Imagen envio">
 							class="img-thumbnail">
 						<div class="card-body">
 							<h5 class="card-title">
@@ -114,15 +116,13 @@
 
 	</main>
 
-	<footer th:replace="layout/layout :: footer">
-		<script th:src="@{js/bootstrap.bundle.min.js}"></script>
-		<script th:src="@{/js/jquery-3.4.1.min.js}"></script>
-		<script th:src="@{/js/popper.min.js}"></script>
-		<script th:src="@{/js/bootstrap.min.js}"></script>
-		<script th:src="@{/js/chosen.jquery.min.js}"></script>
-		<script th:src="@{/js/fontawesome.min.js}"></script>
-		<script th:src="@{/js/sweetalert.min.js}"></script>
-	</footer>
+
+
+
+
+
+
+	<footer th:replace="layout/layout :: footer"></footer>
 
 </body>
 </html>

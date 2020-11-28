@@ -1,8 +1,17 @@
 #lista-envios{
+	
 	padding-left:0px;
 	display:flex;
 	list-style:none;
-	
+}
+
+#lista-enviopaquetes{
+	list-style:none;
+}
+#card-envio{
+	padding-left:0px;
+	display:flex;
+	list-style:none;
 }
 
 

@@ -20,19 +20,19 @@ public class Envio {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	
+
 	@Column(name = "monto", length = 10, nullable = false)
 	private Float monto;
-	
+
 	@Column(name = "nombre_destinatario", length = 20, nullable = false)
 	private String nombreDestinatario;
-	
+
 	@Column(name = "direccion_origen", length = 100, nullable = false)
 	private String direccionOrigen;
-	
+
 	@Column(name = "direccion_destino", length = 100, nullable = false)
 	private String direccionDestino;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "trabajador_id")
 	private Trabajador trabajador;
@@ -67,6 +67,8 @@ public class Envio {
 	@OneToMany(mappedBy = "envio")
 	private List<Paquete> paquetes;
 
+	
+
 	public Envio() {
 		estadoEnvios = new ArrayList<EstadoEnvio>();
 		paquetes = new ArrayList<Paquete>();
@@ -76,11 +78,11 @@ public class Envio {
 		this.reclamoId = 0;
 
 	}
-	
+
 	public String getIdString() {
 		return Integer.toString(id);
 	}
-	
+
 	public Integer getId() {
 		return id;
 	}

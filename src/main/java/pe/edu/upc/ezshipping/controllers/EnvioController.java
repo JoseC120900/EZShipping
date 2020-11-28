@@ -132,29 +132,9 @@ public class EnvioController {
 			}
 			
 			
-			/*
-			for(int indice = 0; indice<ultimos.size();indice++) {
-				Optional<Envio> optional= envioService.findById(ultimos.get(indice).getId()) ;
-				for(int indice2 = 0; indice2<optional.get().getEstadoEnvios().size();indice2++) {
-					//optional.get().getEstadoEnvios().get(optional.get().getEstadoEnvios().size()-1);
-					optional.get().getEstadoEnvios().get(optional.get().getEstadoEnvios().size()-1).getEstado().getNombre();
-					
-					
-				}
-			}
-		
-	
-			*/
 			
-			/*
-			for(int indice=0;indice<buscados.size();indice++) {
-				for(int indice2=0;indice2<buscados.get(indice).getEstadoEnvios().size();indice2++) {
-				if(buscados.get(indice).getEstadoEnvios().get(indice2).getFechaEstadoPedido().after(c1.get(Calendar.MONTH))) {
-				
-				}
-				}
-			}
-			*/
+			
+			
 			model.addAttribute("ultimos", ultimos);
 			model.addAttribute("envios", buscados3);
 			//model.addAttribute("estadoEnvios2", uEstado);
