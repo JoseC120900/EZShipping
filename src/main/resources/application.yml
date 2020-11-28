@@ -3,7 +3,7 @@ spring:
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5432/ezshippingdb
     username: postgres
-    password: postgres20
+    password: Upc@2020
 
   jpa:
     database: postgresql

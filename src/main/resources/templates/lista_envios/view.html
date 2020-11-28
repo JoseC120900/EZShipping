@@ -1,20 +1,20 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
 <head>
-<!-- Required meta tags -->
-<meta charset="utf-8">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<link th:href="@{/css/style.css}" rel="stylesheet">
-<link th:href="@{/css/styleControl.css}" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap"
-	rel="stylesheet">
-<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
-<link rel="stylesheet" th:href="@{/css/envios.css}">
+	<link th:href="@{/css/style.css}" rel="stylesheet">
+	<link th:href="@{/css/styleControl.css}" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
+	<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+	<link rel="stylesheet" th:href="@{/css/envios.css}">
 
-<title>EZShipping</title>
+	<title>EZShipping</title>
 </head>
+
 <body id="bootstrap-overrides">
 	<header th:replace="layout/layout :: header"></header>
 
@@ -40,23 +40,19 @@
 						</h6>
 
 						<h6 class="card-text">
-							<span> Dirección Destino: &nbsp;</span><span
-								th:text="${envio.direccionDestino}"></span>
+							<span> Dirección Destino: &nbsp;</span><span th:text="${envio.direccionDestino}"></span>
 						</h6>
 
 						<h6 class="card-text">
-							<span> Dirección Origen: &nbsp;</span><span
-								th:text="${envio.direccionOrigen}"></span>
+							<span> Dirección Origen: &nbsp;</span><span th:text="${envio.direccionOrigen}"></span>
 						</h6>
 
 						<h6 class="card-text">
-							<span>Destinatario: &nbsp;</span><span
-								th:text="${envio.nombreDestinatario}"></span>
+							<span>Destinatario: &nbsp;</span><span th:text="${envio.nombreDestinatario}"></span>
 						</h6>
 
 						<h6 class="card-text">
-							<span>Tarjeta: &nbsp;</span><span
-								th:text="${tarjeta.getNroTarjeta()}"></span>
+							<span>Tarjeta: &nbsp;</span><span th:text="${tarjeta.getNroTarjeta()}"></span>
 						</h6>
 
 						<h6 class="card-text">
@@ -64,14 +60,12 @@
 						</h6>
 
 						<h6 class="card-text">
-							<span>Código Courier: &nbsp;</span><span
-								th:text="${envio.trabajadorId}"></span>
+							<span>Código Courier: &nbsp;</span><span th:text="${envio.trabajadorId}"></span>
 						</h6>
 
 
-						<a
-							th:href="@{'/lista_envios/viewCourier-' + ${envio.trabajadorId}}"
-							class="btn btn-warning">Ver Courier</a>
+						<a th:href="@{'/lista_envios/viewCourier-' + ${envio.trabajadorId}}" class="btn btn-warning">Ver
+							Courier</a>
 					</div>
 				</div>
 
@@ -128,23 +122,19 @@
 
 
 						<h5 class="card-text">
-							<span> Alto(cm): &nbsp;</span><span
-								th:text="${paquete.getAlto()}"></span>
+							<span> Alto(cm): &nbsp;</span><span th:text="${paquete.getAlto()}"></span>
 						</h5>
 
 						<h5 class="card-text">
-							<span> Ancho(cm): &nbsp;</span><span
-								th:text="${paquete.getAncho()}"></span>
+							<span> Ancho(cm): &nbsp;</span><span th:text="${paquete.getAncho()}"></span>
 						</h5>
 
 						<h5 class="card-text">
-							<span>Largo(cm): &nbsp;</span><span
-								th:text="${paquete.getLargo()}"></span>
+							<span>Largo(cm): &nbsp;</span><span th:text="${paquete.getLargo()}"></span>
 						</h5>
 
 						<h5 class="card-text">
-							<span>Descripción: &nbsp;</span><span
-								th:text="${paquete.getDescripcion()}"></span>
+							<span>Descripción: &nbsp;</span><span th:text="${paquete.getDescripcion()}"></span>
 						</h5>
 
 						<h5 class="card-text">
@@ -152,8 +142,7 @@
 						</h5>
 
 						<h5 class="card-text">
-							<span>Precio(soles): &nbsp;</span><span
-								th:text="${paquete.getPrecioUnitario()}"></span>
+							<span>Precio(soles): &nbsp;</span><span th:text="${paquete.getPrecioUnitario()}"></span>
 						</h5>
 
 					</div>
@@ -181,13 +170,11 @@
 
 
 						<h5 class="card-text">
-							<span> Fecha: &nbsp;</span><span
-								th:text="${estadoEnvio.getFechaEstadoPedido()}"></span>
+							<span> Fecha: &nbsp;</span><span th:text="${estadoEnvio.getFechaEstadoPedido()}"></span>
 						</h5>
 
 						<h5 class="card-text">
-							<span> Estado: &nbsp;</span><span
-								th:text="${estadoEnvio.getEstado().getNombre()}"></span>
+							<span> Estado: &nbsp;</span><span th:text="${estadoEnvio.getEstado().getNombre()}"></span>
 						</h5>
 
 
@@ -297,4 +284,5 @@
 	<footer th:replace="layout/layout :: footer"></footer>
 
 </body>
+
 </html>

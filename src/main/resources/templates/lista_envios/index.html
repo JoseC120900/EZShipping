@@ -1,21 +1,21 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
 <head>
-<!-- Required meta tags -->
-<meta charset="utf-8">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<link th:href="@{/css/style.css}" rel="stylesheet">
-<link th:href="@{/css/styleControl.css}" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap"
-	rel="stylesheet">
-<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
-<link rel="stylesheet" th:href="@{/css/envios.css}">
+	<link th:href="@{/css/style.css}" rel="stylesheet">
+	<link th:href="@{/css/styleControl.css}" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
+	<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+	<link rel="stylesheet" th:href="@{/css/envios.css}">
 
 
-<title>EZShipping</title>
+	<title>EZShipping</title>
 </head>
+
 <body id="bootstrap-overrides">
 	<header th:replace="layout/layout :: header"></header>
 
@@ -38,17 +38,15 @@
 			<ul id="lista-envios">
 				<li th:each="envio : ${ultimos}">
 					<div class="card" style="width: 18rem;">
-					
-					
+
+
 						<!-- <img alt="imagen_envio" th:src="@{/images/logo.jpg}" -->
-						<img th:src="@{${envio.getUrlImagen()}}" class="img-fluid"
-						alt="Imagen envio">
-						
-					
+						<img th:src="@{${envio.getUrlImagen()}}" class="img-fluid" alt="Imagen envio">
+
+
 						<div class="card-body">
 							<h5 class="card-title">
-								<span>Código: &nbsp;</span><a
-									th:href="@{'/lista_envios/view-' + ${envio.id}}"
+								<span>Código: &nbsp;</span><a th:href="@{'/lista_envios/view-' + ${envio.id}}"
 									th:text="${envio.id}"></a>
 							</h5>
 							<p class="card-text">
@@ -61,8 +59,7 @@
 							</p>
 
 
-							<a th:href="@{'/lista_envios/view-' + ${envio.id}}"
-								class="btn btn-warning">Ver más</a>
+							<a th:href="@{'/lista_envios/view-' + ${envio.id}}" class="btn btn-warning">Ver más</a>
 						</div>
 					</div>
 				</li>
@@ -75,12 +72,10 @@
 			<ul id="lista-envios">
 				<li th:each="envio : ${envios}">
 					<div class="card" style="width: 18rem;">
-						<img th:src="@{${envio.getUrlImagen()}}" class="img-fluid"
-						alt="Imagen envio">
+						<img th:src="@{${envio.getUrlImagen()}}" class="img-fluid" alt="Imagen envio">
 						<div class="card-body">
 							<h5 class="card-title">
-								<span>Código: &nbsp;</span><a
-									th:href="@{'/lista_envios/view-' + ${envio.id}}"
+								<span>Código: &nbsp;</span><a th:href="@{'/lista_envios/view-' + ${envio.id}}"
 									th:text="${envio.id}"></a>
 							</h5>
 							<p class="card-text">
@@ -93,8 +88,7 @@
 							</p>
 
 
-							<a th:href="@{'/lista_envios/view-' + ${envio.id}}"
-								class="btn btn-warning">Ver más</a>
+							<a th:href="@{'/lista_envios/view-' + ${envio.id}}" class="btn btn-warning">Ver más</a>
 						</div>
 					</div>
 				</li>
@@ -231,5 +225,5 @@
 	<footer th:replace="layout/layout :: footer"></footer>
 
 </body>
-</html>
 
+</html>

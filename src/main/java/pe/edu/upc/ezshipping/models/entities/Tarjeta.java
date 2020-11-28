@@ -15,20 +15,20 @@ import javax.persistence.Table;
 @Table(name = "tarjetas")
 public class Tarjeta {
 	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
 
-    @Column(name = "nro_tarjeta", length = 16, nullable = false)
-    private String nroTarjeta;
+	@Column(name = "nro_tarjeta", length = 16, nullable = false)
+	private String nroTarjeta;
 
-    @Column(name = "mes_vencimiento", length = 2, nullable = false)
-    private Integer mes_vencimiento;
+	@Column(name = "mes_vencimiento", length = 2, nullable = false)
+	private Integer mes_vencimiento;
+	
+	@Column(name = "anio_vencimiento", length = 4, nullable = false)
+	private Integer anio_vencimiento;
 
-    @Column(name = "anio_vencimiento", length = 4, nullable = false)
-    private Integer anio_vencimiento;
-
-    @Column(name = "cvv", length = 3, nullable = false)
-    private Integer cvv;
+	@Column(name = "cvv", length = 3, nullable = false)
+	private Integer cvv;
 
 	@OneToMany(mappedBy = "tarjeta")
 	private List<ClienteTarjeta> clienteTarjetas;
