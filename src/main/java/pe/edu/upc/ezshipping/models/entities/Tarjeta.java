@@ -21,10 +21,10 @@ public class Tarjeta {
 	@Column(name = "nro_tarjeta", length = 16, nullable = false)
 	private String nroTarjeta;
 
-	@Column(name = "mes_vencimiento", length = 2)
+	@Column(name = "mes_vencimiento", length = 2, nullable = false)
 	private Integer mes_vencimiento;
 	
-	@Column(name = "anio_vencimiento", length = 4)
+	@Column(name = "anio_vencimiento", length = 4, nullable = false)
 	private Integer anio_vencimiento;
 
 	@Column(name = "cvv", length = 3, nullable = false)

@@ -63,4 +63,15 @@ public class EnvioServiceImpl implements EnvioService, Serializable {
 		return pedidoRepository.findByDireccionDestino(direccionDestino);
 	}
 
+	@Transactional
+	@Override
+	public long count() throws Exception {
+		return pedidoRepository.count();
+	}
+
+	@Transactional(readOnly = true)
+	@Override
+	public List<Envio> findByCodigoRastreo(String codigoRastreo) throws Exception {
+		return pedidoRepository.findByCodigoRastreo(codigoRastreo);		
+	}
 }

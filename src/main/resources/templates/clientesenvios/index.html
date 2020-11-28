@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link th:href="@{css/styleKeiji.css}" rel="stylesheet">
+<link th:href="@{css/styleControl.css}" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap"
+	rel="stylesheet">
+<link rel="stylesheet" th:href="@{css/bootstrap.min.css}">
+
+
+<title>EZShipping</title>
+</head>
+<body id="bootstrap-overrides">
+	<header th:replace="layout/layout :: header"></header>
+
+
+	<section class="BackGrenvio">
+	<center>
+		<h1 style="top: 80px; margin-top: 10px;">
+			<b> Lista de Envíos Totales </b>
+		</h1>
+	
+		</center>
+	<h1 style="padding-left: 50px; margin-top: -110px;">	<b>	
+			<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+		</b></h1>
+
+
+
+				<div id="mySidenav" class="sidenav" style="z-index: 4">
+				<a>.</a>
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="/clientesenvios">Envíos</a>
+  <a href="/clientesmembresia">Membresías</a>
+  <a href="/listaclientes">Clientes</a>
+</div>
+
+	<div class="bg-textenvio" style="margin-top: 40px;">
+			<center>
+			
+
+				<div class="table-wrapper-scroll-y my-custom-scrollbar">
+					<table id="tabla" class="table table-striped table-dark">
+						<thead>
+						<tr th:each="envio : ${count}"></tr>
+							<th>Total:</th>
+							<th th:text="${count}" scope="row">.</th>
+							<tr>
+								<th scope="col" style="text-align: center;">#</th>
+								<th scope="col" style="text-align: center;">Cliente</th>
+								<th scope="col" style="text-align: center;">Membresía</th>
+								<th scope="col" style="text-align: center;">Monto</th>
+								<th scope="col" style="text-align: center;">Más info</th>
+							<tr>
+								<td colspan="5"><input id="buscar" type="text"
+									class="form-control" placeholder="Escriba algo para filtrar" />
+								</td>
+							</tr>
+							</tr>
+
+						</thead>
+						<tbody>
+							<tr th:each="envio : ${envios}">
+								<th th:text="${envio.id}" scope="row"
+									style="text-align: center;">.</th>
+								<th
+									th:text="${envio.cliente.persona.nombre}+' '+${envio.cliente.persona.apellido}"
+									scope="row" style="text-align: center;">.</th>
+								<th th:text="${envio.cliente.tipoCliente.nombre}" scope="row"
+									style="text-align: center;">.</th>
+								<th th:text="${envio.monto}" scope="row"
+									style="text-align: center;">.</th>
+								<th style="text-align: center"><button class="myBtn myBtn1">Ver
+										más...</button>
+									<div id="myModal" class="modal">
+
+										<!-- Modal content -->
+										<div class="modal-content" style="color: black;">
+										<div class="modal-header">
+        <h3 class="modal-title">INFORMACIÓN ADICIONAL</h3>
+        
+      </div>
+
+											
+											<h5 class="card-text">
+												<span> Origen:&nbsp;</span><span
+													th:text="*{envio.direccionOrigen}"></span>
+											</h5>
+											<h5 class="card-text">
+												<span> Destino:&nbsp;</span><span
+													th:text="*{envio.direccionDestino}"></span>
+											</h5>
+											<h5 class="card-text">
+												<span> Destinatario:&nbsp;</span><span
+													th:text="*{envio.nombreDestinatario}"></span>
+											</h5>
+											<h5 class="card-text">
+												<span> Trabajador:&nbsp;</span><span
+													th:text="*{envio.trabajador.persona.nombre}"></span>
+											</h5>
+											<div class="modal-footer">
+												
+												<button id="close" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+											</div>
+
+										</div>
+
+									</div></th>
+							
+							<td></td>
+							</tr>
+						</tbody>
+					</table>
+					
+				</div>
+				<div style="text-align: left; padding-top: 50px;">
+				<button onclick="location.href = '../administrar';" type="button" class="btn btn-info">REGRESAR</button>
+			</div>
+			</center>
+		</div>
+		
+		<script>
+				// Get the modal
+				var modal = document.getElementsByClassName('modal');
+
+				// Get the button that opens the modal
+				var btn = document.getElementsByClassName("myBtn");
+
+
+				// Get the <span> element that closes the modal
+				var span = document.getElementsByClassName("btn");
+				
+
+				// When the user clicks the button, open the modal 
+				
+				
+				
+				for(let i=0; i < btn.length; i++){
+			
+					btn[i].onclick = function() {
+						console.log(i);
+						
+							
+							modal[i].style.display = "block";
+							
+					}
+					}
+				// When the user clicks on <span> (x), close the modal
+				for(let i=0; i< btn.length; i++){
+					span[i].onclick = function() {
+						
+						
+							modal[i].style.display = "none";
+							
+					    
+					}
+					}
+				
+				// When the user clicks anywhere outside of the modal, close it
+				window.onclick = function(event) {
+				    if (event.target == modal) {
+				        modal.style.display = "none";
+				    }
+				}
+
+				var textbuscar = document.getElementById("buscar");
+				textbuscar.onkeyup = function(){
+					buscar(this);
+				}
+				function buscar(inputbuscar){
+					var valorabuscar = (inputbuscar.value).toLowerCase().trim();
+					var tabla_tr = document.getElementById("tabla").getElementsByTagName("tbody")[0].rows;
+					for(var i=0; i<tabla_tr.length; i++){
+						var tr = tabla_tr[i];
+						var textotr = (tr.innerText).toLowerCase();
+						tr.className = (textotr.indexOf(valorabuscar)>=0)?"mostrar":"ocultar";
+					}
+				}
+</script>
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+<script type="text/javascript">
+
+    function toggle_visibility(id) {
+       var e = document.getElementById(id);
+       if(e.style.display == 'block')
+          e.style.display = 'none';
+       else
+          e.style.display = 'block';
+    }
+    </script>
+	</section>
+
+
+
+	<footer th:replace="layout/layout :: footer"></footer>
+</body>
+</html>

@@ -50,4 +50,10 @@ public class TrabajadorServiceImpl implements TrabajadorService, Serializable {
 	public List<Trabajador> findAll() throws Exception {
 		return trabajadorRepository.findAll();
 	}
+	
+	@Transactional
+	@Override
+	public long count() throws Exception {
+		return trabajadorRepository.count();
+	}
 }

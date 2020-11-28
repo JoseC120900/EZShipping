@@ -55,5 +55,11 @@ public class TipoClienteServiceImpl implements TipoClienteService, Serializable 
 	public Optional<TipoCliente> findByNombre(String nombre) throws Exception {
 		return tipoClienteRepository.findByNombre(nombre);
 	}
+	
+	@Transactional
+	@Override
+	public long count() throws Exception {
+		return tipoClienteRepository.count();
+	}
 
 }

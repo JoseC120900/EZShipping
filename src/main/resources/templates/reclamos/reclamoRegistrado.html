@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="head">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
+	<link th:href="@{../../css/style.css}" rel="stylesheet">
+	<link th:href="@{../../css/styleControl.css}" rel="stylesheet">
+	<link th:href="@{../../css/styleReclamos.css}" rel="stylesheet">
+	<link rel="stylesheet" th:href="@{css/bootstrap.min.css}">
+
+	<title>EZShipping</title>
+</head>
+
+<body id="bootstrap-overrides">
+	<header th:replace="layout/layout :: header"></header>
+
+	<section class="BackGr">
+		<div class="confirmacion">
+			<h1>
+				Comentario enviado con éxito
+			</h1>
+		</div>
+		<div class="boton">
+			<a href="/"><button >Regresar a inicio</button></a>
+		</div>
+
+	</section>
+	<footer th:replace="layout/layout :: footer"></footer>
+
+</body>
+
+</html>

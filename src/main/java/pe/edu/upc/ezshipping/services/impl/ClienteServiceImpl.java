@@ -56,5 +56,11 @@ public class ClienteServiceImpl implements ClienteService, Serializable {
 	public Optional<Cliente> findByDNI(String DNI) throws Exception {
 		return clienteRepository.findByDNI(DNI);
 	}
+	
+	@Transactional
+	@Override
+	public long count() throws Exception {
+		return clienteRepository.count();
+	}
 
 }
