@@ -16,10 +16,7 @@ spring:
         jdbc.lob.non_contextual_creation: true
 
 server:
-<<<<<<< HEAD
-  port: 8090
-=======
 
-  port: 8090  
-  
->>>>>>> d38b4e050a281d33f32517a7129487fd4ed921f8
+  port: 8090
+
+
