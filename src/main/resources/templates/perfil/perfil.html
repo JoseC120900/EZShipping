@@ -1,25 +1,20 @@
 <!doctype html>
-<html lang="es" xmlns:th="http://www.thymeleaf.org"
-	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 <head th:fragment="head">
-<!-- Required meta tags -->
-<meta charset="utf-8">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap"
-	rel="stylesheet">
-<link th:href="@{css/style.css}" rel="stylesheet">
-<link th:href="@{css/styleControl.css}" rel="stylesheet">
-<link th:href="@{css/stylePerfil.css}" rel="stylesheet">
-<link rel="stylesheet" th:href="@{css/bootstrap.min.css}">
-<link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css"
-	rel="stylesheet">
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
+	<link th:href="@{css/style.css}" rel="stylesheet">
+	<link th:href="@{css/styleControl.css}" rel="stylesheet">
+	<link th:href="@{css/stylePerfil.css}" rel="stylesheet">
+	<link rel="stylesheet" th:href="@{css/bootstrap.min.css}">
+	<link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 
-<title>Ver perfil</title>
+	<title>Ver perfil</title>
 </head>
 
 
@@ -38,71 +33,62 @@
 			</div>
 			<div class="card w-50">
 				<div class="card-header">Perfil del usuario</div>
-				<div class="card-body"
-					th:if="${{#authentication.getPrincipal().getSegmento()}} == 'CLIENTE'">
+				<div class="card-body" th:if="${{#authentication.getPrincipal().getSegmento()}} == 'CLIENTE'">
 					<h5 class="card-title"></h5>
 					<p class="card-text">
 						Nombre: <strong><span th:text="${cliente.persona.nombre}"></span></strong>
 					</p>
 					<p class="card-text">
-						Apellido: <strong><span
-							th:text="${cliente.persona.apellido}"></span></strong>
+						Apellido: <strong><span th:text="${cliente.persona.apellido}"></span></strong>
 					</p>
 					<p class="card-text">
-						Número de documento: <strong><span
-							th:text="${cliente.DNI}"></span></strong>
+						Número de documento: <strong><span th:text="${cliente.DNI}"></span></strong>
 					</p>
 					<p class="card-text">
 						Email: <strong><span th:text="${cliente.persona.email}"></span></strong>
 					</p>
 					<p class="card-text">
-						Membresía: <strong><span
-							th:text="${cliente.tipoCliente.nombre}"></span></strong>
+						Membresía: <strong><span th:text="${cliente.tipoCliente.nombre}"></span></strong>
 					</p>
 					<div class="editar">
 						<a href="#"><button type="button">Editar</button></a>
 					</div>
 				</div>
 
-				<div class="card-body"
-					th:if="${{#authentication.getPrincipal().getSegmento()}} == 'TRABAJADOR'">
+				<div class="card-body" th:if="${{#authentication.getPrincipal().getSegmento()}} == 'TRABAJADOR'">
 					<h5 class="card-title"></h5>
 					<p class="card-text">
-						Nombre: <strong><span
-							th:text="${trabajador.persona.nombre}"></span></strong>
+						Nombre: <strong><span th:text="${trabajador.persona.nombre}"></span></strong>
 					</p>
 					<p class="card-text">
-						Apellido: <strong><span
-							th:text="${trabajador.persona.apellido}"></span></strong>
+						Apellido: <strong><span th:text="${trabajador.persona.apellido}"></span></strong>
 					</p>
 					<p class="card-text">
-						Fecha de contratación: <strong><span
-							th:text="${trabajador.fechaContratacion}"></span></strong>
+						Fecha de contratación: <strong><span th:text="${trabajador.fechaContratacion}"></span></strong>
 					</p>
 					<p class="card-text">
-						Email: <strong><span
-							th:text="${trabajador.persona.email}"></span></strong>
+						Email: <strong><span th:text="${trabajador.persona.email}"></span></strong>
 					</p>
 					<!-- Button to Open the Modal -->
-					<button type="button" class="btn btn-primary" data-toggle="modal"
-						data-target="#myModal">Editar</button>
-
+					<div class="editar">
+						<button data-toggle="modal" data-target="#myModal">
+							Editar
+						</button>
+					</div>
 
 					<!-- Modal -->
-					<div class="modal modalAnimate fade" id="myModal" tabindex="-1"
-						role="dialog" aria-labelledby="myModal" aria-hidden="true"
-						data-animation-in="fadeInLeft" data-animation-out="bounceOut">
+					<div class="modal modalAnimate fade" id="myModal" tabindex="-1" role="dialog"
+						aria-labelledby="myModal" aria-hidden="true" data-animation-in="fadeInLeft"
+						data-animation-out="bounceOut">
 						<div class="modal-dialog modal-dialog-centered" role="document">
 							<div class="modal-dialog">
 								<div class="modal-content">
-
 
 									<!-- Modal Header -->
 									<div class="modal-header">
 										<h4 class="modal-title">Datos</h4>
 										<button type="button" class="close" data-dismiss="modal">&times;</button>
 									</div>
-
 
 									<!-- Modal body -->
 									<div class="modal-body">
@@ -119,49 +105,42 @@
 														placeholder="Apellido">
 												</div>
 												<div>
-													<label for="name">Fecha de contratación: </label> <input
-														type="text" th:field="*{trabajador.fechaContratacion}"
-														id="name" placeholder="Fecha de contratación">
+													<label for="name">Fecha de contratación: </label> <input type="text"
+														th:field="*{trabajador.fechaContratacion}" id="name"
+														placeholder="Fecha de contratación">
 												</div>
 												<div>
-													<label for="name">Correo electrónico: </label> <input
-														type="text" th:field="*{trabajador.persona.email}"
-														id="name" placeholder="Correo electrónico">
+													<label for="name">Correo electrónico: </label> <input type="text"
+														th:field="*{trabajador.persona.email}" id="name"
+														placeholder="Correo electrónico">
 												</div>
 											</form>
 										</div>
 									</div>
-
 
 									<!-- Modal footer -->
 									<div class="modal-footer">
 										<button type="button" class="btn btn-danger"
 											data-dismiss="modal">Cerrar</button>
 									</div>
-
-
 								</div>
 							</div>
 						</div>
-
-
 					</div>
-
-
 
 					<script>
 
-					function modalAnimation(animation) {
-					  $('.modal .modal-dialog').attr('class', 'modal-dialog  ' + animation + ' animated');
-					};
-					$('.modalAnimate').on('show.bs.modal', function (e) {
-					  var anim = $(this).attr('data-animation-in');
-					  modalAnimation(anim);
-					});
-					$('.modalAnimate').on('hide.bs.modal', function (e) {
-					  var anim = $(this).attr('data-animation-out');
-					  modalAnimation(anim);
-					});
+						function modalAnimation(animation) {
+							$('.modal .modal-dialog').attr('class', 'modal-dialog  ' + animation + ' animated');
+						};
+						$('.modalAnimate').on('show.bs.modal', function (e) {
+							var anim = $(this).attr('data-animation-in');
+							modalAnimation(anim);
+						});
+						$('.modalAnimate').on('hide.bs.modal', function (e) {
+							var anim = $(this).attr('data-animation-out');
+							modalAnimation(anim);
+						});
 					</script>
 				</div>
 			</div>
