@@ -19,7 +19,11 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         jdbc.lob.non_contextual_creation: true
 server:
+<<<<<<< HEAD
 
   port: 8090
 
 
+=======
+  port: 8090
+>>>>>>> feature/US01

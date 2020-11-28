@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link th:href="@{css/style.css}" rel="stylesheet">
+	<link th:href="@{css/styleControl.css}" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
+	<link rel="stylesheet" th:href="@{css/bootstrap.min.css}">
+	<link rel="stylesheet" href="css/styleLogin.css">
+
+	<title>EZShipping</title>
+</head>
+
+<body id="bootstrap-overrides">
+	<header th:fragment="header">
+		<nav class="navbar mynav">
+			<a class="navbar-brand" href="#">
+				<div class="logo">
+					<img th:src="@{/images/logo.jpg}" width="50" height="50" class="d-inline-block align-top" alt=""
+						loading="lazy">
+					EZShipping
+				</div>
+			</a>
+		</nav>
+	</header>
+	<p>
+	<div class="login-inicio">
+		<div class="container">
+			<div class="row justify-content-between">
+				<div class="content-right">
+					<form th:action="@{/signin}" method="post">
+						<div class="form-group">
+							<input type="text" name="username" placeholder="Usuario">
+						</div>
+						<div class="form-group">
+							<input type="password" name="password" placeholder="Contraseña">
+						</div>
+						<div class="login">
+							<button type="submit">Iniciar Sesion</button>
+						</div>
+						<div class="forgot">
+							<a href="">¿Olvidaste tu contraseña?</a>
+						</div>
+						<!-- <div class="create-btn">
+							<a href="#"><button>Crear nueva cuenta</button></a>
+						</div> -->
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>

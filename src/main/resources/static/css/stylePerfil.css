@@ -1,0 +1,38 @@
+.perfil {
+	margin-top: 100px;
+	margin-bottom: 192px;
+}
+
+.barraRuta {
+	margin-left: 500px;
+	margin-right: 340px;
+}
+
+.editar button {
+	font-family: 'Cabin', sans-serif !important;
+	border: none;
+	outline: 0;
+	display: inline-block;
+	color: black;
+	background-color: #D8AF1A;
+	text-align: center;
+	cursor: pointer;
+	border-radius: 8px;
+	font-size: 20px;
+	height: 50px;
+	width: 100px;
+	line-height: 50px;
+	padding: 0 17px;
+}
+
+.botones {
+	display: flex;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.form-popup label {
+	font-family: 'Cabin', sans-serif !important;
+}

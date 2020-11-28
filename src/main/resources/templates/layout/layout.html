@@ -7,12 +7,21 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+<<<<<<< HEAD
 <link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap"
 	rel="stylesheet">
 <link rel="stylesheet" th:href="@{/css/style.css}">
 <link rel="stylesheet" th:href="@{/css/styleControl.css}">
 <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
 <link rel="stylesheet" th:href="@{/css/envios.css}">
+=======
+	<link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
+	<link th:href="@{css/style.css}" rel="stylesheet">
+	<link th:href="@{css/styleControl.css}" rel="stylesheet">
+	<link rel="stylesheet" th:href="@{css/bootstrap.min.css}">
+	<link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+
+>>>>>>> feature/US01
 
 <title>EZShipping</title>
 </head>
@@ -29,11 +38,53 @@
 			</a>
 
 			<ul class="nav-links">
+<<<<<<< HEAD
 				<li><a href="/">Inicio</a></li>
 				<li><a href="#">Servicios</a></li>
 				<li><a href="/sobreNosotros">Sobre Nosotros</a></li>
 				<li><a href="/contacto">Contáctanos</a></li>
+=======
+				<li>
+					<a href="/">Inicio</a>
+				</li>
+				<li class="nav-item" sec:authorize="hasRole('ROLE_ADMIN')">
+					<a href="/administrar">Administrar</a>
+				</li>
+				<li>
+					<a href="#">Sobre Nosotros</a>
+				</li>
+				<li class="nav-item" sec:authorize="hasRole('ROLE_CUSTOMER')">
+					<a href="#">Contáctanos</a>
+				</li>
+			</ul>
+>>>>>>> feature/US01
 
+			<a sec:authorize="isAnonymous()" th:href="@{/login}" type="button" class="btn btn-outline-primary">
+				<i class="fas fa-user"></i> Iniciar Sesión
+			</a>
+			<ul sec:authorize="isAuthenticated()" class="navbar-nav" style="margin-right: 50px; ">
+				<li class="nav-item dropdown">
+					<a class="btn btn-outline-info dropdown-toggle" id="navbarDropdown" role="button"
+						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<i class="fas fa-user-circle" style="margin-right: 10px;"></i><span
+							sec:authentication="name">Username</span>
+					</a>
+					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="position: absolute;">
+						<a class="dropdown-item" th:href="@{/perfil}">
+							<i class="fas fa-id-card"></i> Ver mi perfil
+						</a>
+						<a class="dropdown-item" th:href="@{/}" sec:authorize="hasRole('ROLE_CUSTOMER')">
+							<i class="fas fa-history"></i> Ver historial de envíos
+						</a>
+						<a class="dropdown-item" th:href="@{/}" sec:authorize="hasRole('ROLE_COURIER')">
+							<i class="fas fa-box-open"></i> Ver historial de entregas
+						</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" th:href="@{/logout}"> 
+							<i class="fas fa-sign-out-alt"></i>Salir
+						</a>
+					</div>
+				</li>
 			</ul>
 			<div class="burger">
 				<div class="line1"></div>
@@ -41,6 +92,15 @@
 				<div class="line3"></div>
 			</div>
 		</nav>
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+			integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+			crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+			integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+			crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+			integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+			crossorigin="anonymous"></script>
 	</header>
 
 	<footer th:fragment="footer">
