@@ -1,6 +1,6 @@
 .perfil {
 	margin-top: 100px;
-	margin-bottom: 100px;
+	margin-bottom: 192px;
 }
 
 .barraRuta {
@@ -44,4 +44,8 @@
 
 .botones{
 	display: flex;
+}
+
+* {
+	 box-sizing: border-box;
 }
