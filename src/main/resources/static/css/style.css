@@ -16,7 +16,6 @@ h1 {
 }
 
 p {
-	color: black;
 	text-align: justify;
 	display: flex;
 	width: 90%;
@@ -264,6 +263,14 @@ p {
 	overflow: hidden;
 	background: url(my_background.png);
 	background-size: cover;
+}
+
+.container a{
+  color: black;
+}
+
+.container a:hover {
+  color: orange;
 }
 
 /*---------
